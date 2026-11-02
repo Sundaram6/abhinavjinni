@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abhinav-mansi.wedding'),
-  title: 'Abhinav & Mansi — A Story in Bloom | Wedding Celebrations',
+  metadataBase: new URL('https://mansiwedsabhinav.vercel.app'),
+  title: 'Mansi weds Abhinav — A Story in Bloom | Wedding Celebrations',
   description: 'With great joy, Sh. Inder Pal & Smt. Nirmala and Sh. Mahabir Prasad Sharma & Smt. Babita Sharma invite you to celebrate the wedding of Abhinav & Mansi in Bodhgaya and Noida.',
   keywords: ['Abhinav Mansi Wedding', 'Abhinav Pal', 'Mansi Sharma', 'Bodhgaya Wedding', 'The Royal Palace Banquet Noida', 'Buddha Heritage Resort Bodhgaya'],
   authors: [{ name: 'Abhinav & Mansi' }],

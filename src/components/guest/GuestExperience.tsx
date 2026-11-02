@@ -24,7 +24,7 @@ export default function GuestExperience() {
   const [activeVenue, setActiveVenue] = useState<'bodhgaya' | 'noida'>('bodhgaya');
   const [copiedLink, setCopiedLink] = useState(false);
 
-  const shareText = `🌸 *Abhinav & Mansi — A Story in Bloom* 🌸\n\nWith great joy, our families invite you to celebrate our wedding ceremonies!\n\n✨ *The Promise Night:* 20 Oct 2026 (The Royal Palace Banquet, Noida)\n✨ *Mehandi & Sangeet:* 2 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n✨ *Haldi & Sacred Wedding:* 3 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n\nPlease view our itinerary and venue directions here:\n${typeof window !== 'undefined' ? window.location.href.split('#')[0] : 'https://abhinav-mansi.wedding'}`;
+  const shareText = `🌸 *Mansi weds Abhinav — A Story in Bloom* 🌸\n\nWith great joy, our families invite you to celebrate our wedding ceremonies!\n\n✨ *The Promise Night:* 20 Oct 2026 (The Royal Palace Banquet, Noida)\n✨ *Mehandi & Sangeet:* 2 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n✨ *Haldi & Sacred Wedding:* 3 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n\nPlease view our itinerary and venue directions here:\n${typeof window !== 'undefined' ? window.location.href.split('#')[0] : 'https://mansiwedsabhinav.vercel.app'}`;
 
   const handleWhatsAppShare = () => {
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
