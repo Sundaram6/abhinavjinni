@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-tiro-hindi: 'Tiro Devanagari Hindi', serif;
+  --font-hindi: 'Tiro Devanagari Hindi', serif;
+  --font-cormorant: 'Cormorant Garamond', 'Tiro Devanagari Hindi', Georgia, serif;
+  --font-cinzel: 'Cinzel', 'Tiro Devanagari Hindi', serif;
+  --font-alex-brush: 'Alex Brush', cursive;
+  --font-sans: 'Plus Jakarta Sans', 'Tiro Devanagari Hindi', system-ui, sans-serif;
+  --font-rozha: 'Tiro Devanagari Hindi', serif;
+
+  /* Royal Jewel Tone Design Tokens */
+  --color-paper: #FAF6F0;
+  --color-paper-card: #FDFBF7;
+  --color-plum: #3D072B;
+  --color-burgundy: #3D072B;
+  --color-ruby: #AD1351;
+  --color-emerald: #00664E;
+  --color-gold: #C89B53;
+  --color-gold-bright: #D4AF37;
+  --color-ink-primary: #361026;
+}
+
+/* Custom Film Grain / Handmade Paper Background Texture with Royal Jewel Ambient Undertones */
+.paper-grain {
+  background-color: #FAF6F0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(173, 19, 81, 0.035) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(200, 155, 83, 0.045) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(0, 102, 78, 0.02) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Luxury Royal Stationery Card */
+.stationery-card {
+  background: #FDFBF7;
+  border: 1px solid rgba(200, 155, 83, 0.32);
+  box-shadow: 
+    0 1px 3px rgba(61, 7, 43, 0.03),
+    0 10px 30px -5px rgba(61, 7, 43, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  position: relative;
+}
+
+.stationery-card-inner-frame {
+  position: relative;
+}
+.stationery-card-inner-frame::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(200, 155, 83, 0.22);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Royal Jewel Wax Seal Button Effect (Ruby to Imperial Plum Gradient) */
+.wax-seal-btn {
+  background: radial-gradient(circle at 35% 35%, #AD1351 0%, #75114F 50%, #3D072B 100%);
+  box-shadow: 
+    0 8px 24px rgba(61, 7, 43, 0.38),
+    0 2px 6px rgba(0, 0, 0, 0.22),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.wax-seal-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 12px 30px rgba(173, 19, 81, 0.45),
+    0 3px 8px rgba(0, 0, 0, 0.28),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.55);
+}
+.wax-seal-btn:active {
+  transform: scale(0.97);
+}
+
+/* Emerald Jewel Button */
+.emerald-seal-btn {
+  background: radial-gradient(circle at 35% 35%, #057D60 0%, #00664E 50%, #013325 100%);
+  box-shadow: 
+    0 8px 24px rgba(0, 102, 78, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.emerald-seal-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 12px 30px rgba(5, 125, 96, 0.45),
+    0 3px 8px rgba(0, 0, 0, 0.25),
+    inset 0 2px 4px rgba(255, 255, 255, 0.45),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Royal Jewel Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #AB7B2C 0%, #D4AF37 50%, #C89B53 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-burgundy-gradient, .text-jewel-gradient {
+  background: linear-gradient(135deg, #75114F 0%, #3D072B 55%, #24041B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-ruby-gradient {
+  background: linear-gradient(135deg, #C2185B 0%, #AD1351 50%, #700832 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-emerald-gradient {
+  background: linear-gradient(135deg, #057D60 0%, #00664E 50%, #013325 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Antique Border Accents */
+.border-gold-ornate {
+  border: 1px solid rgba(200, 155, 83, 0.38);
+}
+
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+@keyframes pulseGentle {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+
+.animate-pulse-gentle {
+  animation: pulseGentle 4s ease-in-out infinite;
+}
+
+@keyframes spinVerySlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-very-slow {
+  animation: spinVerySlow 18s linear infinite;
+}
+
+/* Floating Petals for Cinematic Canvas */
+.petal-particle {
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  border-radius: 50% 50% 50% 0;
+  opacity: 0.55;
+  filter: blur(0.5px);
+  pointer-events: none;
+}
+
+.petal-particle.p1 {
+  top: 15%;
+  left: 20%;
+  background: #AD1351;
+  animation: floatPetal1 8s ease-in-out infinite;
+}
+.petal-particle.p2 {
+  top: 40%;
+  left: 80%;
+  background: #C89B53;
+  animation: floatPetal2 10s ease-in-out infinite;
+}
+.petal-particle.p3 {
+  top: 70%;
+  left: 15%;
+  background: #540C3D;
+  animation: floatPetal3 9s ease-in-out infinite;
+}
+.petal-particle.p4 {
+  top: 85%;
+  left: 75%;
+  background: #AD1351;
+  animation: floatPetal1 11s ease-in-out infinite;
+}
+.petal-particle.p5 {
+  top: 30%;
+  left: 60%;
+  background: #00664E;
+  opacity: 0.35;
+  animation: floatPetal2 12s ease-in-out infinite;
+}
+.petal-particle.p6 {
+  top: 60%;
+  left: 35%;
+  background: #FDFBF7;
+  animation: floatPetal3 7s ease-in-out infinite;
+}
+
+@keyframes floatPetal1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(45deg); }
+}
+@keyframes floatPetal2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(25px) rotate(-35deg); }
+}
+@keyframes floatPetal3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(25deg); }
+}

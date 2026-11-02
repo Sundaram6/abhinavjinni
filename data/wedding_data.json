@@ -1,0 +1,71 @@
+{
+  "rsvps": [
+    {
+      "name": "Deepak & Neha Pal",
+      "phone": "+91 98111 22334",
+      "email": "deepak@example.com",
+      "guestsCount": 2,
+      "eventsAttending": [
+        "wedding",
+        "sangeet",
+        "mehandi"
+      ],
+      "dietaryNotes": "Pure Vegetarian",
+      "personalNote": "Heartiest congratulations to Abhinav and Mansi!",
+      "id": "rsvp_1793544527980_iad8t",
+      "createdAt": "2026-11-01T14:48:47.980Z"
+    }
+  ],
+  "wishes": [
+    {
+      "id": "wish-1",
+      "name": "Surender Pal & Family",
+      "relationship": "Family",
+      "blessingTag": "Sada Saubhagya Vati Bhava",
+      "message": "Dearest Abhinav and Mansi, our heartfelt blessings are always with you both. May Lord Ganesha shower your new journey with endless joy, peace, and eternal togetherness.",
+      "likes": 12,
+      "status": "approved",
+      "createdAt": "2026-10-21T10:15:00+05:30"
+    },
+    {
+      "id": "wish-2",
+      "name": "The Sharma Family",
+      "relationship": "Bride's Family",
+      "blessingTag": "Eternal Harmony",
+      "message": "Mansi our beloved daughter, and Abhinav our wonderful son-in-law, watching you two step into this sacred chapter fills our hearts with pride and pure bliss.",
+      "likes": 16,
+      "status": "approved",
+      "createdAt": "2026-10-22T14:30:00+05:30"
+    },
+    {
+      "id": "wish-3",
+      "name": "Rishabh & Himanshu Pal",
+      "relationship": "Cousins",
+      "blessingTag": "Dance & Celebration",
+      "message": "The countdown to Bodhgaya is on! The Barat is going to be unforgettable. To laughter, dhol beats, and a lifetime of love for you both!",
+      "likes": 19,
+      "status": "approved",
+      "createdAt": "2026-10-25T19:40:00+05:30"
+    },
+    {
+      "id": "wish-4",
+      "name": "Nityaya & Avyagra Pal",
+      "relationship": "Kids",
+      "blessingTag": "Pure Joy",
+      "message": "Heartiest congratulations Abhinav Bhaiya & Mansi Bhabhi! We have prepared a special dance for the Sangeet night!",
+      "likes": 24,
+      "status": "approved",
+      "createdAt": "2026-10-28T16:20:00+05:30"
+    },
+    {
+      "id": "wish-5",
+      "name": "Pooja & Amit Verma",
+      "relationship": "Close Friends",
+      "blessingTag": "Story in Bloom",
+      "message": "From college memories to this breathtaking moment! Mansi and Abhinav, you complement each other so beautifully. Wishing you both all the happiness in the universe.",
+      "likes": 9,
+      "status": "approved",
+      "createdAt": "2026-10-30T11:00:00+05:30"
+    }
+  ]
+}
