@@ -60,7 +60,7 @@ export default function GuestExperience() {
       
       {/* Header */}
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-16 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-burgundy-900 font-bold tracking-tight">
+        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
           Venues, Directions &amp; Travel
         </h2>
 
@@ -77,22 +77,22 @@ export default function GuestExperience() {
             
             <div className="flex items-center justify-between border-b border-gold-300/30 pb-4 mb-6">
               <div>
-                <span className="font-serif italic text-xs text-gold-800 font-semibold tracking-wider block">
+                <span className="font-serif italic text-xs text-gold-700 font-semibold tracking-wider block">
                   Canonical Wedding Locations
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-burgundy-900">
+                <h3 className="font-serif text-2xl font-bold text-ink-title">
                   {activeVenue === 'bodhgaya' ? 'Buddha Heritage Resort' : 'The Royal Palace Banquet'}
                 </h3>
               </div>
 
               {/* Venue Switcher Tabs */}
-              <div className="inline-flex p-1 rounded-full bg-paper-200 border border-gold-400/30 text-xs shadow-inner">
+              <div className="inline-flex p-1 rounded-full bg-paper-100 border border-gold-400/30 text-xs shadow-inner">
                 <button
                   onClick={() => setActiveVenue('bodhgaya')}
                   className={`px-4 py-1.5 rounded-full text-xs font-serif transition-all ${
                     activeVenue === 'bodhgaya'
-                      ? 'bg-burgundy-900 text-gold-200 shadow-sm font-semibold'
-                      : 'text-ink-secondary hover:text-burgundy-900'
+                      ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                      : 'text-ink-secondary hover:text-ruby-600'
                   }`}
                 >
                   Bodhgaya (Dec 2–3)
@@ -101,8 +101,8 @@ export default function GuestExperience() {
                   onClick={() => setActiveVenue('noida')}
                   className={`px-4 py-1.5 rounded-full text-xs font-serif transition-all ${
                     activeVenue === 'noida'
-                      ? 'bg-burgundy-900 text-gold-200 shadow-sm font-semibold'
-                      : 'text-ink-secondary hover:text-burgundy-900'
+                      ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                      : 'text-ink-secondary hover:text-ruby-600'
                   }`}
                 >
                   Noida (Oct 20)
@@ -114,7 +114,7 @@ export default function GuestExperience() {
               <div className="space-y-5 animate-fadeIn">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-gold-700 text-xs font-sans font-semibold uppercase tracking-wider">
-                    <MapPin className="w-4 h-4 text-burgundy-800" />
+                    <MapPin className="w-4 h-4 text-ruby-600" />
                     <span>Fifty meter before Thai Temple, Opp. Maya Sarovar, Bodhgaya, Bihar 824231</span>
                   </div>
                   <p className="text-sm font-serif text-ink-primary leading-relaxed">
@@ -124,10 +124,10 @@ export default function GuestExperience() {
 
                 {/* Celebrations Hosted Here */}
                 <div className="p-4 bg-paper-100/90 rounded-2xl border border-gold-300/40 space-y-2">
-                  <span className="text-[11px] font-sans font-semibold tracking-wider uppercase text-burgundy-950 block">
+                  <span className="text-[11px] font-sans font-semibold tracking-wider uppercase text-ink-title block">
                     Celebrations Hosted at this Venue:
                   </span>
-                  <div className="grid grid-cols-2 gap-2 text-xs font-serif text-burgundy-900">
+                  <div className="grid grid-cols-2 gap-2 text-xs font-serif text-ink-title">
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
                       <span>Mehandi (Dec 2, 11:00 AM)</span>
@@ -148,7 +148,7 @@ export default function GuestExperience() {
                 </div>
 
                 <div className="p-4 bg-paper-50 rounded-2xl border border-paper-300 text-xs space-y-1.5">
-                  <span className="font-semibold block text-burgundy-950">Landmark &amp; Arrival:</span>
+                  <span className="font-semibold block text-ink-title">Landmark &amp; Arrival:</span>
                   <p className="text-ink-secondary text-xs leading-relaxed">
                     Directly opposite the scenic Maya Sarovar lake, 50 meters before the Royal Thai Monastery. Ample valet parking and round-the-clock reception available for all honored guests.
                   </p>
@@ -160,7 +160,7 @@ export default function GuestExperience() {
                     href="https://www.google.com/maps/search/?api=1&query=Buddha+Heritage+Resort+Bodhgaya+Bihar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-3 px-4 rounded-full bg-burgundy-900 text-gold-200 text-xs font-serif flex items-center justify-center gap-2 shadow-md hover:bg-burgundy-800 transition-all hover:scale-102"
+                    className="flex-1 py-3 px-4 rounded-full bg-ruby-600 text-white text-xs font-serif flex items-center justify-center gap-2 shadow-md hover:bg-ruby-700 transition-all hover:scale-102 border border-gold-400/40"
                   >
                     <Navigation className="w-4 h-4 text-gold-300" />
                     <span>Open in Google Maps</span>
@@ -169,7 +169,7 @@ export default function GuestExperience() {
                     href="https://maps.apple.com/?q=Buddha+Heritage+Resort+Bodhgaya"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-burgundy-900 border border-gold-400/40 text-xs font-serif transition-all"
+                    className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif transition-all"
                   >
                     Apple Maps
                   </a>
@@ -179,7 +179,7 @@ export default function GuestExperience() {
               <div className="space-y-5 animate-fadeIn">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-gold-700 text-xs font-sans font-semibold uppercase tracking-wider">
-                    <MapPin className="w-4 h-4 text-burgundy-800" />
+                    <MapPin className="w-4 h-4 text-ruby-600" />
                     <span>Near JBM Global School, Block-B, Sector 132, Noida, Uttar Pradesh 201304</span>
                   </div>
                   <p className="text-sm font-serif text-ink-primary leading-relaxed">
@@ -188,17 +188,17 @@ export default function GuestExperience() {
                 </div>
 
                 <div className="p-4 bg-paper-100/90 rounded-2xl border border-gold-300/40 space-y-2">
-                  <span className="text-[11px] font-sans font-semibold tracking-wider uppercase text-burgundy-950 block">
+                  <span className="text-[11px] font-sans font-semibold tracking-wider uppercase text-ink-title block">
                     Celebration Hosted at this Venue:
                   </span>
-                  <div className="text-xs font-serif text-burgundy-900 space-y-1">
+                  <div className="text-xs font-serif text-ink-title space-y-1">
                     <p className="font-semibold">The Promise Night (Engagement Ceremony)</p>
                     <p className="text-ink-secondary text-[11px]">Tuesday, 20 October 2026 • Dinner: 7:00 PM Onwards • Ring Ceremony: 8:00 PM</p>
                   </div>
                 </div>
 
                 <div className="p-4 bg-paper-50 rounded-2xl border border-paper-300 text-xs space-y-1.5">
-                  <span className="font-semibold block text-burgundy-950">Location &amp; Access:</span>
+                  <span className="font-semibold block text-ink-title">Location &amp; Access:</span>
                   <p className="text-ink-secondary text-xs leading-relaxed">
                     Located on the Noida-Greater Noida Expressway near JBM Global School. Easily accessible from Delhi NCR, Noida Sector 137 Metro, and IGI Airport.
                   </p>
@@ -209,7 +209,7 @@ export default function GuestExperience() {
                     href="https://www.google.com/maps/search/?api=1&query=The+Royal+Palace+Banquet+Sector+132+Noida"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-3 px-4 rounded-full bg-burgundy-900 text-gold-200 text-xs font-serif flex items-center justify-center gap-2 shadow-md hover:bg-burgundy-800 transition-all hover:scale-102"
+                    className="flex-1 py-3 px-4 rounded-full bg-ruby-600 text-white text-xs font-serif flex items-center justify-center gap-2 shadow-md hover:bg-ruby-700 transition-all hover:scale-102 border border-gold-400/40"
                   >
                     <Navigation className="w-4 h-4 text-gold-300" />
                     <span>Open in Google Maps</span>
@@ -218,7 +218,7 @@ export default function GuestExperience() {
                     href="https://maps.apple.com/?q=The+Royal+Palace+Banquet+Sector+132+Noida"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-burgundy-900 border border-gold-400/40 text-xs font-serif transition-all"
+                    className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif transition-all"
                   >
                     Apple Maps
                   </a>
@@ -233,29 +233,29 @@ export default function GuestExperience() {
           
           {/* Travel & Connectivity Guide */}
           <div className="stationery-card p-6 sm:p-7 rounded-3xl border border-gold-400/40 shadow-stationery space-y-4">
-            <h4 className="font-serif text-lg font-bold text-burgundy-900 border-b border-gold-300/30 pb-2.5 flex items-center gap-2">
+            <h4 className="font-serif text-lg font-bold text-ink-title border-b border-gold-300/30 pb-2.5 flex items-center gap-2">
               <Plane className="w-4 h-4 text-gold-700" />
               <span>Travel &amp; Transit Guide</span>
             </h4>
 
             <div className="space-y-3.5 text-xs">
               <div className="flex items-start gap-3">
-                <Plane className="w-4 h-4 text-burgundy-800 flex-shrink-0 mt-0.5" />
+                <Plane className="w-4 h-4 text-ruby-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-burgundy-950 block">Airports</span>
+                  <span className="font-semibold text-ink-title block">Airports</span>
                   <p className="text-ink-secondary text-[11px] leading-relaxed">
-                    <strong className="text-burgundy-900">Gaya Airport (GAY):</strong> ~10 km (15 mins drive).<br />
-                    <strong className="text-burgundy-900">Patna Airport (PAT):</strong> ~115 km (2.5 hrs via NH22 with regular flight connectivity).
+                    <strong className="text-ink-title">Gaya Airport (GAY):</strong> ~10 km (15 mins drive).<br />
+                    <strong className="text-ink-title">Patna Airport (PAT):</strong> ~115 km (2.5 hrs via NH22 with regular flight connectivity).
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Train className="w-4 h-4 text-burgundy-800 flex-shrink-0 mt-0.5" />
+                <Train className="w-4 h-4 text-ruby-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-burgundy-950 block">Railway Stations</span>
+                  <span className="font-semibold text-ink-title block">Railway Stations</span>
                   <p className="text-ink-secondary text-[11px] leading-relaxed">
-                    <strong className="text-burgundy-900">Gaya Junction (GAYA):</strong> ~13 km. Directly connected by Rajdhani, Vande Bharat, and express lines across major cities.
+                    <strong className="text-ink-title">Gaya Junction (GAYA):</strong> ~13 km. Directly connected by Rajdhani, Vande Bharat, and express lines across major cities.
                   </p>
                 </div>
               </div>
@@ -263,7 +263,7 @@ export default function GuestExperience() {
               <div className="flex items-start gap-3">
                 <SunMedium className="w-4 h-4 text-gold-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-burgundy-950 block">December Climate in Bodhgaya</span>
+                  <span className="font-semibold text-ink-title block">December Climate in Bodhgaya</span>
                   <p className="text-ink-secondary text-[11px] leading-relaxed">
                     Pleasant sunny afternoons (~24°C) with cool, refreshing evenings (~11°C). Light woolens, blazers, and festive shawls are ideal.
                   </p>
@@ -274,7 +274,7 @@ export default function GuestExperience() {
                 <a
                   href="/api/calendar?event=all"
                   download="abhinav-mansi-wedding-events.ics"
-                  className="w-full py-2.5 px-4 rounded-xl bg-paper-100 hover:bg-paper-200 text-burgundy-900 border border-gold-400/40 text-xs font-serif flex items-center justify-center gap-2 transition-all shadow-sm"
+                  className="w-full py-2.5 px-4 rounded-xl bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif flex items-center justify-center gap-2 transition-all shadow-sm"
                 >
                   <Download className="w-3.5 h-3.5 text-gold-700" />
                   <span>Download Complete Calendar (.ics)</span>
@@ -284,8 +284,8 @@ export default function GuestExperience() {
           </div>
 
           {/* WhatsApp Sharing Hub */}
-          <div className="stationery-card p-6 sm:p-7 rounded-3xl border border-gold-400/40 shadow-stationery bg-gradient-to-br from-paper-50 to-blush-50/50 text-center space-y-3">
-            <h4 className="font-serif text-lg font-bold text-burgundy-900">
+          <div className="stationery-card p-6 sm:p-7 rounded-3xl border border-gold-400/40 shadow-stationery bg-paper-100 text-center space-y-3">
+            <h4 className="font-serif text-lg font-bold text-ink-title">
               Share With Family &amp; Friends
             </h4>
             <p className="font-serif italic text-xs text-ink-secondary leading-relaxed">
@@ -303,17 +303,17 @@ export default function GuestExperience() {
 
               <button
                 onClick={handleCopyLink}
-                className="py-2.5 px-4 rounded-full bg-paper-100 hover:bg-paper-200 text-burgundy-900 border border-gold-400/40 text-xs font-serif flex items-center gap-1.5 transition-all"
+                className="py-2.5 px-4 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif flex items-center gap-1.5 transition-all"
                 title="Copy website link"
               >
                 {copiedLink ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-green-700" />
-                    <span className="text-[11px] text-green-700 font-semibold">Copied!</span>
+                    <Check className="w-3.5 h-3.5 text-emerald-700" />
+                    <span className="text-[11px] text-emerald-700 font-semibold">Copied!</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-3.5 h-3.5 text-burgundy-800" />
+                    <Copy className="w-3.5 h-3.5 text-ruby-600" />
                     <span className="text-[11px]">Copy Link</span>
                   </>
                 )}

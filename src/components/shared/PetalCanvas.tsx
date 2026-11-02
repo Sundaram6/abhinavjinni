@@ -43,11 +43,11 @@ export default function PetalCanvas() {
     window.addEventListener('resize', handleResize);
 
     const petalColors = [
-      'rgba(173, 19, 81, 0.45)',   // Royal Ruby Blossom (#AD1351)
-      'rgba(200, 155, 83, 0.45)',  // Antique Royal Gold Flake (#C89B53)
-      'rgba(84, 12, 61, 0.35)',    // Imperial Plum Velvet (#540C3D)
-      'rgba(253, 240, 234, 0.60)', // Pearl Rosewater Petal
-      'rgba(0, 102, 78, 0.28)',    // Imperial Emerald Accent (#00664E)
+      'rgba(179, 18, 82, 0.45)',   // Rich Ruby Magenta (#B31252)
+      'rgba(197, 158, 89, 0.45)',  // Antique Warm Gold (#C59E59)
+      'rgba(74, 14, 78, 0.35)',    // Deep Regal Plum (#4A0E4E)
+      'rgba(250, 241, 238, 0.60)', // Blush Ivory (#FAF1EE)
+      'rgba(12, 90, 72, 0.28)',    // Emerald Green (#0C5A48)
     ];
 
     const PETAL_COUNT = Math.min(22, Math.floor(window.innerWidth / 40));

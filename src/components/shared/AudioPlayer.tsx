@@ -67,8 +67,8 @@ export default function AudioPlayer() {
         onClick={toggleSound}
         className={`flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs font-serif tracking-widest uppercase transition-all duration-300 backdrop-blur-md border ${
           isPlaying
-            ? 'bg-burgundy-900/95 text-gold-200 border-gold-400/60 shadow-gold-glow scale-105'
-            : 'bg-paper-50/95 text-burgundy-900 border-gold-400/40 shadow-stationery hover:border-gold-500'
+            ? 'bg-burgundy-900/95 text-paper-50 border-gold-400/60 shadow-gold-glow scale-105'
+            : 'bg-paper-50/95 text-ink-primary border-gold-400/40 shadow-stationery hover:border-gold-500'
         }`}
         aria-label={isPlaying ? 'Mute Original Shehnai Music' : 'Play Original Shehnai Music'}
         title={isPlaying ? 'Pause Original Shehnai (Ustad Bismillah Khan)' : 'Play Original Wedding Shehnai'}
@@ -89,7 +89,7 @@ export default function AudioPlayer() {
           </>
         ) : (
           <>
-            <Music className="w-4 h-4 text-burgundy-800" />
+            <Music className="w-4 h-4 text-ruby-600" />
             <VolumeX className="w-4 h-4 text-ink-muted" />
             <div className="flex flex-col text-left">
               <span className="text-[11px] font-sans font-medium text-ink-secondary leading-tight">Original Shehnai</span>

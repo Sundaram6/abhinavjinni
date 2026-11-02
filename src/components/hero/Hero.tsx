@@ -85,13 +85,13 @@ export default function Hero() {
 
       {/* Main Couple Names & Tagline */}
       <div className="text-center relative z-10 my-3 sm:my-5 max-w-4xl mx-auto space-y-3">
-        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-burgundy-900 font-bold tracking-tight leading-none drop-shadow-sm">
+        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-ink-title font-bold tracking-tight leading-none drop-shadow-sm">
           Abhinav <span className="font-script text-gold-600 font-normal text-3xl sm:text-5xl md:text-6xl mx-1 sm:mx-2">&amp;</span> Mansi
         </h1>
 
         <div className="flex items-center justify-center gap-3 pt-1">
           <span className="h-[1px] w-8 sm:w-16 bg-gradient-to-r from-transparent to-gold-400"></span>
-          <span className="font-script text-2xl sm:text-3xl text-burgundy-800">
+          <span className="font-script text-2xl sm:text-3xl text-ruby-600">
             A Story in Bloom
           </span>
           <span className="h-[1px] w-8 sm:w-16 bg-gradient-to-l from-transparent to-gold-400"></span>
@@ -116,8 +116,8 @@ export default function Hero() {
             onClick={() => setSelectedEventId('wedding')}
             className={`px-3 py-1 rounded-full border transition-all ${
               selectedEventId === 'wedding'
-                ? 'bg-burgundy-900 text-gold-200 border-gold-400 font-medium shadow-sm'
-                : 'bg-paper-50/70 text-ink-secondary border-gold-300/40 hover:bg-paper-100'
+                ? 'bg-ruby-600 text-white border-gold-400 font-medium shadow-sm'
+                : 'bg-paper-100/80 text-ink-primary border-gold-300/40 hover:bg-paper-200'
             }`}
           >
             The Sacred Wedding (Dec 3)
@@ -126,8 +126,8 @@ export default function Hero() {
             onClick={() => setSelectedEventId('sangeet')}
             className={`px-3 py-1 rounded-full border transition-all ${
               selectedEventId === 'sangeet'
-                ? 'bg-burgundy-900 text-gold-200 border-gold-400 font-medium shadow-sm'
-                : 'bg-paper-50/70 text-ink-secondary border-gold-300/40 hover:bg-paper-100'
+                ? 'bg-ruby-600 text-white border-gold-400 font-medium shadow-sm'
+                : 'bg-paper-100/80 text-ink-primary border-gold-300/40 hover:bg-paper-200'
             }`}
           >
             Sangeet &amp; Mehandi (Dec 2)
@@ -136,8 +136,8 @@ export default function Hero() {
             onClick={() => setSelectedEventId('promise-night')}
             className={`px-3 py-1 rounded-full border transition-all ${
               selectedEventId === 'promise-night'
-                ? 'bg-burgundy-900 text-gold-200 border-gold-400 font-medium shadow-sm'
-                : 'bg-paper-50/70 text-ink-secondary border-gold-300/40 hover:bg-paper-100'
+                ? 'bg-ruby-600 text-white border-gold-400 font-medium shadow-sm'
+                : 'bg-paper-100/80 text-ink-primary border-gold-300/40 hover:bg-paper-200'
             }`}
           >
             The Promise Night (Oct 20)
@@ -145,20 +145,20 @@ export default function Hero() {
         </div>
 
         {/* Target celebration title */}
-        <p className="font-serif text-sm sm:text-base text-burgundy-950 font-medium">
-          Counting down to <span className="font-semibold text-burgundy-800">{currentTargetEvent.title}</span> ({currentTargetEvent.dateString})
+        <p className="font-serif text-sm sm:text-base text-ink-primary font-medium">
+          Counting down to <span className="font-semibold text-ruby-600">{currentTargetEvent.title}</span> ({currentTargetEvent.dateString})
         </p>
 
         {/* Countdown Digit Boxes */}
         {timeLeft.isPast ? (
-          <div className="p-4 rounded-xl bg-paper-50/80 border border-gold-400/40 text-burgundy-900 font-serif">
+          <div className="p-4 rounded-xl bg-paper-100/90 border border-gold-400/40 text-ink-title font-serif">
             <p className="text-base font-semibold">This celebration has joyfully taken place!</p>
             <p className="text-xs text-ink-secondary mt-1">Cherishing the memories and looking forward to the sacred wedding ceremonies in Bodhgaya.</p>
           </div>
         ) : (
           <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
             <div className="stationery-card p-2 sm:p-3 rounded-xl border border-gold-400/40 shadow-sm text-center">
-              <span className="block font-serif text-2xl sm:text-4xl font-bold text-burgundy-900">
+              <span className="block font-serif text-2xl sm:text-4xl font-bold text-ink-title">
                 {String(timeLeft.days).padStart(2, '0')}
               </span>
               <span className="block text-[10px] sm:text-xs font-sans tracking-widest uppercase text-gold-700 font-medium">
@@ -167,7 +167,7 @@ export default function Hero() {
             </div>
 
             <div className="stationery-card p-2 sm:p-3 rounded-xl border border-gold-400/40 shadow-sm text-center">
-              <span className="block font-serif text-2xl sm:text-4xl font-bold text-burgundy-900">
+              <span className="block font-serif text-2xl sm:text-4xl font-bold text-ink-title">
                 {String(timeLeft.hours).padStart(2, '0')}
               </span>
               <span className="block text-[10px] sm:text-xs font-sans tracking-widest uppercase text-gold-700 font-medium">
@@ -176,7 +176,7 @@ export default function Hero() {
             </div>
 
             <div className="stationery-card p-2 sm:p-3 rounded-xl border border-gold-400/40 shadow-sm text-center">
-              <span className="block font-serif text-2xl sm:text-4xl font-bold text-burgundy-900">
+              <span className="block font-serif text-2xl sm:text-4xl font-bold text-ink-title">
                 {String(timeLeft.minutes).padStart(2, '0')}
               </span>
               <span className="block text-[10px] sm:text-xs font-sans tracking-widest uppercase text-gold-700 font-medium">
@@ -185,7 +185,7 @@ export default function Hero() {
             </div>
 
             <div className="stationery-card p-2 sm:p-3 rounded-xl border border-gold-400/40 shadow-sm text-center">
-              <span className="block font-serif text-2xl sm:text-4xl font-bold text-burgundy-900">
+              <span className="block font-serif text-2xl sm:text-4xl font-bold text-ink-title">
                 {String(timeLeft.seconds).padStart(2, '0')}
               </span>
               <span className="block text-[10px] sm:text-xs font-sans tracking-widest uppercase text-gold-700 font-medium">
@@ -199,13 +199,13 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
           <a
             href="#travel"
-            className="px-6 py-3 rounded-full bg-burgundy-900 hover:bg-burgundy-800 text-gold-100 font-serif text-sm tracking-widest uppercase shadow-md hover:shadow-lg transition-all hover:scale-105 border border-gold-400/40"
+            className="px-6 py-3 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-serif text-sm tracking-widest uppercase shadow-md hover:shadow-lg transition-all hover:scale-105 border border-gold-400/40"
           >
             Venues &amp; Travel Guide
           </a>
           <a
             href="#celebrations"
-            className="px-6 py-3 rounded-full bg-paper-50 hover:bg-paper-100 text-burgundy-900 font-serif text-sm tracking-widest uppercase shadow-sm border border-gold-400/40 transition-all hover:scale-105"
+            className="px-6 py-3 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary font-serif text-sm tracking-widest uppercase shadow-sm border border-gold-400/40 transition-all hover:scale-105"
           >
             Explore Itinerary
           </a>
@@ -216,7 +216,7 @@ export default function Hero() {
       <div className="pt-8 text-center text-ink-muted">
         <a
           href="#celebrations"
-          className="group inline-flex flex-col items-center gap-1.5 text-xs font-serif tracking-widest uppercase hover:text-burgundy-900 transition-colors"
+          className="group inline-flex flex-col items-center gap-1.5 text-xs font-serif tracking-widest uppercase hover:text-ruby-600 transition-colors"
           aria-label="Scroll to celebrations itinerary"
         >
           <span>Celebrations</span>

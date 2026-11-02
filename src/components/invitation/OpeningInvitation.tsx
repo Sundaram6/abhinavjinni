@@ -98,7 +98,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 transition-all duration-700 ${
         step === 'finished' ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'
-      } paper-grain bg-burgundy-950/75 backdrop-blur-md`}
+      } paper-grain bg-burgundy-900/80 backdrop-blur-md`}
       role="dialog"
       aria-modal="true"
       aria-label="Wedding Opening Ceremony"
@@ -106,7 +106,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
       {/* Skip / Enter Action */}
       <button
         onClick={handleSkip}
-        className="absolute top-5 right-5 sm:top-8 sm:right-8 z-40 flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50/90 hover:bg-paper-50 text-burgundy-900 border border-gold-400/40 text-xs font-serif tracking-widest uppercase shadow-md transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-500"
+        className="absolute top-5 right-5 sm:top-8 sm:right-8 z-40 flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50/90 hover:bg-paper-50 text-ink-title border border-gold-400/40 text-xs font-serif tracking-widest uppercase shadow-md transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-500"
       >
         <span>{step === 'envelope' ? 'Skip to Website' : 'Enter Website'}</span>
         <ArrowRight className="w-3.5 h-3.5 text-gold-700" />
@@ -154,13 +154,13 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
 
           {/* Invitation Lines */}
           <div className="text-center space-y-2 relative z-10 max-w-md mx-auto px-2">
-            <p className="font-serif text-sm sm:text-base text-burgundy-950 font-medium">
+            <p className="font-serif text-sm sm:text-base text-ink-title font-medium">
               Sh. Inder Pal &amp; Smt. Nirmala
             </p>
             <p className="text-xs sm:text-xs tracking-wider uppercase text-gold-700 font-sans font-semibold">
               cordially invite you to celebrate the marriage of their son
             </p>
-            <h2 className="font-serif text-2xl sm:text-3xl text-burgundy-900 font-bold tracking-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl text-ink-title font-bold tracking-tight">
               Abhinav &amp; Mansi
             </h2>
             <p className="font-serif text-xs sm:text-sm text-ink-secondary italic">
@@ -334,7 +334,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
             {/* Manual Enter Website Button */}
             <button
               onClick={completeOpening}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-burgundy-900 hover:bg-burgundy-800 text-gold-100 font-serif text-xs uppercase tracking-widest shadow-md transition-all hover:scale-105 border border-gold-400/40"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-serif text-xs uppercase tracking-widest shadow-md transition-all hover:scale-105 border border-gold-400/40"
             >
               <span>Enter Wedding Website</span>
               <ArrowRight className="w-3.5 h-3.5 text-gold-300" />

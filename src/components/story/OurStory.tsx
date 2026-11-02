@@ -27,7 +27,7 @@ export default function OurStory() {
       
       {/* Decorative Background Elements */}
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-16 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-burgundy-900 font-bold tracking-tight">
+        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
           Our Story in Bloom
         </h2>
 
@@ -49,7 +49,7 @@ export default function OurStory() {
       <div className="max-w-4xl mx-auto relative z-10">
         
         {/* Central Connecting Vine / Line in Royal Gold & Jewel Plum */}
-        <div className="absolute left-4 sm:left-1/2 top-4 bottom-4 -translate-x-1/2 w-0.5 bg-gradient-to-b from-gold-400 via-burgundy-800 to-gold-400 pointer-events-none hidden sm:block"></div>
+        <div className="absolute left-4 sm:left-1/2 top-4 bottom-4 -translate-x-1/2 w-0.5 bg-gradient-to-b from-gold-400 via-burgundy-900 to-gold-400 pointer-events-none hidden sm:block"></div>
 
         <div className="space-y-12 sm:space-y-16">
           {stories.map((item, index) => {
@@ -64,7 +64,7 @@ export default function OurStory() {
               >
                 {/* Timeline Center Node */}
                 <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-paper-50 border-2 border-gold-500 shadow-sm items-center justify-center z-20">
-                  <span className="w-2.5 h-2.5 rounded-full bg-burgundy-900 shadow-sm"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-ruby-600 shadow-sm"></span>
                 </div>
 
                 {/* Content Card */}
@@ -73,7 +73,7 @@ export default function OurStory() {
                     
                     {/* Header with Tag & Year */}
                     <div className="flex items-center justify-between gap-2 border-b border-gold-300/30 pb-3 mb-4">
-                      <span className="text-[11px] font-sans font-semibold tracking-widest uppercase text-burgundy-900 bg-burgundy-100 px-2.5 py-1 rounded-full border border-burgundy-200">
+                      <span className="text-[11px] font-sans font-semibold tracking-widest uppercase text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                         {item.tag}
                       </span>
                       <span className="font-serif italic text-xs text-ink-muted">
@@ -82,7 +82,7 @@ export default function OurStory() {
                     </div>
 
                     {/* Milestone Title */}
-                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-burgundy-900 mb-2">
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-ink-title mb-2">
                       {item.title}
                     </h3>
 
@@ -92,12 +92,12 @@ export default function OurStory() {
                         <textarea
                           value={editText}
                           onChange={e => setEditText(e.target.value)}
-                          className="w-full p-2 text-sm font-serif border border-gold-400 rounded-lg bg-paper-50 text-burgundy-950 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                          className="w-full p-2 text-sm font-serif border border-gold-400 rounded-lg bg-paper-50 text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500"
                           rows={3}
                         />
                         <button
                           onClick={() => handleSaveEdit(item.id)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-burgundy-900 text-gold-200 text-xs font-serif"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ruby-600 text-white text-xs font-serif"
                         >
                           <Check className="w-3 h-3" />
                           <span>Save Caption</span>

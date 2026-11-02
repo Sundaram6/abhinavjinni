@@ -37,3 +37,4 @@ scratch/
 tmp_frames/
 screenshots/
 pdf_extracted/
+.env*

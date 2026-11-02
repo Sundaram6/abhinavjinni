@@ -33,7 +33,7 @@ export default function WeddingCelebrations() {
       
       {/* Ornate Header */}
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-12 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-burgundy-900 font-bold tracking-tight">
+        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
           Wedding Itinerary &amp; Ceremonies
         </h2>
 
@@ -43,13 +43,13 @@ export default function WeddingCelebrations() {
 
         {/* Filter & Global Calendar Download */}
         <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-          <div className="inline-flex p-1 rounded-full bg-paper-200/80 border border-gold-400/30">
+          <div className="inline-flex p-1 rounded-full bg-paper-100 border border-gold-400/30">
             <button
               onClick={() => setFilter('all')}
               className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
                 filter === 'all'
-                  ? 'bg-burgundy-900 text-gold-200 shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-burgundy-900'
+                  ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                  : 'text-ink-secondary hover:text-ruby-600'
               }`}
             >
               All Celebrations (6)
@@ -58,8 +58,8 @@ export default function WeddingCelebrations() {
               onClick={() => setFilter('bodhgaya')}
               className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
                 filter === 'bodhgaya'
-                  ? 'bg-burgundy-900 text-gold-200 shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-burgundy-900'
+                  ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                  : 'text-ink-secondary hover:text-ruby-600'
               }`}
             >
               Bodhgaya (Dec 2–3)
@@ -68,8 +68,8 @@ export default function WeddingCelebrations() {
               onClick={() => setFilter('noida')}
               className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
                 filter === 'noida'
-                  ? 'bg-burgundy-900 text-gold-200 shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-burgundy-900'
+                  ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                  : 'text-ink-secondary hover:text-ruby-600'
               }`}
             >
               Noida (Oct 20)
@@ -79,10 +79,10 @@ export default function WeddingCelebrations() {
           <a
             href="/api/calendar?event=all"
             download="abhinav-mansi-wedding-events.ics"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50 hover:bg-paper-100 text-burgundy-900 border border-gold-400/40 text-xs font-serif tracking-wider uppercase shadow-sm transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-serif tracking-wider uppercase shadow-sm transition-all hover:scale-105"
             title="Download full iCalendar (.ics) for all events"
           >
-            <Download className="w-3.5 h-3.5 text-gold-600" />
+            <Download className="w-3.5 h-3.5 text-gold-700" />
             <span>Add All to Calendar (.ics)</span>
           </a>
         </div>
@@ -103,21 +103,15 @@ export default function WeddingCelebrations() {
                 </span>
                 <span className={`text-[10px] font-sans font-semibold tracking-widest uppercase px-2.5 py-0.5 rounded-full ${
                   event.id === 'wedding'
-                    ? 'bg-burgundy-900 text-gold-200 border border-gold-400 shadow-sm'
-                    : event.id === 'mehandi'
-                    ? 'bg-emerald-100 text-emerald-900 border border-emerald-300'
-                    : event.id === 'sangeet' || event.id === 'ghruchari-barat'
-                    ? 'bg-ruby-100 text-ruby-900 border border-ruby-200'
-                    : event.id === 'haldi'
-                    ? 'bg-amber-100 text-amber-900 border border-amber-300'
-                    : 'bg-burgundy-100 text-burgundy-900 border border-burgundy-200'
+                    ? 'bg-burgundy-900 text-paper-50 border border-gold-400 shadow-sm'
+                    : 'bg-emerald-700 text-white border border-emerald-600/40 shadow-sm'
                 }`}>
                   {event.badge}
                 </span>
               </div>
 
               {/* Title & Subtitle */}
-              <h3 className="font-serif text-2xl font-bold text-burgundy-900 group-hover:text-burgundy-800 transition-colors">
+              <h3 className="font-serif text-2xl font-bold text-ink-title group-hover:text-ruby-600 transition-colors">
                 {event.title}
               </h3>
               <p className="font-serif italic text-sm text-ink-secondary mb-1">
@@ -131,8 +125,8 @@ export default function WeddingCelebrations() {
 
               {/* Shloka Quote if present */}
               {event.shloka && (
-                <div className="my-3 p-3 rounded-xl bg-paper-200/60 border border-gold-300/40 text-center">
-                  <p className="font-hindi text-xs text-burgundy-900 leading-relaxed">
+                <div className="my-3 p-3 rounded-xl bg-paper-50 border border-gold-300/40 text-center">
+                  <p className="font-hindi text-xs text-ink-primary leading-relaxed">
                     {event.shloka}
                   </p>
                 </div>
@@ -142,16 +136,16 @@ export default function WeddingCelebrations() {
               <div className="space-y-2 my-4 text-xs font-sans text-ink-primary bg-paper-50 p-3.5 rounded-xl border border-paper-300">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-gold-600 flex-shrink-0" />
-                  <span className="font-semibold text-burgundy-900">{event.dateString}</span>
+                  <span className="font-semibold text-ink-title">{event.dateString}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-gold-600 flex-shrink-0" />
                   <span>{event.time}</span>
                 </div>
                 <div className="flex items-start gap-2 pt-1 border-t border-paper-200">
-                  <MapPin className="w-4 h-4 text-burgundy-700 flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-ruby-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold block text-burgundy-950">{event.venueName}</span>
+                    <span className="font-semibold block text-ink-title">{event.venueName}</span>
                     <span className="text-[11px] text-ink-secondary leading-snug block">{event.venueAddress}</span>
                   </div>
                 </div>
@@ -159,13 +153,13 @@ export default function WeddingCelebrations() {
 
               {/* Event Timeline Activities */}
               <div className="my-4 space-y-2">
-                <p className="text-[11px] font-sans font-semibold tracking-wider uppercase text-gold-800">
+                <p className="text-[11px] font-sans font-semibold tracking-wider uppercase text-gold-700">
                   Ceremony Flow:
                 </p>
                 <div className="space-y-1.5 pl-1">
                   {event.timeline.map((item, idx) => (
                     <div key={idx} className="text-xs flex items-start gap-2">
-                      <span className="font-serif font-medium text-burgundy-900 min-w-16 text-[11px]">
+                      <span className="font-serif font-medium text-ruby-600 min-w-16 text-[11px]">
                         {item.time}
                       </span>
                       <div>
@@ -183,7 +177,7 @@ export default function WeddingCelebrations() {
               <div className="my-4 pt-3 border-t border-paper-200">
                 <div className="flex items-center justify-between text-xs mb-1.5">
                   <span className="font-sans font-semibold text-ink-primary">Suggested Attire:</span>
-                  <span className="font-serif italic text-burgundy-800 text-[11px]">{event.attire}</span>
+                  <span className="font-serif italic text-ink-secondary text-[11px]">{event.attire}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   {event.attirePalette.map((p, idx) => (
@@ -206,7 +200,7 @@ export default function WeddingCelebrations() {
                 href={getGoogleCalendarUrl(event)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-burgundy-900 hover:bg-burgundy-800 text-gold-100 text-xs font-serif tracking-wider shadow-sm transition-all"
+                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-serif tracking-wider shadow-sm transition-all border border-gold-400/40"
                 title="Add this event to Google Calendar"
               >
                 <Calendar className="w-3.5 h-3.5 text-gold-300" />
@@ -216,20 +210,20 @@ export default function WeddingCelebrations() {
               <a
                 href={`/api/calendar?event=${event.id}`}
                 download={`abhinav-mansi-${event.id}.ics`}
-                className="py-2 px-2.5 rounded-lg bg-paper-100 hover:bg-paper-200 text-burgundy-900 border border-gold-400/40 text-xs font-serif transition-all"
+                className="py-2 px-2.5 rounded-lg bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif transition-all"
                 title="Download .ics for Apple / Outlook"
               >
-                <Download className="w-3.5 h-3.5 text-burgundy-800" />
+                <Download className="w-3.5 h-3.5 text-gold-700" />
               </a>
 
               <a
                 href={event.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-paper-50 hover:bg-paper-100 text-burgundy-950 border border-gold-400/40 text-xs font-serif tracking-wider shadow-sm transition-all"
+                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-serif tracking-wider shadow-sm transition-all"
                 title="Open Google Maps Directions"
               >
-                <Navigation className="w-3.5 h-3.5 text-burgundy-700" />
+                <Navigation className="w-3.5 h-3.5 text-emerald-700" />
                 <span>Directions</span>
               </a>
             </div>

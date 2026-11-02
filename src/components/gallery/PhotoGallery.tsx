@@ -75,7 +75,7 @@ export default function PhotoGallery() {
       
       {/* Header */}
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-12 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-burgundy-900 font-bold tracking-tight">
+        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
           Stationery &amp; Photo Album
         </h2>
 
@@ -91,8 +91,8 @@ export default function PhotoGallery() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
                 activeCategory === cat
-                  ? 'bg-burgundy-900 text-gold-200 border-gold-500 shadow-sm font-semibold scale-105'
-                  : 'bg-paper-50 text-ink-secondary border border-gold-300/40 hover:bg-paper-100'
+                  ? 'bg-ruby-600 text-white border-gold-400 shadow-sm font-semibold scale-105'
+                  : 'bg-paper-100 text-ink-primary border border-gold-400/35 hover:bg-paper-200'
               }`}
             >
               {cat}
@@ -117,18 +117,18 @@ export default function PhotoGallery() {
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-burgundy-950/20 group-hover:bg-burgundy-950/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <span className="p-3 rounded-full bg-paper-50/90 text-burgundy-900 shadow-md transform scale-90 group-hover:scale-100 transition-transform">
+                <span className="p-3 rounded-full bg-paper-50/90 text-ruby-600 shadow-md transform scale-90 group-hover:scale-100 transition-transform">
                   <Maximize2 className="w-5 h-5" />
                 </span>
               </div>
             </div>
 
-            <div className="p-4 sm:p-5 bg-paper-50 border-t border-gold-300/30">
+            <div className="p-4 sm:p-5 bg-paper-100 border-t border-gold-300/30">
               <div className="flex items-center justify-between text-[11px] font-sans font-semibold tracking-wider uppercase text-gold-700 mb-1">
                 <span>{item.category}</span>
                 <span className="italic font-serif normal-case text-ink-muted">View in Lightbox</span>
               </div>
-              <h3 className="font-serif text-lg font-bold text-burgundy-900 leading-snug">
+              <h3 className="font-serif text-lg font-bold text-ink-title leading-snug">
                 {item.title}
               </h3>
               <p className="font-serif text-xs text-ink-secondary mt-1 line-clamp-2">

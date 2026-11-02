@@ -97,7 +97,7 @@ export default function WishesGuestbook() {
             particleCount: 50,
             spread: 60,
             origin: { y: 0.7 },
-            colors: ['#D4AF37', '#C89B53', '#AD1351', '#3D072B', '#00664E'],
+            colors: ['#C59E59', '#DFC18A', '#B31252', '#4A0E4E', '#0C5A48'],
           });
         } catch {}
       } else {
@@ -123,7 +123,7 @@ export default function WishesGuestbook() {
       
       {/* Header */}
       <div className="max-w-4xl mx-auto text-center space-y-3 mb-16 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-burgundy-900 font-bold tracking-tight">
+        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
           Words of Love for Abhinav &amp; Mansi
         </h2>
 
@@ -137,7 +137,7 @@ export default function WishesGuestbook() {
         {/* Left Form: Leave a Blessing (5 Cols) */}
         <div className="lg:col-span-5">
           <div className="stationery-card p-6 sm:p-8 rounded-3xl border border-gold-400/40 shadow-stationery sticky top-20">
-            <h3 className="font-serif text-2xl font-bold text-burgundy-900 mb-1">
+            <h3 className="font-serif text-2xl font-bold text-ink-title mb-1">
               Send Your Blessings
             </h3>
             <p className="font-serif italic text-xs text-ink-secondary mb-5">
@@ -145,21 +145,21 @@ export default function WishesGuestbook() {
             </p>
 
             {submitSuccess && (
-              <div className="mb-4 p-3 rounded-xl bg-paper-100 border border-gold-500 text-xs text-burgundy-900 flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-700 flex-shrink-0" />
+              <div className="mb-4 p-3 rounded-xl bg-paper-100 border border-gold-500 text-xs text-ink-primary flex items-center gap-2">
+                <Check className="w-4 h-4 text-emerald-700 flex-shrink-0" />
                 <span>Your blessing has been posted to the guestbook!</span>
               </div>
             )}
 
             {errorMessage && (
-              <div className="mb-4 p-3 rounded-xl bg-burgundy-100 border border-burgundy-300 text-xs text-burgundy-900">
+              <div className="mb-4 p-3 rounded-xl bg-ruby-100 border border-ruby-300 text-xs text-ruby-900">
                 {errorMessage}
               </div>
             )}
 
             <form onSubmit={handleAddWish} className="space-y-4">
               <div>
-                <label className="block text-xs font-sans font-semibold tracking-wider uppercase text-burgundy-950 mb-1">
+                <label className="block text-xs font-sans font-semibold tracking-wider uppercase text-ink-title mb-1">
                   Your Name *
                 </label>
                 <input
@@ -174,7 +174,7 @@ export default function WishesGuestbook() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-sans font-semibold tracking-wider uppercase text-burgundy-950 mb-1">
+                  <label className="block text-xs font-sans font-semibold tracking-wider uppercase text-ink-title mb-1">
                     Relationship
                   </label>
                   <select
@@ -192,7 +192,7 @@ export default function WishesGuestbook() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-sans font-semibold tracking-wider uppercase text-burgundy-950 mb-1">
+                  <label className="block text-xs font-sans font-semibold tracking-wider uppercase text-ink-title mb-1">
                     Blessing Tag
                   </label>
                   <select
@@ -210,7 +210,7 @@ export default function WishesGuestbook() {
               </div>
 
               <div>
-                <label className="block text-xs font-sans font-semibold tracking-wider uppercase text-burgundy-950 mb-1">
+                <label className="block text-xs font-sans font-semibold tracking-wider uppercase text-ink-title mb-1">
                   Your Message or Blessing *
                 </label>
                 <textarea
@@ -226,7 +226,7 @@ export default function WishesGuestbook() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 px-6 rounded-full bg-burgundy-900 hover:bg-burgundy-800 text-gold-100 font-serif text-xs font-semibold tracking-widest uppercase shadow-md transition-all hover:scale-102 flex items-center justify-center gap-2 border border-gold-400/40"
+                className="w-full py-3 px-6 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-serif text-xs font-semibold tracking-widest uppercase shadow-md transition-all hover:scale-102 flex items-center justify-center gap-2 border border-gold-400/40"
               >
                 {isSubmitting ? (
                   <span>Posting Blessing...</span>
@@ -246,16 +246,16 @@ export default function WishesGuestbook() {
           
           {/* Filter Bar */}
           <div className="flex items-center justify-between border-b border-gold-300/30 pb-3">
-            <span className="font-serif italic text-sm text-burgundy-900">
+            <span className="font-serif italic text-sm text-ink-title">
               {filteredWishes.length} Blessings Recorded
             </span>
-            <div className="inline-flex p-1 rounded-full bg-paper-200 border border-gold-400/30 text-xs">
+            <div className="inline-flex p-1 rounded-full bg-paper-100 border border-gold-400/30 text-xs">
               <button
                 onClick={() => setFilter('all')}
                 className={`px-3 py-1 rounded-full text-xs font-serif transition-all ${
                   filter === 'all'
-                    ? 'bg-burgundy-900 text-gold-200 shadow-sm font-semibold'
-                    : 'text-ink-secondary hover:text-burgundy-900'
+                    ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                    : 'text-ink-secondary hover:text-ruby-600'
                 }`}
               >
                 All
@@ -264,8 +264,8 @@ export default function WishesGuestbook() {
                 onClick={() => setFilter('family')}
                 className={`px-3 py-1 rounded-full text-xs font-serif transition-all ${
                   filter === 'family'
-                    ? 'bg-burgundy-900 text-gold-200 shadow-sm font-semibold'
-                    : 'text-ink-secondary hover:text-burgundy-900'
+                    ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                    : 'text-ink-secondary hover:text-ruby-600'
                 }`}
               >
                 Family
@@ -274,8 +274,8 @@ export default function WishesGuestbook() {
                 onClick={() => setFilter('friends')}
                 className={`px-3 py-1 rounded-full text-xs font-serif transition-all ${
                   filter === 'friends'
-                    ? 'bg-burgundy-900 text-gold-200 shadow-sm font-semibold'
-                    : 'text-ink-secondary hover:text-burgundy-900'
+                    ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                    : 'text-ink-secondary hover:text-ruby-600'
                 }`}
               >
                 Friends
@@ -302,15 +302,15 @@ export default function WishesGuestbook() {
                 >
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div>
-                      <h4 className="font-serif text-lg font-bold text-burgundy-900 leading-tight">
+                      <h4 className="font-serif text-lg font-bold text-ink-title leading-tight">
                         {wish.name}
                       </h4>
                       <div className="flex items-center gap-2 mt-0.5">
-                        <span className="text-[10px] font-sans font-semibold tracking-wider uppercase text-gold-800 bg-gold-100/60 px-2 py-0.5 rounded-full border border-gold-300/40">
+                        <span className="text-[10px] font-sans font-semibold tracking-wider uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                           {wish.relationship}
                         </span>
                         {wish.blessingTag && (
-                          <span className="text-[11px] font-hindi text-burgundy-700 italic">
+                          <span className="text-[11px] font-hindi text-ruby-600 italic">
                             {wish.blessingTag}
                           </span>
                         )}
@@ -319,10 +319,10 @@ export default function WishesGuestbook() {
 
                     <button
                       onClick={() => handleLike(wish.id)}
-                      className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-paper-100 hover:bg-blush-100/60 border border-gold-300/40 text-burgundy-800 text-xs font-sans transition-all active:scale-95"
+                      className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-paper-100 hover:bg-paper-200 border border-gold-300/40 text-ruby-600 text-xs font-sans transition-all active:scale-95"
                       title="Send love / heart"
                     >
-                      <Heart className="w-3.5 h-3.5 text-burgundy-700 fill-burgundy-700" />
+                      <Heart className="w-3.5 h-3.5 text-ruby-600 fill-ruby-600" />
                       <span className="font-semibold text-[11px]">{wish.likes || 0}</span>
                     </button>
                   </div>

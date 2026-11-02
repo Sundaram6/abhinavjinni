@@ -87,8 +87,8 @@ export default function SacredTransformation() {
               onClick={() => setActiveView('couple')}
               className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
                 activeView === 'couple'
-                  ? 'bg-burgundy-900 text-gold-100 shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-burgundy-900'
+                  ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                  : 'text-ink-secondary hover:text-ruby-600'
               }`}
             >
               The Promise Rings
@@ -97,8 +97,8 @@ export default function SacredTransformation() {
               onClick={() => setActiveView('shiva-parvati')}
               className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
                 activeView === 'shiva-parvati'
-                  ? 'bg-burgundy-900 text-gold-100 shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-burgundy-900'
+                  ? 'bg-ruby-600 text-white shadow-sm font-semibold'
+                  : 'text-ink-secondary hover:text-ruby-600'
               }`}
             >
               Divine Blessings
@@ -110,7 +110,7 @@ export default function SacredTransformation() {
 
       {/* Narrative Shloka / Subtitle */}
       <div className="text-center mt-3">
-        <p className="font-hindi text-sm text-gold-800 font-medium">
+        <p className="font-hindi text-sm text-gold-700 font-medium">
           ॥ शिव-पार्वती पाणिग्रहणम् से अनन्त प्रेम का साक्षात्कार ॥
         </p>
       </div>

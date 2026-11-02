@@ -130,14 +130,14 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
   // Fallback for users with prefers-reduced-motion
   if (prefersReducedMotion) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-burgundy-950/95 backdrop-blur-md">
-        <div className="relative w-full max-w-md p-8 rounded-3xl bg-paper-50 border-2 border-gold-400 text-center space-y-4 shadow-2xl">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-burgundy-900/95 backdrop-blur-md">
+        <div className="relative w-full max-w-md p-8 rounded-3xl bg-paper-100 border-2 border-gold-400 text-center space-y-4 shadow-2xl">
           <p className="font-hindi text-burgundy-900 font-semibold">॥ श्री गणेशाय नमः ॥</p>
-          <h2 className="font-serif text-3xl text-burgundy-950 font-bold">Abhinav &amp; Mansi</h2>
+          <h2 className="font-serif text-3xl text-ink-title font-bold">Abhinav &amp; Mansi</h2>
           <p className="text-xs uppercase tracking-widest text-gold-700">Together, Forever • 03 December 2026</p>
           <button
             onClick={handleComplete}
-            className="w-full py-3 rounded-full bg-burgundy-900 text-gold-100 font-serif tracking-wider uppercase text-xs hover:bg-burgundy-800 transition-colors shadow-md"
+            className="w-full py-3 rounded-full bg-ruby-600 text-white font-serif tracking-wider uppercase text-xs hover:bg-ruby-700 transition-colors shadow-md border border-gold-400/40"
           >
             Enter Celebration
           </button>
@@ -196,7 +196,7 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
         {/* Immediate Skip Action */}
         <button
           onClick={handleSkip}
-          className="pointer-events-auto flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-paper-50/90 hover:bg-paper-50 text-burgundy-950 border border-gold-400/50 backdrop-blur-md text-xs font-serif tracking-widest uppercase shadow-xl transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-gold-400"
+          className="pointer-events-auto flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-paper-50/90 hover:bg-paper-50 text-ink-title border border-gold-400/50 backdrop-blur-md text-xs font-serif tracking-widest uppercase shadow-xl transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-gold-400"
           aria-label="Skip introduction and enter website"
         >
           <span>Skip Intro</span>
@@ -263,7 +263,7 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
               e.stopPropagation();
               handleComplete();
             }}
-            className={`flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-burgundy-900/95 hover:bg-burgundy-900 text-gold-100 border border-gold-400/60 backdrop-blur-md shadow-2xl transition-all duration-500 hover:scale-105 active:scale-95 text-xs sm:text-sm font-serif tracking-widest uppercase font-semibold ${
+            className={`flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white border border-gold-400/60 backdrop-blur-md shadow-2xl transition-all duration-500 hover:scale-105 active:scale-95 text-xs sm:text-sm font-serif tracking-widest uppercase font-semibold ${
               showEnterButton
                 ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto'
                 : 'opacity-0 translate-y-2 scale-95 pointer-events-none'
