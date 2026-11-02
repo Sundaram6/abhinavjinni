@@ -85,20 +85,20 @@ export default function SacredTransformation() {
           <div className="inline-flex p-1 rounded-full bg-paper-100 border border-gold-400/30">
             <button
               onClick={() => setActiveView('couple')}
-              className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                 activeView === 'couple'
                   ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-ruby-600'
+                  : 'text-ink-secondary hover:text-ruby-600 font-medium'
               }`}
             >
               The Promise Rings
             </button>
             <button
               onClick={() => setActiveView('shiva-parvati')}
-              className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                 activeView === 'shiva-parvati'
                   ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-ruby-600'
+                  : 'text-ink-secondary hover:text-ruby-600 font-medium'
               }`}
             >
               Divine Blessings
@@ -110,7 +110,7 @@ export default function SacredTransformation() {
 
       {/* Narrative Shloka / Subtitle */}
       <div className="text-center mt-3">
-        <p className="font-hindi text-sm text-gold-700 font-medium">
+        <p className="font-hindi text-sm text-gold-700 font-medium tracking-normal leading-relaxed">
           ॥ शिव-पार्वती पाणिग्रहणम् से अनन्त प्रेम का साक्षात्कार ॥
         </p>
       </div>

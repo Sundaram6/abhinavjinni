@@ -75,10 +75,10 @@ export default function Hero() {
 
       {/* Header Sacred Blessings */}
       <div className="text-center space-y-1 relative z-10 max-w-2xl mx-auto pt-6">
-        <p className="font-hindi text-burgundy-900 text-sm sm:text-base font-semibold tracking-wider">
+        <p className="font-hindi text-burgundy-900 text-sm sm:text-base font-semibold tracking-normal leading-relaxed">
           ॥ श्री गणेशाय नमः ॥
         </p>
-        <p className="font-serif italic text-ink-secondary text-xs sm:text-sm tracking-wide">
+        <p className="font-serif italic text-ink-secondary text-xs sm:text-sm">
           Together with their families
         </p>
       </div>
@@ -86,18 +86,18 @@ export default function Hero() {
       {/* Main Couple Names & Tagline */}
       <div className="text-center relative z-10 my-3 sm:my-5 max-w-4xl mx-auto space-y-3">
         <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-ink-title font-bold tracking-tight leading-none drop-shadow-sm">
-          Abhinav <span className="font-script text-gold-600 font-normal text-3xl sm:text-5xl md:text-6xl mx-1 sm:mx-2">&amp;</span> Mansi
+          Abhinav <span className="font-serif italic text-gold-600 font-normal text-3xl sm:text-5xl md:text-6xl mx-1 sm:mx-2">&amp;</span> Mansi
         </h1>
 
         <div className="flex items-center justify-center gap-3 pt-1">
           <span className="h-[1px] w-8 sm:w-16 bg-gradient-to-r from-transparent to-gold-400"></span>
-          <span className="font-script text-2xl sm:text-3xl text-ruby-600">
+          <span className="font-serif italic text-2xl sm:text-3xl text-ruby-600">
             A Story in Bloom
           </span>
           <span className="h-[1px] w-8 sm:w-16 bg-gradient-to-l from-transparent to-gold-400"></span>
         </div>
 
-        <p className="font-serif text-ink-secondary text-sm sm:text-base max-w-xl mx-auto pt-1">
+        <p className="font-sans text-ink-secondary text-sm sm:text-base max-w-xl mx-auto pt-1 leading-relaxed">
           Celebrating a sacred union of love, laughter, and lifelong devotion.
         </p>
       </div>
@@ -111,7 +111,7 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-xl mx-auto text-center space-y-4 pt-2">
         
         {/* Celebration selector tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
+        <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-sans">
           <button
             onClick={() => setSelectedEventId('wedding')}
             className={`px-3 py-1 rounded-full border transition-all ${
@@ -145,14 +145,14 @@ export default function Hero() {
         </div>
 
         {/* Target celebration title */}
-        <p className="font-serif text-sm sm:text-base text-ink-primary font-medium">
-          Counting down to <span className="font-semibold text-ruby-600">{currentTargetEvent.title}</span> ({currentTargetEvent.dateString})
+        <p className="font-sans text-sm sm:text-base text-ink-primary font-medium">
+          Counting down to <span className="font-serif font-bold text-ruby-600">{currentTargetEvent.title}</span> ({currentTargetEvent.dateString})
         </p>
 
         {/* Countdown Digit Boxes */}
         {timeLeft.isPast ? (
-          <div className="p-4 rounded-xl bg-paper-100/90 border border-gold-400/40 text-ink-title font-serif">
-            <p className="text-base font-semibold">This celebration has joyfully taken place!</p>
+          <div className="p-4 rounded-xl bg-paper-100/90 border border-gold-400/40 text-ink-title font-sans">
+            <p className="text-base font-semibold font-serif">This celebration has joyfully taken place!</p>
             <p className="text-xs text-ink-secondary mt-1">Cherishing the memories and looking forward to the sacred wedding ceremonies in Bodhgaya.</p>
           </div>
         ) : (
@@ -199,13 +199,13 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
           <a
             href="#travel"
-            className="px-6 py-3 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-serif text-sm tracking-widest uppercase shadow-md hover:shadow-lg transition-all hover:scale-105 border border-gold-400/40"
+            className="px-6 py-3 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-md hover:shadow-lg transition-all hover:scale-105 border border-gold-400/40"
           >
             Venues &amp; Travel Guide
           </a>
           <a
             href="#celebrations"
-            className="px-6 py-3 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary font-serif text-sm tracking-widest uppercase shadow-sm border border-gold-400/40 transition-all hover:scale-105"
+            className="px-6 py-3 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-sm border border-gold-400/40 transition-all hover:scale-105"
           >
             Explore Itinerary
           </a>
@@ -216,7 +216,7 @@ export default function Hero() {
       <div className="pt-8 text-center text-ink-muted">
         <a
           href="#celebrations"
-          className="group inline-flex flex-col items-center gap-1.5 text-xs font-serif tracking-widest uppercase hover:text-ruby-600 transition-colors"
+          className="group inline-flex flex-col items-center gap-1.5 text-xs font-sans font-medium tracking-widest uppercase hover:text-ruby-600 transition-colors"
           aria-label="Scroll to celebrations itinerary"
         >
           <span>Celebrations</span>

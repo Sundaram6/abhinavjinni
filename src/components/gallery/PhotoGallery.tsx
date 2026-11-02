@@ -89,10 +89,10 @@ export default function PhotoGallery() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                 activeCategory === cat
                   ? 'bg-ruby-600 text-white border-gold-400 shadow-sm font-semibold scale-105'
-                  : 'bg-paper-100 text-ink-primary border border-gold-400/35 hover:bg-paper-200'
+                  : 'bg-paper-100 text-ink-primary border border-gold-400/35 hover:bg-paper-200 font-medium'
               }`}
             >
               {cat}
@@ -131,7 +131,7 @@ export default function PhotoGallery() {
               <h3 className="font-serif text-lg font-bold text-ink-title leading-snug">
                 {item.title}
               </h3>
-              <p className="font-serif text-xs text-ink-secondary mt-1 line-clamp-2">
+              <p className="font-sans text-xs text-ink-secondary mt-1 line-clamp-2 leading-relaxed">
                 {item.caption}
               </p>
             </div>
@@ -153,7 +153,7 @@ export default function PhotoGallery() {
           <div className="flex items-center justify-between text-paper-50 z-20">
             <div className="flex items-center gap-2">
               <ImageIcon className="w-4 h-4 text-gold-400" />
-              <span className="font-serif text-sm text-gold-200 tracking-wider">
+              <span className="font-sans text-xs text-gold-200 tracking-wider">
                 {lightboxIndex + 1} of {filteredItems.length}
               </span>
             </div>
@@ -220,7 +220,7 @@ export default function PhotoGallery() {
             <h4 className="font-serif text-lg sm:text-xl font-bold text-gold-300">
               {filteredItems[lightboxIndex].title}
             </h4>
-            <p className="font-serif text-xs sm:text-sm text-paper-200/90 leading-relaxed">
+            <p className="font-sans text-xs sm:text-sm text-paper-200/90 leading-relaxed">
               {filteredItems[lightboxIndex].caption}
             </p>
             <p className="text-[11px] font-sans text-paper-300/60 uppercase tracking-widest pt-1">

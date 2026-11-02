@@ -106,7 +106,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
       {/* Skip / Enter Action */}
       <button
         onClick={handleSkip}
-        className="absolute top-5 right-5 sm:top-8 sm:right-8 z-40 flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50/90 hover:bg-paper-50 text-ink-title border border-gold-400/40 text-xs font-serif tracking-widest uppercase shadow-md transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-500"
+        className="absolute top-5 right-5 sm:top-8 sm:right-8 z-40 flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50/90 hover:bg-paper-50 text-ink-title border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase shadow-md transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold-500"
       >
         <span>{step === 'envelope' ? 'Skip to Website' : 'Enter Website'}</span>
         <ArrowRight className="w-3.5 h-3.5 text-gold-700" />
@@ -131,7 +131,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
                 priority
               />
             </div>
-            <p className="font-hindi text-burgundy-900 text-sm sm:text-base font-semibold tracking-wide">
+            <p className="font-hindi text-burgundy-900 text-sm sm:text-base font-semibold tracking-normal leading-relaxed">
               ॥ श्री गणेशाय नमः ॥
             </p>
             <p className="font-serif italic text-ink-secondary text-xs sm:text-sm mt-0.5">
@@ -179,7 +179,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
 
               <div className="wax-seal-btn w-20 h-20 sm:w-24 sm:h-24 rounded-full flex flex-col items-center justify-center relative z-10 cursor-pointer">
                 <div className="border border-gold-300/40 rounded-full w-16 h-16 sm:w-20 sm:h-20 flex flex-col items-center justify-center">
-                  <span className="font-display text-gold-200 text-lg sm:text-xl font-bold tracking-widest drop-shadow">
+                  <span className="font-serif text-gold-200 text-lg sm:text-xl font-bold tracking-widest drop-shadow">
                     A &amp; M
                   </span>
                   <span className="text-[9px] uppercase tracking-widest text-gold-300/80 font-sans">
@@ -188,7 +188,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
                 </div>
               </div>
 
-              <div className="mt-3.5 flex items-center gap-1.5 text-burgundy-900 font-serif text-xs sm:text-sm font-semibold tracking-wider">
+              <div className="mt-3.5 flex items-center gap-1.5 text-burgundy-900 font-sans text-xs sm:text-sm font-semibold tracking-wider">
                 <Sparkles className="w-3.5 h-3.5 text-gold-600 animate-spin-very-slow" />
                 <span>Tap Wax Seal to Open</span>
                 <Sparkles className="w-3.5 h-3.5 text-gold-600 animate-spin-very-slow" />
@@ -220,13 +220,13 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
 
           {/* Ceremony Header Badge */}
           <div className="text-center relative z-20 mb-4 space-y-1">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-paper-100 border border-gold-400/40 text-burgundy-900 text-xs font-serif tracking-widest uppercase shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-paper-100 border border-gold-400/40 text-burgundy-900 text-xs font-sans tracking-wider uppercase shadow-sm font-medium">
               <Sparkles className="w-3.5 h-3.5 text-gold-600 animate-pulse" />
               <span>Sacred Metamorphosis</span>
               <Sparkles className="w-3.5 h-3.5 text-gold-600 animate-pulse" />
             </div>
 
-            <p className="font-hindi text-sm sm:text-base text-gold-800 font-semibold tracking-wide transition-all duration-700">
+            <p className="font-hindi text-sm sm:text-base text-gold-800 font-semibold tracking-normal leading-relaxed transition-all duration-700">
               {step === 'transforming-shiva'
                 ? '॥ शिव-पार्वती पाणिग्रहणम् ॥'
                 : '॥ सदा सौभाग्यवती भव • पाणिग्रहण संस्कार ॥'}
@@ -258,7 +258,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
 
               {/* Tag for Shiva-Parvati */}
               <div className="absolute top-3 left-3 z-20">
-                <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-gold-400/40 text-gold-200 text-xs font-serif tracking-wider shadow">
+                <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-gold-400/40 text-gold-200 text-xs font-sans tracking-wider shadow">
                   🔱 Primordial Union of Shiva &amp; Shakti
                 </span>
               </div>
@@ -296,7 +296,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
 
               {/* Tag for Couple */}
               <div className="absolute top-3 left-3 z-20">
-                <span className="px-3 py-1 rounded-full bg-burgundy-900/80 backdrop-blur-md border border-gold-400/50 text-gold-200 text-xs font-serif tracking-wider shadow flex items-center gap-1.5">
+                <span className="px-3 py-1 rounded-full bg-burgundy-900/80 backdrop-blur-md border border-gold-400/50 text-gold-200 text-xs font-sans tracking-wider shadow flex items-center gap-1.5">
                   <Heart className="w-3.5 h-3.5 text-gold-300 fill-gold-300" />
                   <span>Abhinav &amp; Mansi • The Promise Rings</span>
                 </span>
@@ -321,7 +321,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
 
           {/* Progress / Status Bar Below */}
           <div className="mt-4 pt-3 text-center space-y-2">
-            <div className="flex items-center justify-center gap-2 text-xs font-serif text-burgundy-900">
+            <div className="flex items-center justify-center gap-2 text-xs font-sans text-burgundy-900">
               <span className={`transition-all duration-500 ${step === 'transforming-shiva' ? 'font-bold text-gold-700 scale-105' : 'text-ink-muted'}`}>
                 1. Divine Shiva-Parvati
               </span>
@@ -334,7 +334,7 @@ export default function OpeningInvitation({ onOpen, isOpen }: OpeningInvitationP
             {/* Manual Enter Website Button */}
             <button
               onClick={completeOpening}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-serif text-xs uppercase tracking-widest shadow-md transition-all hover:scale-105 border border-gold-400/40"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-sans text-xs font-semibold uppercase tracking-wider shadow-md transition-all hover:scale-105 border border-gold-400/40"
             >
               <span>Enter Wedding Website</span>
               <ArrowRight className="w-3.5 h-3.5 text-gold-300" />

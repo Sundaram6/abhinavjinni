@@ -56,7 +56,7 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-6 text-xs font-serif tracking-widest uppercase text-ink-primary font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-xs font-sans tracking-widest uppercase text-ink-primary font-medium">
           {navLinks.map(link => (
             <a
               key={link.href}
@@ -72,7 +72,7 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
         <div className="flex items-center gap-2.5">
           <button
             onClick={onReopenInvitation}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-[11px] font-serif tracking-wider shadow-sm transition-all hover:scale-105"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-[11px] font-sans font-medium tracking-wider shadow-sm transition-all hover:scale-105"
             title="Replay the cinematic sacred transformation intro"
           >
             <Sparkles className="w-3.5 h-3.5 text-gold-700" />
@@ -81,7 +81,7 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
 
           <a
             href="#travel"
-            className="hidden sm:inline-flex px-4 py-1.5 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-serif tracking-wider uppercase shadow-sm transition-all hover:scale-105 border border-gold-400/40"
+            className="hidden sm:inline-flex px-4 py-1.5 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all hover:scale-105 border border-gold-400/40"
           >
             Venues
           </a>
@@ -100,13 +100,13 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-paper-50/98 border-b border-gold-400/40 px-6 py-6 space-y-4 shadow-xl backdrop-blur-lg animate-fadeIn">
-          <nav className="flex flex-col space-y-3 font-serif text-base text-ink-title font-semibold">
+          <nav className="flex flex-col space-y-3 font-sans text-sm text-ink-title font-medium">
             {navLinks.map(link => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-1 border-b border-paper-200/80 flex items-center justify-between hover:text-ruby-600 transition-colors"
+                className="py-1 border-b border-paper-200/80 flex items-center justify-between hover:text-ruby-600 transition-colors uppercase tracking-wider text-xs"
               >
                 <span>{link.label}</span>
                 <span className="text-gold-600 text-xs">→</span>
@@ -118,7 +118,7 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
             <a
               href="#travel"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-2.5 text-center rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-serif text-xs uppercase tracking-widest shadow-md border border-gold-400/40"
+              className="w-full py-2.5 text-center rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-sans text-xs uppercase tracking-wider font-semibold shadow-md border border-gold-400/40"
             >
               Venues &amp; Directions
             </a>
@@ -127,7 +127,7 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onReopenInvitation();
               }}
-              className="w-full py-2.5 text-center rounded-full bg-paper-100 border border-gold-400/40 text-ink-primary font-serif text-xs uppercase tracking-widest flex items-center justify-center gap-2"
+              className="w-full py-2.5 text-center rounded-full bg-paper-100 border border-gold-400/40 text-ink-primary font-sans text-xs uppercase tracking-wider font-medium flex items-center justify-center gap-2"
             >
               <Sparkles className="w-3.5 h-3.5 text-gold-700" />
               <span>Replay Cinematic Intro</span>

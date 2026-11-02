@@ -65,7 +65,7 @@ export default function AudioPlayer() {
     <div className="fixed bottom-6 right-5 z-40">
       <button
         onClick={toggleSound}
-        className={`flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs font-serif tracking-widest uppercase transition-all duration-300 backdrop-blur-md border ${
+        className={`flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all duration-300 backdrop-blur-md border font-semibold ${
           isPlaying
             ? 'bg-burgundy-900/95 text-paper-50 border-gold-400/60 shadow-gold-glow scale-105'
             : 'bg-paper-50/95 text-ink-primary border-gold-400/40 shadow-stationery hover:border-gold-500'
@@ -84,7 +84,7 @@ export default function AudioPlayer() {
             <Volume2 className="w-4 h-4 text-gold-300 flex-shrink-0" />
             <div className="flex flex-col text-left">
               <span className="text-[11px] font-sans font-bold leading-tight">Original Shehnai</span>
-              <span className="text-[9px] font-serif text-gold-300/80 normal-case hidden sm:inline">Ustad Bismillah Khan</span>
+              <span className="text-[9px] font-serif italic text-gold-300/80 normal-case hidden sm:inline">Ustad Bismillah Khan</span>
             </div>
           </>
         ) : (
@@ -93,7 +93,7 @@ export default function AudioPlayer() {
             <VolumeX className="w-4 h-4 text-ink-muted" />
             <div className="flex flex-col text-left">
               <span className="text-[11px] font-sans font-medium text-ink-secondary leading-tight">Original Shehnai</span>
-              <span className="text-[9px] font-serif text-ink-muted normal-case hidden sm:inline">Tap to Play</span>
+              <span className="text-[9px] font-serif italic text-ink-muted normal-case hidden sm:inline">Tap to Play</span>
             </div>
           </>
         )}

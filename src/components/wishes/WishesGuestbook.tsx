@@ -168,7 +168,7 @@ export default function WishesGuestbook() {
                   placeholder="e.g. Surender Pal / Anita &amp; Friends"
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-gold-400/40 bg-paper-50 text-sm font-serif text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-gold-400/40 bg-paper-50 text-sm font-sans text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500"
                 />
               </div>
 
@@ -180,7 +180,7 @@ export default function WishesGuestbook() {
                   <select
                     value={relationship}
                     onChange={e => setRelationship(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-gold-400/40 bg-paper-50 text-xs font-serif text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500"
+                    className="w-full px-3 py-2 rounded-xl border border-gold-400/40 bg-paper-50 text-xs font-sans text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500"
                   >
                     <option value="Friend">Friend</option>
                     <option value="Family">Family / Relative</option>
@@ -198,7 +198,7 @@ export default function WishesGuestbook() {
                   <select
                     value={blessingTag}
                     onChange={e => setBlessingTag(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-gold-400/40 bg-paper-50 text-xs font-serif text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500"
+                    className="w-full px-3 py-2 rounded-xl border border-gold-400/40 bg-paper-50 text-xs font-sans text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500"
                   >
                     <option value="Sada Saubhagya Vati Bhava">सदा सौभाग्यवती भव</option>
                     <option value="Shubh Vivah">शुभ विवाह मंगलमय हो</option>
@@ -219,14 +219,14 @@ export default function WishesGuestbook() {
                   placeholder="Share your prayers, sweet memories, and warm wishes..."
                   value={message}
                   onChange={e => setMessage(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-gold-400/40 bg-paper-50 text-sm font-serif text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500 leading-relaxed"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-gold-400/40 bg-paper-50 text-sm font-sans text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500 leading-relaxed"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 px-6 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-serif text-xs font-semibold tracking-widest uppercase shadow-md transition-all hover:scale-102 flex items-center justify-center gap-2 border border-gold-400/40"
+                className="w-full py-3 px-6 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-sans text-xs font-semibold tracking-wider uppercase shadow-md transition-all hover:scale-102 flex items-center justify-center gap-2 border border-gold-400/40"
               >
                 {isSubmitting ? (
                   <span>Posting Blessing...</span>
@@ -252,30 +252,30 @@ export default function WishesGuestbook() {
             <div className="inline-flex p-1 rounded-full bg-paper-100 border border-gold-400/30 text-xs">
               <button
                 onClick={() => setFilter('all')}
-                className={`px-3 py-1 rounded-full text-xs font-serif transition-all ${
+                className={`px-3 py-1 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                   filter === 'all'
                     ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                    : 'text-ink-secondary hover:text-ruby-600'
+                    : 'text-ink-secondary hover:text-ruby-600 font-medium'
                 }`}
               >
                 All
               </button>
               <button
                 onClick={() => setFilter('family')}
-                className={`px-3 py-1 rounded-full text-xs font-serif transition-all ${
+                className={`px-3 py-1 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                   filter === 'family'
                     ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                    : 'text-ink-secondary hover:text-ruby-600'
+                    : 'text-ink-secondary hover:text-ruby-600 font-medium'
                 }`}
               >
                 Family
               </button>
               <button
                 onClick={() => setFilter('friends')}
-                className={`px-3 py-1 rounded-full text-xs font-serif transition-all ${
+                className={`px-3 py-1 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                   filter === 'friends'
                     ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                    : 'text-ink-secondary hover:text-ruby-600'
+                    : 'text-ink-secondary hover:text-ruby-600 font-medium'
                 }`}
               >
                 Friends
@@ -310,7 +310,7 @@ export default function WishesGuestbook() {
                           {wish.relationship}
                         </span>
                         {wish.blessingTag && (
-                          <span className="text-[11px] font-hindi text-ruby-600 italic">
+                          <span className="text-[11px] font-hindi text-ruby-600 tracking-normal">
                             {wish.blessingTag}
                           </span>
                         )}

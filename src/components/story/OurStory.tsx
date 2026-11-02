@@ -92,12 +92,12 @@ export default function OurStory() {
                         <textarea
                           value={editText}
                           onChange={e => setEditText(e.target.value)}
-                          className="w-full p-2 text-sm font-serif border border-gold-400 rounded-lg bg-paper-50 text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500"
+                          className="w-full p-2 text-sm font-sans border border-gold-400 rounded-lg bg-paper-50 text-ink-primary focus:outline-none focus:ring-2 focus:ring-gold-500 leading-relaxed"
                           rows={3}
                         />
                         <button
                           onClick={() => handleSaveEdit(item.id)}
-                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ruby-600 text-white text-xs font-serif"
+                          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ruby-600 text-white text-xs font-sans font-semibold uppercase tracking-wider"
                         >
                           <Check className="w-3 h-3" />
                           <span>Save Caption</span>

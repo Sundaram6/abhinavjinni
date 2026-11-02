@@ -46,30 +46,30 @@ export default function WeddingCelebrations() {
           <div className="inline-flex p-1 rounded-full bg-paper-100 border border-gold-400/30">
             <button
               onClick={() => setFilter('all')}
-              className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                 filter === 'all'
                   ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-ruby-600'
+                  : 'text-ink-secondary hover:text-ruby-600 font-medium'
               }`}
             >
               All Celebrations (6)
             </button>
             <button
               onClick={() => setFilter('bodhgaya')}
-              className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                 filter === 'bodhgaya'
                   ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-ruby-600'
+                  : 'text-ink-secondary hover:text-ruby-600 font-medium'
               }`}
             >
               Bodhgaya (Dec 2–3)
             </button>
             <button
               onClick={() => setFilter('noida')}
-              className={`px-4 py-1.5 rounded-full text-xs font-serif tracking-wider uppercase transition-all ${
+              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                 filter === 'noida'
                   ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-ruby-600'
+                  : 'text-ink-secondary hover:text-ruby-600 font-medium'
               }`}
             >
               Noida (Oct 20)
@@ -79,7 +79,7 @@ export default function WeddingCelebrations() {
           <a
             href="/api/calendar?event=all"
             download="abhinav-mansi-wedding-events.ics"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-serif tracking-wider uppercase shadow-sm transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-sans tracking-wider uppercase font-medium shadow-sm transition-all hover:scale-105"
             title="Download full iCalendar (.ics) for all events"
           >
             <Download className="w-3.5 h-3.5 text-gold-700" />
@@ -118,7 +118,7 @@ export default function WeddingCelebrations() {
                 {event.subTitle}
               </p>
               {event.hindiTitle && (
-                <p className="font-hindi text-xs text-gold-700 mb-3">
+                <p className="font-hindi text-sm text-gold-700 mb-3 font-semibold tracking-normal leading-relaxed">
                   {event.hindiTitle}
                 </p>
               )}
@@ -126,7 +126,7 @@ export default function WeddingCelebrations() {
               {/* Shloka Quote if present */}
               {event.shloka && (
                 <div className="my-3 p-3 rounded-xl bg-paper-50 border border-gold-300/40 text-center">
-                  <p className="font-hindi text-xs text-ink-primary leading-relaxed">
+                  <p className="font-hindi text-xs sm:text-sm text-ink-primary leading-relaxed tracking-normal">
                     {event.shloka}
                   </p>
                 </div>
@@ -200,7 +200,7 @@ export default function WeddingCelebrations() {
                 href={getGoogleCalendarUrl(event)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-serif tracking-wider shadow-sm transition-all border border-gold-400/40"
+                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all border border-gold-400/40"
                 title="Add this event to Google Calendar"
               >
                 <Calendar className="w-3.5 h-3.5 text-gold-300" />
@@ -210,7 +210,7 @@ export default function WeddingCelebrations() {
               <a
                 href={`/api/calendar?event=${event.id}`}
                 download={`abhinav-mansi-${event.id}.ics`}
-                className="py-2 px-2.5 rounded-lg bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif transition-all"
+                className="py-2 px-2.5 rounded-lg bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans transition-all"
                 title="Download .ics for Apple / Outlook"
               >
                 <Download className="w-3.5 h-3.5 text-gold-700" />
@@ -220,7 +220,7 @@ export default function WeddingCelebrations() {
                 href={event.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-serif tracking-wider shadow-sm transition-all"
+                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all"
                 title="Open Google Maps Directions"
               >
                 <Navigation className="w-3.5 h-3.5 text-emerald-700" />

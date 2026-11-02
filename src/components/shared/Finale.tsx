@@ -36,7 +36,7 @@ export default function Finale() {
             />
           </div>
 
-          <p className="font-hindi text-base sm:text-xl text-ink-title font-semibold tracking-wide max-w-lg mx-auto leading-relaxed">
+          <p className="font-hindi text-base sm:text-xl text-ink-title font-semibold tracking-normal max-w-lg mx-auto leading-relaxed">
             विघ्नहरण मंगल करण श्री गणपति महाराज।<br />
             प्रथम निमन्त्रण आपको पूरण करियो काज ॥
           </p>
@@ -78,10 +78,10 @@ export default function Finale() {
           {/* Extended Family & Children Invitation from Invitation Page 3 */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2 text-center text-xs">
             <div className="space-y-1">
-              <span className="font-display font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
+              <span className="font-sans font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
                 R. S. V. P.
               </span>
-              <div className="font-serif text-ink-primary space-y-0.5 text-sm">
+              <div className="font-sans text-ink-primary space-y-0.5 text-sm">
                 {WEDDING_DATA.family.rsvp.map((name, idx) => (
                   <p key={idx}>{name}</p>
                 ))}
@@ -89,10 +89,10 @@ export default function Finale() {
             </div>
 
             <div className="space-y-1">
-              <span className="font-display font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
+              <span className="font-sans font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
                 Kids Invitation
               </span>
-              <div className="font-serif text-ink-primary space-y-0.5 text-sm">
+              <div className="font-sans text-ink-primary space-y-0.5 text-sm">
                 {WEDDING_DATA.family.kids.map((name, idx) => (
                   <p key={idx} className="text-ruby-600 font-semibold">{name}</p>
                 ))}
@@ -100,10 +100,10 @@ export default function Finale() {
             </div>
 
             <div className="space-y-1">
-              <span className="font-display font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
+              <span className="font-sans font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
                 W. B. C. F.
               </span>
-              <p className="font-serif text-ink-primary text-sm">
+              <p className="font-sans text-ink-primary text-sm">
                 {WEDDING_DATA.family.wbcf}
               </p>
             </div>
@@ -112,16 +112,16 @@ export default function Finale() {
 
         {/* Monogram Seal & Farewell */}
         <div className="space-y-3 pt-4">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-burgundy-900 border-2 border-gold-400 text-paper-50 font-display font-bold text-base shadow-md">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-burgundy-900 border-2 border-gold-400 text-paper-50 font-serif font-bold text-base shadow-md">
             A &amp; M
           </div>
           <h3 className="font-serif text-2xl font-bold text-ink-title">
             Abhinav &amp; Mansi
           </h3>
-          <p className="font-script text-2xl text-gold-700">
+          <p className="font-serif italic text-2xl text-gold-700">
             A Story in Bloom • 2026
           </p>
-          <p className="text-xs font-serif text-ink-muted">
+          <p className="text-xs font-sans text-ink-muted leading-relaxed">
             Designed with devotion, love, and sacred joy for all our honored guests.
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function Finale() {
         <div className="pt-6">
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif tracking-wider uppercase shadow-sm transition-all hover:scale-105"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all hover:scale-105"
             aria-label="Back to top of wedding website"
           >
             <ArrowUp className="w-3.5 h-3.5 text-gold-700" />

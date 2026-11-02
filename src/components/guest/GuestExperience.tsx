@@ -89,20 +89,20 @@ export default function GuestExperience() {
               <div className="inline-flex p-1 rounded-full bg-paper-100 border border-gold-400/30 text-xs shadow-inner">
                 <button
                   onClick={() => setActiveVenue('bodhgaya')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-serif transition-all ${
+                  className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                     activeVenue === 'bodhgaya'
                       ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                      : 'text-ink-secondary hover:text-ruby-600'
+                      : 'text-ink-secondary hover:text-ruby-600 font-medium'
                   }`}
                 >
                   Bodhgaya (Dec 2–3)
                 </button>
                 <button
                   onClick={() => setActiveVenue('noida')}
-                  className={`px-4 py-1.5 rounded-full text-xs font-serif transition-all ${
+                  className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
                     activeVenue === 'noida'
                       ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                      : 'text-ink-secondary hover:text-ruby-600'
+                      : 'text-ink-secondary hover:text-ruby-600 font-medium'
                   }`}
                 >
                   Noida (Oct 20)
@@ -117,7 +117,7 @@ export default function GuestExperience() {
                     <MapPin className="w-4 h-4 text-ruby-600" />
                     <span>Fifty meter before Thai Temple, Opp. Maya Sarovar, Bodhgaya, Bihar 824231</span>
                   </div>
-                  <p className="text-sm font-serif text-ink-primary leading-relaxed">
+                  <p className="text-sm font-sans text-ink-primary leading-relaxed">
                     The spiritual and serene sanctuary of Bodhgaya serves as the sacred marriage venue for the Mehandi, Sangeet, Haldi, Ghruchari, Barat, and auspicious Wedding Ceremonies.
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default function GuestExperience() {
                   <span className="text-[11px] font-sans font-semibold tracking-wider uppercase text-ink-title block">
                     Celebrations Hosted at this Venue:
                   </span>
-                  <div className="grid grid-cols-2 gap-2 text-xs font-serif text-ink-title">
+                  <div className="grid grid-cols-2 gap-2 text-xs font-sans text-ink-title">
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
                       <span>Mehandi (Dec 2, 11:00 AM)</span>
@@ -149,7 +149,7 @@ export default function GuestExperience() {
 
                 <div className="p-4 bg-paper-50 rounded-2xl border border-paper-300 text-xs space-y-1.5">
                   <span className="font-semibold block text-ink-title">Landmark &amp; Arrival:</span>
-                  <p className="text-ink-secondary text-xs leading-relaxed">
+                  <p className="text-ink-secondary text-xs leading-relaxed font-sans">
                     Directly opposite the scenic Maya Sarovar lake, 50 meters before the Royal Thai Monastery. Ample valet parking and round-the-clock reception available for all honored guests.
                   </p>
                 </div>
@@ -160,7 +160,7 @@ export default function GuestExperience() {
                     href="https://www.google.com/maps/search/?api=1&query=Buddha+Heritage+Resort+Bodhgaya+Bihar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-3 px-4 rounded-full bg-ruby-600 text-white text-xs font-serif flex items-center justify-center gap-2 shadow-md hover:bg-ruby-700 transition-all hover:scale-102 border border-gold-400/40"
+                    className="flex-1 py-3 px-4 rounded-full bg-ruby-600 text-white text-xs font-sans font-semibold tracking-wider uppercase flex items-center justify-center gap-2 shadow-md hover:bg-ruby-700 transition-all hover:scale-102 border border-gold-400/40"
                   >
                     <Navigation className="w-4 h-4 text-gold-300" />
                     <span>Open in Google Maps</span>
@@ -169,7 +169,7 @@ export default function GuestExperience() {
                     href="https://maps.apple.com/?q=Buddha+Heritage+Resort+Bodhgaya"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif transition-all"
+                    className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase transition-all"
                   >
                     Apple Maps
                   </a>
@@ -182,7 +182,7 @@ export default function GuestExperience() {
                     <MapPin className="w-4 h-4 text-ruby-600" />
                     <span>Near JBM Global School, Block-B, Sector 132, Noida, Uttar Pradesh 201304</span>
                   </div>
-                  <p className="text-sm font-serif text-ink-primary leading-relaxed">
+                  <p className="text-sm font-sans text-ink-primary leading-relaxed">
                     The Royal Palace Banquet (By KhanaK) hosted The Promise Night — the joyous engagement and ring ceremony celebrated with family blessings and toasts.
                   </p>
                 </div>
@@ -191,7 +191,7 @@ export default function GuestExperience() {
                   <span className="text-[11px] font-sans font-semibold tracking-wider uppercase text-ink-title block">
                     Celebration Hosted at this Venue:
                   </span>
-                  <div className="text-xs font-serif text-ink-title space-y-1">
+                  <div className="text-xs font-sans text-ink-title space-y-1">
                     <p className="font-semibold">The Promise Night (Engagement Ceremony)</p>
                     <p className="text-ink-secondary text-[11px]">Tuesday, 20 October 2026 • Dinner: 7:00 PM Onwards • Ring Ceremony: 8:00 PM</p>
                   </div>
@@ -199,7 +199,7 @@ export default function GuestExperience() {
 
                 <div className="p-4 bg-paper-50 rounded-2xl border border-paper-300 text-xs space-y-1.5">
                   <span className="font-semibold block text-ink-title">Location &amp; Access:</span>
-                  <p className="text-ink-secondary text-xs leading-relaxed">
+                  <p className="text-ink-secondary text-xs leading-relaxed font-sans">
                     Located on the Noida-Greater Noida Expressway near JBM Global School. Easily accessible from Delhi NCR, Noida Sector 137 Metro, and IGI Airport.
                   </p>
                 </div>
@@ -209,7 +209,7 @@ export default function GuestExperience() {
                     href="https://www.google.com/maps/search/?api=1&query=The+Royal+Palace+Banquet+Sector+132+Noida"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-3 px-4 rounded-full bg-ruby-600 text-white text-xs font-serif flex items-center justify-center gap-2 shadow-md hover:bg-ruby-700 transition-all hover:scale-102 border border-gold-400/40"
+                    className="flex-1 py-3 px-4 rounded-full bg-ruby-600 text-white text-xs font-sans font-semibold tracking-wider uppercase flex items-center justify-center gap-2 shadow-md hover:bg-ruby-700 transition-all hover:scale-102 border border-gold-400/40"
                   >
                     <Navigation className="w-4 h-4 text-gold-300" />
                     <span>Open in Google Maps</span>
@@ -218,7 +218,7 @@ export default function GuestExperience() {
                     href="https://maps.apple.com/?q=The+Royal+Palace+Banquet+Sector+132+Noida"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif transition-all"
+                    className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase transition-all"
                   >
                     Apple Maps
                   </a>
@@ -238,7 +238,7 @@ export default function GuestExperience() {
               <span>Travel &amp; Transit Guide</span>
             </h4>
 
-            <div className="space-y-3.5 text-xs">
+            <div className="space-y-3.5 text-xs font-sans">
               <div className="flex items-start gap-3">
                 <Plane className="w-4 h-4 text-ruby-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -274,7 +274,7 @@ export default function GuestExperience() {
                 <a
                   href="/api/calendar?event=all"
                   download="abhinav-mansi-wedding-events.ics"
-                  className="w-full py-2.5 px-4 rounded-xl bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif flex items-center justify-center gap-2 transition-all shadow-sm"
+                  className="w-full py-2.5 px-4 rounded-xl bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase flex items-center justify-center gap-2 transition-all shadow-sm"
                 >
                   <Download className="w-3.5 h-3.5 text-gold-700" />
                   <span>Download Complete Calendar (.ics)</span>
@@ -295,7 +295,7 @@ export default function GuestExperience() {
             <div className="flex items-center justify-center gap-2.5 pt-2">
               <button
                 onClick={handleNativeShare}
-                className="py-2.5 px-5 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-xs font-sans font-semibold flex items-center gap-2 shadow-md transition-all hover:scale-105"
+                className="py-2.5 px-5 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white text-xs font-sans font-semibold tracking-wider uppercase flex items-center gap-2 shadow-md transition-all hover:scale-105"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Share on WhatsApp</span>
@@ -303,7 +303,7 @@ export default function GuestExperience() {
 
               <button
                 onClick={handleCopyLink}
-                className="py-2.5 px-4 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-serif flex items-center gap-1.5 transition-all"
+                className="py-2.5 px-4 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase flex items-center gap-1.5 transition-all"
                 title="Copy website link"
               >
                 {copiedLink ? (

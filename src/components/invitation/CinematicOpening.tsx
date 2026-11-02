@@ -132,12 +132,12 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-burgundy-900/95 backdrop-blur-md">
         <div className="relative w-full max-w-md p-8 rounded-3xl bg-paper-100 border-2 border-gold-400 text-center space-y-4 shadow-2xl">
-          <p className="font-hindi text-burgundy-900 font-semibold">॥ श्री गणेशाय नमः ॥</p>
+          <p className="font-hindi text-burgundy-900 font-semibold tracking-normal">॥ श्री गणेशाय नमः ॥</p>
           <h2 className="font-serif text-3xl text-ink-title font-bold">Abhinav &amp; Mansi</h2>
-          <p className="text-xs uppercase tracking-widest text-gold-700">Together, Forever • 03 December 2026</p>
+          <p className="text-xs font-sans uppercase tracking-widest text-gold-700">Together, Forever • 03 December 2026</p>
           <button
             onClick={handleComplete}
-            className="w-full py-3 rounded-full bg-ruby-600 text-white font-serif tracking-wider uppercase text-xs hover:bg-ruby-700 transition-colors shadow-md border border-gold-400/40"
+            className="w-full py-3 rounded-full bg-ruby-600 text-white font-sans font-semibold tracking-wider uppercase text-xs hover:bg-ruby-700 transition-colors shadow-md border border-gold-400/40"
           >
             Enter Celebration
           </button>
@@ -177,7 +177,7 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
         {/* Sound Toggle Button (Clickable) */}
         <button
           onClick={toggleSound}
-          className="pointer-events-auto flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-gold-200 border border-gold-400/40 backdrop-blur-md text-[11px] font-serif tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-gold-400"
+          className="pointer-events-auto flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-gold-200 border border-gold-400/40 backdrop-blur-md text-[11px] font-sans font-medium tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-gold-400"
           aria-label={isMuted ? 'Turn on sound' : 'Mute sound'}
         >
           {isMuted ? (
@@ -196,7 +196,7 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
         {/* Immediate Skip Action */}
         <button
           onClick={handleSkip}
-          className="pointer-events-auto flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-paper-50/90 hover:bg-paper-50 text-ink-title border border-gold-400/50 backdrop-blur-md text-xs font-serif tracking-widest uppercase shadow-xl transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-gold-400"
+          className="pointer-events-auto flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-paper-50/90 hover:bg-paper-50 text-ink-title border border-gold-400/50 backdrop-blur-md text-xs font-sans font-semibold tracking-wider uppercase shadow-xl transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-gold-400"
           aria-label="Skip introduction and enter website"
         >
           <span>Skip Intro</span>
@@ -209,7 +209,7 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
         
         {/* Sacred Benedictory Heading on Mobile for Balanced Framing */}
         <div className="sm:hidden text-center mb-2.5">
-          <p className="font-hindi text-[13px] tracking-widest text-gold-300/90 font-medium drop-shadow-sm">
+          <p className="font-hindi text-[13px] tracking-normal leading-relaxed text-gold-300/90 font-medium drop-shadow-sm">
             ॥ श्री गणेशाय नमः ॥
           </p>
         </div>
@@ -263,7 +263,7 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
               e.stopPropagation();
               handleComplete();
             }}
-            className={`flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white border border-gold-400/60 backdrop-blur-md shadow-2xl transition-all duration-500 hover:scale-105 active:scale-95 text-xs sm:text-sm font-serif tracking-widest uppercase font-semibold ${
+            className={`flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white border border-gold-400/60 backdrop-blur-md shadow-2xl transition-all duration-500 hover:scale-105 active:scale-95 text-xs sm:text-sm font-sans tracking-wider uppercase font-semibold ${
               showEnterButton
                 ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto'
                 : 'opacity-0 translate-y-2 scale-95 pointer-events-none'
