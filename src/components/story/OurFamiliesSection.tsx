@@ -49,6 +49,7 @@ export default function OurFamiliesSection() {
               src="/assets/photos/mansi_family.jpg"
               alt="Sh. Mahabir Prasad Sharma & Smt. Babita Sharma"
               fill
+              sizes="(max-width: 1024px) 100vw, 550px"
               className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter saturate-105"
             />
             {/* Subtle Vignette for Archival Feel */}
@@ -110,6 +111,7 @@ export default function OurFamiliesSection() {
               src="/assets/photos/abhinav_family.jpg"
               alt="Sh. Inder Pal & Smt. Nirmala"
               fill
+              sizes="(max-width: 1024px) 100vw, 550px"
               className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter saturate-105"
             />
             {/* Subtle Vignette for Archival Feel */}

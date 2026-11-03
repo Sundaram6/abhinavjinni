@@ -55,6 +55,7 @@ export default function ThePromiseSection() {
               src="/assets/photos/couple_rings.jpg"
               alt="Abhinav & Mansi authentic engagement rings with bridal henna"
               fill
+              sizes="(max-width: 768px) 100vw, 850px"
               className="object-cover object-center filter saturate-105"
             />
             {/* Subtle Vignette Overlay for Warmth */}

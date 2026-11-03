@@ -19,6 +19,7 @@ export default function Finale() {
           src="/assets/ganesh_art.png"
           alt=""
           fill
+          sizes="384px"
           className="object-contain"
         />
       </div>
@@ -32,6 +33,7 @@ export default function Finale() {
               src="/assets/ganesh_transparent.png"
               alt="Lord Ganesha"
               fill
+              sizes="80px"
               className="object-contain"
             />
           </div>
@@ -111,6 +113,7 @@ export default function Finale() {
           src="/assets/floral_border.png"
           alt="Botanical floral border"
           fill
+          sizes="100vw"
           className="object-cover object-top"
         />
       </div>

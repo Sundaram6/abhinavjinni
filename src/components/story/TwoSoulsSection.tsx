@@ -48,6 +48,7 @@ export default function TwoSoulsSection() {
               src="/assets/photos/mansi_solo.jpg"
               alt="Mansi Sharma — The Bride"
               fill
+              sizes="(max-width: 1024px) 100vw, 550px"
               className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter saturate-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-burgundy-950/65 via-transparent to-transparent pointer-events-none"></div>
@@ -113,6 +114,7 @@ export default function TwoSoulsSection() {
               src="/assets/photos/abhinav_solo.jpg"
               alt="Abhinav Pal — The Groom"
               fill
+              sizes="(max-width: 1024px) 100vw, 550px"
               className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter saturate-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-burgundy-950/65 via-transparent to-transparent pointer-events-none"></div>

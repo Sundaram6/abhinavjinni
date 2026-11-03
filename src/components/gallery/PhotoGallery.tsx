@@ -114,6 +114,7 @@ export default function PhotoGallery() {
                 src={item.src}
                 alt={item.title}
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-burgundy-950/20 group-hover:bg-burgundy-950/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -197,6 +198,7 @@ export default function PhotoGallery() {
                 src={filteredItems[lightboxIndex].src}
                 alt={filteredItems[lightboxIndex].title}
                 fill
+                sizes="(max-width: 1024px) 100vw, 896px"
                 className="object-contain"
                 priority
               />

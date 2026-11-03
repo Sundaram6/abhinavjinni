@@ -59,6 +59,7 @@ export default function Hero() {
           src="/assets/floral_corner_left.png"
           alt=""
           fill
+          sizes="(max-width: 640px) 160px, 288px"
           className="object-contain"
           priority
         />
@@ -68,6 +69,7 @@ export default function Hero() {
           src="/assets/floral_corner_right.png"
           alt=""
           fill
+          sizes="(max-width: 640px) 160px, 288px"
           className="object-contain"
           priority
         />
@@ -127,6 +129,7 @@ export default function Hero() {
               alt="Abhinav & Mansi looking lovingly at each other"
               fill
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 768px"
               className="object-cover object-top filter saturate-105"
             />
             {/* Subtle Vignette for Archival Tone */}

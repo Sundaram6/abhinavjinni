@@ -7,18 +7,27 @@ export const metadata: Metadata = {
   description: 'With great joy, Sh. Inder Pal & Smt. Nirmala and Sh. Mahabir Prasad Sharma & Smt. Babita Sharma invite you to celebrate the wedding of Abhinav & Mansi in Bodhgaya and Noida.',
   keywords: ['Abhinav Mansi Wedding', 'Abhinav Pal', 'Mansi Sharma', 'Bodhgaya Wedding', 'The Royal Palace Banquet Noida', 'Buddha Heritage Resort Bodhgaya'],
   authors: [{ name: 'Abhinav & Mansi' }],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
+  alternates: {
+    canonical: 'https://mansiwedsabhinav.vercel.app',
+  },
   openGraph: {
     title: 'Abhinav & Mansi — A Story in Bloom',
     description: 'Together with their families, Abhinav & Mansi invite you to their wedding celebrations. Discover events, venues, and wedding details.',
     type: 'website',
+    url: 'https://mansiwedsabhinav.vercel.app',
     locale: 'en_IN',
-    siteName: 'Abhinav & Mansi Wedding',
+    siteName: 'Abhinav & Mansi Wedding Celebrations',
     images: [
       {
         url: '/assets/invitation-page-1.webp',
         width: 1200,
         height: 630,
-        alt: 'Abhinav weds Mansi Wedding Invitation',
+        alt: 'Abhinav weds Mansi Wedding Invitation Suite',
       },
     ],
   },

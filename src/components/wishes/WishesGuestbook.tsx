@@ -155,6 +155,7 @@ export default function WishesGuestbook() {
                   src="/assets/photos/couple_candid_cake.jpg"
                   alt="Abhinav & Mansi cutting their engagement cake"
                   fill
+                  sizes="(max-width: 768px) 100vw, 450px"
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter saturate-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-burgundy-950/60 via-transparent to-transparent pointer-events-none"></div>
