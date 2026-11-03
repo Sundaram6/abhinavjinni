@@ -47,9 +47,9 @@ export default function Finale() {
         </div>
 
         {/* Both Families Greeting & Blessings */}
-        <div className="stationery-card p-8 sm:p-12 rounded-3xl border border-gold-400/40 shadow-stationery max-w-3xl mx-auto space-y-8">
+        <div className="stationery-card p-8 sm:p-12 rounded-3xl border border-gold-400/40 shadow-stationery max-w-3xl mx-auto">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center border-b border-gold-300/35 pb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
             <div className="space-y-1">
               <span className="text-[11px] font-sans font-semibold tracking-widest uppercase text-gold-700">
                 Groom&apos;s Parents
@@ -71,40 +71,6 @@ export default function Finale() {
               </h4>
               <p className="font-serif italic text-xs text-ink-secondary">
                 With heartfelt joy &amp; warm welcome
-              </p>
-            </div>
-          </div>
-
-          {/* Extended Family & Children Invitation from Invitation Page 3 */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2 text-center text-xs">
-            <div className="space-y-1">
-              <span className="font-sans font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
-                R. S. V. P.
-              </span>
-              <div className="font-sans text-ink-primary space-y-0.5 text-sm">
-                {WEDDING_DATA.family.rsvp.map((name, idx) => (
-                  <p key={idx}>{name}</p>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <span className="font-sans font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
-                Kids Invitation
-              </span>
-              <div className="font-sans text-ink-primary space-y-0.5 text-sm">
-                {WEDDING_DATA.family.kids.map((name, idx) => (
-                  <p key={idx} className="text-ruby-600 font-semibold">{name}</p>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <span className="font-sans font-semibold tracking-wider uppercase text-ink-title block text-[11px]">
-                W. B. C. F.
-              </span>
-              <p className="font-sans text-ink-primary text-sm">
-                {WEDDING_DATA.family.wbcf}
               </p>
             </div>
           </div>

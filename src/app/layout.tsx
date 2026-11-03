@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Abhinav & Mansi' }],
   openGraph: {
     title: 'Abhinav & Mansi — A Story in Bloom',
-    description: 'Together with their families, Abhinav & Mansi invite you to their wedding celebrations. Discover events, venues, and RSVP.',
+    description: 'Together with their families, Abhinav & Mansi invite you to their wedding celebrations. Discover events, venues, and wedding details.',
     type: 'website',
     locale: 'en_IN',
     siteName: 'Abhinav & Mansi Wedding',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Abhinav & Mansi — A Story in Bloom',
-    description: 'Join us in celebrating the wedding of Abhinav & Mansi. View the itinerary, RSVP, and travel details.',
+    description: 'Join us in celebrating the wedding of Abhinav & Mansi. View the itinerary, venues, and travel details.',
     images: ['/assets/invitation-page-1.webp'],
   },
 };

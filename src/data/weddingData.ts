@@ -397,13 +397,5 @@ export const WEDDING_DATA = {
       caption: "Ivory, dusty blush, and rosewood florals hand-painted for the royal stationery.",
       aspect: "panoramic",
     },
-    {
-      id: "gal-8",
-      title: "Auspicious Ganesha Line Ornament",
-      category: "Portraits",
-      src: "/assets/invitation-page-3.webp",
-      caption: "R.S.V.P & Kids Invitation page featuring Sh. Surender, Yogender, Himanshu, Rishabh, Nityaya & Avyagra Pal.",
-      aspect: "landscape",
-    },
   ],
 };
