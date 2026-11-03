@@ -21,6 +21,7 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
 
   const navLinks = [
     { label: 'Story', href: '#two-souls' },
+    { label: 'Families', href: '#families' },
     { label: 'Celebrations', href: '#celebrations' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Venues & Travel', href: '#travel' },

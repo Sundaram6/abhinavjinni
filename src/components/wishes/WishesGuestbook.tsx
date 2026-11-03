@@ -1,9 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Heart, Send, Sparkles, MessageSquareHeart, Check, Filter } from 'lucide-react';
 import { WishRecord } from '@/lib/storage';
 import confetti from 'canvas-confetti';
+import { SectionHeading } from '@/components/ui';
+import { WEDDING_DATA } from '@/data/weddingData';
 
 export default function WishesGuestbook() {
   const [wishes, setWishes] = useState<WishRecord[]>([]);
@@ -119,14 +122,100 @@ export default function WishesGuestbook() {
   });
 
   return (
-    <section id="wishes" className="py-24 px-4 sm:px-6 relative overflow-hidden bg-paper-100/50">
+    <section id="wishes" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden bg-heritage-ivory/60">
       
-      {/* Header */}
-      <div className="max-w-4xl mx-auto text-center space-y-3 mb-16 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
-          Words of Love for Abhinav &amp; Mansi
-        </h2>
+      {/* Chapter Seven Section Heading */}
+      <SectionHeading
+        kicker="Chapter Seven"
+        title="Blessings & Forever"
+        hindiTitle="॥ शुभाशीर्वादः • सप्रेम पाणिग्रहण ॥"
+        description="Your loving presence and prayers are the greatest gift as we begin this sacred union."
+        dividerVariant="flourish"
+      />
 
+      {/* Featured Candid Couple Heirloom Card */}
+      <div className="max-w-5xl mx-auto mb-16 sm:mb-20 relative z-10">
+        <div className="stationery-card p-6 sm:p-10 rounded-3xl border border-gold-400/40 shadow-stationery bg-paper-50 relative overflow-hidden">
+          
+          {/* Subtle floral watermark */}
+          <div className="absolute top-0 right-0 w-64 h-64 opacity-5 pointer-events-none">
+            <Image
+              src="/assets/floral_border.png"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            {/* Left: Candid Photo */}
+            <div className="md:col-span-5 relative">
+              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-inner border border-gold-400/35 bg-burgundy-950/10 group">
+                <Image
+                  src="/assets/photos/couple_candid_cake.jpg"
+                  alt="Abhinav & Mansi cutting their engagement cake"
+                  fill
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter saturate-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-burgundy-950/60 via-transparent to-transparent pointer-events-none"></div>
+                
+                {/* Gold Archival Hairline */}
+                <div className="absolute inset-2.5 sm:inset-3 border border-gold-400/30 rounded-xl pointer-events-none"></div>
+
+                <div className="absolute bottom-3 inset-x-3 text-center text-paper-50 space-y-0.5 z-20">
+                  <span className="font-serif italic text-xs text-gold-200">
+                    The Promise Night • Noida
+                  </span>
+                  <p className="font-serif text-sm sm:text-base font-bold text-gold-100">
+                    Sweet Beginnings &amp; Shared Laughter
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Couple Message & Gratitude */}
+            <div className="md:col-span-7 space-y-4 text-center md:text-left">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-ruby-700 border border-ruby-200 text-xs font-sans font-semibold tracking-wider uppercase">
+                <Sparkles className="w-3.5 h-3.5 text-ruby-600" />
+                <span>With Heartfelt Gratitude</span>
+              </div>
+
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-ink-title leading-tight">
+                To Our Dearest Family &amp; Friends
+              </h3>
+
+              <p className="font-hindi text-base sm:text-lg text-gold-800 font-medium">
+                ॥ स्नेह, समर्पण और अनंत विश्वास ॥
+              </p>
+
+              <p className="font-serif italic text-base sm:text-lg text-ink-primary leading-relaxed">
+                &ldquo;Your love, laughter, and blessings have touched our lives in ways words cannot express. As we take our sacred vows in Bodhgaya, your presence and prayers will forever illuminate our new journey together.&rdquo;
+              </p>
+
+              <div className="pt-2 border-t border-gold-300/30 flex items-center justify-center md:justify-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-burgundy-900 border border-gold-400 text-paper-50 flex items-center justify-center font-serif text-xs font-bold">
+                  A&amp;M
+                </div>
+                <div>
+                  <p className="font-serif text-lg font-bold text-ink-title">
+                    Abhinav &amp; Mansi
+                  </p>
+                  <p className="text-[11px] font-sans font-semibold tracking-widest uppercase text-gold-700">
+                    A Story in Bloom • 2026
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Guestbook Header */}
+      <div className="max-w-4xl mx-auto text-center space-y-2 mb-12 relative z-10">
+        <h3 className="font-serif text-2xl sm:text-3xl text-ink-title font-bold">
+          The Wedding Guestbook
+        </h3>
         <p className="font-serif italic text-ink-secondary text-sm sm:text-base max-w-xl mx-auto">
           Leave your sacred blessings, memories, and joyful wishes for the bride and groom.
         </p>

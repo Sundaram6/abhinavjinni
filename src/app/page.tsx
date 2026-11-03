@@ -6,6 +6,7 @@ import Navbar from '@/components/shared/Navbar';
 import Hero from '@/components/hero/Hero';
 import TwoSoulsSection from '@/components/story/TwoSoulsSection';
 import ThePromiseSection from '@/components/story/ThePromiseSection';
+import OurFamiliesSection from '@/components/story/OurFamiliesSection';
 import PetalCanvas from '@/components/shared/PetalCanvas';
 import WeddingCelebrations from '@/components/events/WeddingCelebrations';
 import PhotoGallery from '@/components/gallery/PhotoGallery';
@@ -69,7 +70,10 @@ export default function WeddingPage() {
       {/* Chapter Three: The Promise */}
       <ThePromiseSection />
 
-      {/* 5. Wedding Celebrations Itinerary */}
+      {/* Chapter Four: Our Families */}
+      <OurFamiliesSection />
+
+      {/* Chapter Five: The Celebrations Itinerary */}
       <WeddingCelebrations />
 
       {/* 7. Stationery & Photo Album Gallery */}

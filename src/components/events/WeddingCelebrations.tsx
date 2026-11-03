@@ -1,17 +1,73 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Calendar, Clock, MapPin, Navigation, Sparkles, Download, Check, ExternalLink } from 'lucide-react';
+import { 
+  Calendar, 
+  Clock, 
+  MapPin, 
+  Navigation, 
+  Sparkles, 
+  Download, 
+  ChevronDown, 
+  ExternalLink,
+  Music,
+  Flame,
+  Sun,
+  Crown
+} from 'lucide-react';
 import { WEDDING_DATA, EventDetail } from '@/data/weddingData';
+import { SectionHeading } from '@/components/ui';
+
+// Custom Ceremony Emblems / Line-art Icons
+function CeremonyEmblem({ id }: { id: string }) {
+  switch (id) {
+    case 'mehandi':
+      return (
+        <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-300/60 flex items-center justify-center text-emerald-800 shadow-sm">
+          <span className="text-xl">🌿</span>
+        </div>
+      );
+    case 'sangeet':
+      return (
+        <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-300/60 flex items-center justify-center text-purple-800 shadow-sm">
+          <Music className="w-6 h-6 text-purple-700" />
+        </div>
+      );
+    case 'haldi':
+      return (
+        <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-300/60 flex items-center justify-center text-amber-800 shadow-sm">
+          <Sun className="w-6 h-6 text-amber-600" />
+        </div>
+      );
+    case 'ghruchari-barat':
+      return (
+        <div className="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-300/60 flex items-center justify-center text-rose-800 shadow-sm">
+          <Crown className="w-6 h-6 text-rose-700" />
+        </div>
+      );
+    case 'wedding':
+    default:
+      return (
+        <div className="w-12 h-12 rounded-2xl bg-burgundy-50 border border-burgundy-300/60 flex items-center justify-center text-burgundy-900 shadow-sm">
+          <Flame className="w-6 h-6 text-ruby-600" />
+        </div>
+      );
+  }
+}
 
 export default function WeddingCelebrations() {
-  const [filter, setFilter] = useState<'all' | 'noida' | 'bodhgaya'>('all');
+  const [expandedEventId, setExpandedEventId] = useState<string | null>('wedding');
+  const [activeDay, setActiveDay] = useState<'all' | 'day1' | 'day2'>('all');
 
-  const filteredEvents = WEDDING_DATA.events.filter(event => {
-    if (filter === 'noida') return event.city === 'Noida';
-    if (filter === 'bodhgaya') return event.city === 'Bodhgaya';
-    return true;
-  });
+  // Filter only the Bodhgaya celebrations (Engagement remains permanently in Chapter Three)
+  const bodhgayaEvents = WEDDING_DATA.events.filter(e => e.city === 'Bodhgaya');
+
+  const day1Events = bodhgayaEvents.filter(e => e.dateString.includes('2nd December'));
+  const day2Events = bodhgayaEvents.filter(e => e.dateString.includes('3rd December'));
+
+  const toggleExpand = (id: string) => {
+    setExpandedEventId(prev => (prev === id ? null : id));
+  };
 
   const getGoogleCalendarUrl = (event: EventDetail) => {
     const startDate = new Date(event.isoDate);
@@ -29,207 +85,440 @@ export default function WeddingCelebrations() {
   };
 
   return (
-    <section id="celebrations" className="py-24 px-4 sm:px-6 relative overflow-hidden bg-paper-100/60">
+    <section id="celebrations" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden bg-paper-100/50">
       
-      {/* Ornate Header */}
-      <div className="max-w-4xl mx-auto text-center space-y-3 mb-12 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
-          Wedding Itinerary &amp; Ceremonies
-        </h2>
+      {/* Chapter Five Heading */}
+      <SectionHeading
+        kicker="Chapter Five"
+        title="The Celebrations"
+        hindiTitle="॥ मङ्गल विवाहोत्सव कार्यक्रम • बोधगया ॥"
+        description="A sacred two-day celebration of heritage, music, vibrant rituals, and eternal vows under the Bodhi sky."
+        dividerVariant="flourish"
+      />
 
-        <p className="font-serif italic text-ink-secondary text-sm sm:text-base max-w-2xl mx-auto">
-          Six joyous celebrations marking the journey from the promise of love to sacred marital vows.
-        </p>
-
-        {/* Filter & Global Calendar Download */}
-        <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-          <div className="inline-flex p-1 rounded-full bg-paper-100 border border-gold-400/30">
-            <button
-              onClick={() => setFilter('all')}
-              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
-                filter === 'all'
-                  ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-ruby-600 font-medium'
-              }`}
-            >
-              All Celebrations (6)
-            </button>
-            <button
-              onClick={() => setFilter('bodhgaya')}
-              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
-                filter === 'bodhgaya'
-                  ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-ruby-600 font-medium'
-              }`}
-            >
-              Bodhgaya (Dec 2–3)
-            </button>
-            <button
-              onClick={() => setFilter('noida')}
-              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
-                filter === 'noida'
-                  ? 'bg-ruby-600 text-white shadow-sm font-semibold'
-                  : 'text-ink-secondary hover:text-ruby-600 font-medium'
-              }`}
-            >
-              Noida (Oct 20)
-            </button>
-          </div>
-
-          <a
-            href="/api/calendar?event=all"
-            download="abhinav-mansi-wedding-events.ics"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-sans tracking-wider uppercase font-medium shadow-sm transition-all hover:scale-105"
-            title="Download full iCalendar (.ics) for all events"
+      {/* Global Day Filter & Calendar Action Bar */}
+      <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-4 mb-12 relative z-10 px-2">
+        {/* Day Tabs */}
+        <div className="inline-flex p-1 rounded-full bg-paper-50 border border-gold-400/35 shadow-sm text-xs font-sans">
+          <button
+            onClick={() => setActiveDay('all')}
+            className={`px-4 py-1.5 rounded-full tracking-wider uppercase transition-all ${
+              activeDay === 'all'
+                ? 'bg-ruby-600 text-white font-semibold shadow-sm'
+                : 'text-ink-secondary hover:text-ruby-600 font-medium'
+            }`}
           >
-            <Download className="w-3.5 h-3.5 text-gold-700" />
-            <span>Add All to Calendar (.ics)</span>
-          </a>
+            All Ceremonies (5)
+          </button>
+          <button
+            onClick={() => setActiveDay('day1')}
+            className={`px-4 py-1.5 rounded-full tracking-wider uppercase transition-all ${
+              activeDay === 'day1'
+                ? 'bg-ruby-600 text-white font-semibold shadow-sm'
+                : 'text-ink-secondary hover:text-ruby-600 font-medium'
+            }`}
+          >
+            Day 1: Dec 2
+          </button>
+          <button
+            onClick={() => setActiveDay('day2')}
+            className={`px-4 py-1.5 rounded-full tracking-wider uppercase transition-all ${
+              activeDay === 'day2'
+                ? 'bg-ruby-600 text-white font-semibold shadow-sm'
+                : 'text-ink-secondary hover:text-ruby-600 font-medium'
+            }`}
+          >
+            Day 2: Dec 3 (Wedding)
+          </button>
         </div>
+
+        {/* Global iCal Download */}
+        <a
+          href="/api/calendar?event=all"
+          download="abhinav-mansi-wedding-events.ics"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-sans tracking-wider uppercase font-semibold shadow-sm transition-all hover:scale-105"
+          title="Download complete wedding calendar"
+        >
+          <Download className="w-3.5 h-3.5 text-gold-700" />
+          <span>Add Itinerary to Calendar (.ics)</span>
+        </a>
       </div>
 
-      {/* Celebrations Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10">
-        {filteredEvents.map(event => (
-          <div
-            key={event.id}
-            className="stationery-card rounded-2xl border border-gold-400/35 p-6 sm:p-7 flex flex-col justify-between shadow-stationery hover:shadow-stationery-deep transition-all duration-300 relative group"
-          >
-            {/* Top Chapter Tag & Badge */}
-            <div>
-              <div className="flex items-center justify-between border-b border-gold-300/30 pb-3 mb-4">
-                <span className="font-serif italic text-xs tracking-wider text-gold-700 font-semibold">
-                  {event.chapter}
-                </span>
-                <span className={`text-[10px] font-sans font-semibold tracking-widest uppercase px-2.5 py-0.5 rounded-full ${
-                  event.id === 'wedding'
-                    ? 'bg-burgundy-900 text-paper-50 border border-gold-400 shadow-sm'
-                    : 'bg-emerald-700 text-white border border-emerald-600/40 shadow-sm'
-                }`}>
-                  {event.badge}
-                </span>
+      {/* Two-Day Timeline Container */}
+      <div className="max-w-4xl mx-auto space-y-12 relative z-10">
+        
+        {/* ================= DAY 1: WEDNESDAY, 2ND DECEMBER 2026 ================= */}
+        {(activeDay === 'all' || activeDay === 'day1') && (
+          <div className="space-y-6">
+            
+            {/* Day Header Banner */}
+            <div className="flex items-center gap-4 pb-2 border-b-2 border-gold-400/30">
+              <div className="w-9 h-9 rounded-full bg-ruby-600 text-white flex items-center justify-center font-serif font-bold text-sm shadow-sm">
+                1
               </div>
-
-              {/* Title & Subtitle */}
-              <h3 className="font-serif text-2xl font-bold text-ink-title group-hover:text-ruby-600 transition-colors">
-                {event.title}
-              </h3>
-              <p className="font-serif italic text-sm text-ink-secondary mb-1">
-                {event.subTitle}
-              </p>
-              {event.hindiTitle && (
-                <p className="font-hindi text-sm text-gold-700 mb-3 font-semibold tracking-normal leading-relaxed">
-                  {event.hindiTitle}
+              <div>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-ink-title">
+                  Day One • Wednesday, 2nd December 2026
+                </h3>
+                <p className="font-serif italic text-xs sm:text-sm text-gold-800">
+                  Henna traditions, acoustic folk songs, and the grand Sangeet night
                 </p>
-              )}
-
-              {/* Shloka Quote if present */}
-              {event.shloka && (
-                <div className="my-3 p-3 rounded-xl bg-paper-50 border border-gold-300/40 text-center">
-                  <p className="font-hindi text-xs sm:text-sm text-ink-primary leading-relaxed tracking-normal">
-                    {event.shloka}
-                  </p>
-                </div>
-              )}
-
-              {/* Date & Time block */}
-              <div className="space-y-2 my-4 text-xs font-sans text-ink-primary bg-paper-50 p-3.5 rounded-xl border border-paper-300">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-gold-600 flex-shrink-0" />
-                  <span className="font-semibold text-ink-title">{event.dateString}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-gold-600 flex-shrink-0" />
-                  <span>{event.time}</span>
-                </div>
-                <div className="flex items-start gap-2 pt-1 border-t border-paper-200">
-                  <MapPin className="w-4 h-4 text-ruby-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-semibold block text-ink-title">{event.venueName}</span>
-                    <span className="text-[11px] text-ink-secondary leading-snug block">{event.venueAddress}</span>
-                  </div>
-                </div>
               </div>
+            </div>
 
-              {/* Event Timeline Activities */}
-              <div className="my-4 space-y-2">
-                <p className="text-[11px] font-sans font-semibold tracking-wider uppercase text-gold-700">
-                  Ceremony Flow:
-                </p>
-                <div className="space-y-1.5 pl-1">
-                  {event.timeline.map((item, idx) => (
-                    <div key={idx} className="text-xs flex items-start gap-2">
-                      <span className="font-serif font-medium text-ruby-600 min-w-16 text-[11px]">
-                        {item.time}
-                      </span>
-                      <div>
-                        <span className="font-medium text-ink-primary">{item.activity}</span>
-                        {item.description && (
-                          <p className="text-[11px] text-ink-muted leading-tight">{item.description}</p>
-                        )}
+            {/* Day 1 Event Cards */}
+            <div className="space-y-4">
+              {day1Events.map(event => {
+                const isExpanded = expandedEventId === event.id;
+                return (
+                  <div
+                    key={event.id}
+                    className="stationery-card rounded-2xl border border-gold-400/35 overflow-hidden bg-paper-50 shadow-stationery transition-all duration-300"
+                  >
+                    {/* Main Clickable Header */}
+                    <div
+                      onClick={() => toggleExpand(event.id)}
+                      className="p-5 sm:p-6 flex items-start sm:items-center justify-between gap-4 cursor-pointer hover:bg-gold-50/20 transition-colors"
+                    >
+                      <div className="flex items-start sm:items-center gap-4">
+                        <CeremonyEmblem id={event.id} />
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-2">
+                            <span className="font-serif italic text-xs text-gold-700 font-semibold tracking-wider">
+                              {event.chapter}
+                            </span>
+                            <span className="text-gold-300">•</span>
+                            <span className="font-hindi text-xs text-burgundy-900 font-semibold">
+                              {event.hindiTitle}
+                            </span>
+                          </div>
+                          <h4 className="font-serif text-xl sm:text-2xl font-bold text-ink-title leading-tight">
+                            {event.title}
+                          </h4>
+                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-sans text-ink-secondary pt-1">
+                            <span className="inline-flex items-center gap-1.5 font-semibold text-ruby-600">
+                              <Clock className="w-3.5 h-3.5" />
+                              <span>{event.time}</span>
+                            </span>
+                            <span className="inline-flex items-center gap-1.5">
+                              <MapPin className="w-3.5 h-3.5 text-gold-600" />
+                              <span>{event.venueName} ({event.venueTagline})</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          className="p-2 rounded-full hover:bg-paper-200/60 text-gold-700 transition-transform"
+                          aria-label={isExpanded ? 'Collapse event' : 'Expand event details'}
+                        >
+                          <ChevronDown
+                            className={`w-5 h-5 transition-transform duration-300 ${
+                              isExpanded ? 'rotate-180 text-ruby-600' : ''
+                            }`}
+                          />
+                        </button>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* Attire & Palette */}
-              <div className="my-4 pt-3 border-t border-paper-200">
-                <div className="flex items-center justify-between text-xs mb-1.5">
-                  <span className="font-sans font-semibold text-ink-primary">Suggested Attire:</span>
-                  <span className="font-serif italic text-ink-secondary text-[11px]">{event.attire}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  {event.attirePalette.map((p, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5">
-                      <span
-                        className="w-3.5 h-3.5 rounded-full border border-black/10 shadow-sm"
-                        style={{ backgroundColor: p.hex }}
-                        title={p.name}
-                      ></span>
-                      <span className="text-[10px] text-ink-muted hidden sm:inline">{p.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                    {/* Expandable Details Tray */}
+                    {isExpanded && (
+                      <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-gold-300/30 space-y-5 bg-paper-100/40">
+                        {/* Note / Sentiment */}
+                        {event.note && (
+                          <p className="font-serif italic text-sm sm:text-base text-ink-primary leading-relaxed">
+                            &ldquo;{event.note}&rdquo;
+                          </p>
+                        )}
+
+                        {/* Itinerary Timeline */}
+                        {event.timeline && event.timeline.length > 0 && (
+                          <div className="space-y-2 pt-2">
+                            <span className="text-[11px] font-sans font-semibold tracking-widest uppercase text-gold-700 block">
+                              Ceremony Schedule
+                            </span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                              {event.timeline.map((item, idx) => (
+                                <div
+                                  key={idx}
+                                  className="p-3 rounded-xl bg-paper-50 border border-gold-300/30 text-xs font-sans space-y-0.5 shadow-xs"
+                                >
+                                  <span className="font-semibold text-ruby-600 block">{item.time}</span>
+                                  <p className="font-semibold text-ink-title">{item.activity}</p>
+                                  <p className="text-ink-secondary text-[11px] leading-tight">{item.description}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Attire Guidance */}
+                        {event.attire && (
+                          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gold-300/20">
+                            <div>
+                              <span className="text-[10px] font-sans font-semibold tracking-widest uppercase text-gold-700 block">
+                                Suggested Attire
+                              </span>
+                              <p className="font-serif italic text-sm text-ink-primary font-medium">
+                                {event.attire}
+                              </p>
+                            </div>
+
+                            {event.attirePalette && (
+                              <div className="flex items-center gap-1.5">
+                                {event.attirePalette.map((col, idx) => (
+                                  <span
+                                    key={idx}
+                                    title={col.name}
+                                    className="w-4 h-4 rounded-full border border-gold-400/40 shadow-xs inline-block"
+                                    style={{ backgroundColor: col.hex }}
+                                  />
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Action Buttons */}
+                        <div className="flex flex-wrap items-center gap-3 pt-2">
+                          <a
+                            href={event.googleMapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all hover:scale-105"
+                          >
+                            <Navigation className="w-3.5 h-3.5" />
+                            <span>Get Directions</span>
+                          </a>
+
+                          <a
+                            href={getGoogleCalendarUrl(event)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/50 text-xs font-sans font-medium tracking-wider uppercase shadow-xs transition-all hover:scale-105"
+                          >
+                            <Calendar className="w-3.5 h-3.5 text-gold-600" />
+                            <span>Google Calendar</span>
+                          </a>
+
+                          <a
+                            href={`/api/calendar?event=${event.id}`}
+                            download={`${event.id}.ics`}
+                            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-transparent hover:bg-gold-50 text-gold-800 text-xs font-sans font-medium tracking-wider uppercase transition-colors"
+                          >
+                            <Download className="w-3.5 h-3.5" />
+                            <span>.ICS</span>
+                          </a>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
-            {/* Action Buttons: Add to Calendar & Directions */}
-            <div className="mt-4 pt-4 border-t border-gold-300/30 flex items-center gap-2">
-              <a
-                href={getGoogleCalendarUrl(event)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all border border-gold-400/40"
-                title="Add this event to Google Calendar"
-              >
-                <Calendar className="w-3.5 h-3.5 text-gold-300" />
-                <span>Google Cal</span>
-              </a>
-
-              <a
-                href={`/api/calendar?event=${event.id}`}
-                download={`abhinav-mansi-${event.id}.ics`}
-                className="py-2 px-2.5 rounded-lg bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans transition-all"
-                title="Download .ics for Apple / Outlook"
-              >
-                <Download className="w-3.5 h-3.5 text-gold-700" />
-              </a>
-
-              <a
-                href={event.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all"
-                title="Open Google Maps Directions"
-              >
-                <Navigation className="w-3.5 h-3.5 text-emerald-700" />
-                <span>Directions</span>
-              </a>
-            </div>
           </div>
-        ))}
+        )}
+
+        {/* ================= DAY 2: THURSDAY, 3RD DECEMBER 2026 ================= */}
+        {(activeDay === 'all' || activeDay === 'day2') && (
+          <div className="space-y-6 pt-4">
+            
+            {/* Day Header Banner */}
+            <div className="flex items-center gap-4 pb-2 border-b-2 border-gold-400/30">
+              <div className="w-9 h-9 rounded-full bg-gold-600 text-paper-50 flex items-center justify-center font-serif font-bold text-sm shadow-sm">
+                2
+              </div>
+              <div>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-ink-title">
+                  Day Two • Thursday, 3rd December 2026 (The Wedding)
+                </h3>
+                <p className="font-serif italic text-xs sm:text-sm text-gold-800">
+                  Golden Haldi, Barat procession, and sacred Pheras around the Agni
+                </p>
+              </div>
+            </div>
+
+            {/* Day 2 Event Cards */}
+            <div className="space-y-4">
+              {day2Events.map(event => {
+                const isExpanded = expandedEventId === event.id;
+                const isSacredWedding = event.id === 'wedding';
+
+                return (
+                  <div
+                    key={event.id}
+                    className={`stationery-card rounded-2xl overflow-hidden bg-paper-50 shadow-stationery transition-all duration-300 ${
+                      isSacredWedding
+                        ? 'border-2 border-gold-500/70 shadow-stationery-deep ring-1 ring-gold-400/30'
+                        : 'border border-gold-400/35'
+                    }`}
+                  >
+                    {/* Main Clickable Header */}
+                    <div
+                      onClick={() => toggleExpand(event.id)}
+                      className="p-5 sm:p-6 flex items-start sm:items-center justify-between gap-4 cursor-pointer hover:bg-gold-50/20 transition-colors"
+                    >
+                      <div className="flex items-start sm:items-center gap-4">
+                        <CeremonyEmblem id={event.id} />
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-2">
+                            <span className="font-serif italic text-xs text-gold-700 font-semibold tracking-wider">
+                              {event.chapter}
+                            </span>
+                            <span className="text-gold-300">•</span>
+                            <span className="font-hindi text-xs text-burgundy-900 font-semibold">
+                              {event.hindiTitle}
+                            </span>
+                            {isSacredWedding && (
+                              <span className="px-2.5 py-0.5 rounded-full bg-ruby-100 text-ruby-700 text-[10px] font-sans font-bold uppercase tracking-wider">
+                                Grand Finale
+                              </span>
+                            )}
+                          </div>
+                          <h4 className="font-serif text-xl sm:text-2xl font-bold text-ink-title leading-tight">
+                            {event.title}
+                          </h4>
+                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-sans text-ink-secondary pt-1">
+                            <span className="inline-flex items-center gap-1.5 font-semibold text-ruby-600">
+                              <Clock className="w-3.5 h-3.5" />
+                              <span>{event.time}</span>
+                            </span>
+                            <span className="inline-flex items-center gap-1.5">
+                              <MapPin className="w-3.5 h-3.5 text-gold-600" />
+                              <span>{event.venueName} ({event.venueTagline})</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          className="p-2 rounded-full hover:bg-paper-200/60 text-gold-700 transition-transform"
+                          aria-label={isExpanded ? 'Collapse event' : 'Expand event details'}
+                        >
+                          <ChevronDown
+                            className={`w-5 h-5 transition-transform duration-300 ${
+                              isExpanded ? 'rotate-180 text-ruby-600' : ''
+                            }`}
+                          />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Expandable Details Tray */}
+                    {isExpanded && (
+                      <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-gold-300/30 space-y-5 bg-paper-100/40">
+                        {/* Shloka if wedding */}
+                        {event.shloka && (
+                          <div className="p-3.5 rounded-xl bg-gold-50/60 border border-gold-300/40 text-center">
+                            <p className="font-hindi text-xs sm:text-sm text-burgundy-950 font-semibold leading-relaxed">
+                              {event.shloka}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* Note / Sentiment */}
+                        {event.note && (
+                          <p className="font-serif italic text-sm sm:text-base text-ink-primary leading-relaxed">
+                            &ldquo;{event.note}&rdquo;
+                          </p>
+                        )}
+
+                        {/* Itinerary Timeline */}
+                        {event.timeline && event.timeline.length > 0 && (
+                          <div className="space-y-2 pt-2">
+                            <span className="text-[11px] font-sans font-semibold tracking-widest uppercase text-gold-700 block">
+                              Ceremony Schedule
+                            </span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+                              {event.timeline.map((item, idx) => (
+                                <div
+                                  key={idx}
+                                  className="p-3 rounded-xl bg-paper-50 border border-gold-300/30 text-xs font-sans space-y-0.5 shadow-xs"
+                                >
+                                  <span className="font-semibold text-ruby-600 block">{item.time}</span>
+                                  <p className="font-semibold text-ink-title">{item.activity}</p>
+                                  <p className="text-ink-secondary text-[11px] leading-tight">{item.description}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Attire Guidance */}
+                        {event.attire && (
+                          <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gold-300/20">
+                            <div>
+                              <span className="text-[10px] font-sans font-semibold tracking-widest uppercase text-gold-700 block">
+                                Suggested Attire
+                              </span>
+                              <p className="font-serif italic text-sm text-ink-primary font-medium">
+                                {event.attire}
+                              </p>
+                            </div>
+
+                            {event.attirePalette && (
+                              <div className="flex items-center gap-1.5">
+                                {event.attirePalette.map((col, idx) => (
+                                  <span
+                                    key={idx}
+                                    title={col.name}
+                                    className="w-4 h-4 rounded-full border border-gold-400/40 shadow-xs inline-block"
+                                    style={{ backgroundColor: col.hex }}
+                                  />
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Action Buttons */}
+                        <div className="flex flex-wrap items-center gap-3 pt-2">
+                          <a
+                            href={event.googleMapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all hover:scale-105"
+                          >
+                            <Navigation className="w-3.5 h-3.5" />
+                            <span>Get Directions</span>
+                          </a>
+
+                          <a
+                            href={getGoogleCalendarUrl(event)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper-50 hover:bg-paper-100 text-ink-primary border border-gold-400/50 text-xs font-sans font-medium tracking-wider uppercase shadow-xs transition-all hover:scale-105"
+                          >
+                            <Calendar className="w-3.5 h-3.5 text-gold-600" />
+                            <span>Google Calendar</span>
+                          </a>
+
+                          <a
+                            href={`/api/calendar?event=${event.id}`}
+                            download={`${event.id}.ics`}
+                            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-transparent hover:bg-gold-50 text-gold-800 text-xs font-sans font-medium tracking-wider uppercase transition-colors"
+                          >
+                            <Download className="w-3.5 h-3.5" />
+                            <span>.ICS</span>
+                          </a>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+        )}
+
       </div>
+
     </section>
   );
 }

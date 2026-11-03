@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { 
   MapPin, 
   Navigation, 
   Calendar, 
-  Share2, 
   Copy, 
   Check, 
   Plane, 
@@ -14,17 +13,60 @@ import {
   SunMedium, 
   MessageCircle, 
   Sparkles, 
-  Compass, 
   Download,
-  Building2
+  Clock,
+  Compass
 } from 'lucide-react';
 import { WEDDING_DATA } from '@/data/weddingData';
+import { SectionHeading } from '@/components/ui';
+
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isPast: boolean;
+}
 
 export default function GuestExperience() {
   const [activeVenue, setActiveVenue] = useState<'bodhgaya' | 'noida'>('bodhgaya');
   const [copiedLink, setCopiedLink] = useState(false);
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    isPast: false,
+  });
 
-  const shareText = `🌸 *Mansi weds Abhinav — A Story in Bloom* 🌸\n\nWith great joy, our families invite you to celebrate our wedding ceremonies!\n\n✨ *The Promise Night:* 20 Oct 2026 (The Royal Palace Banquet, Noida)\n✨ *Mehandi & Sangeet:* 2 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n✨ *Haldi & Sacred Wedding:* 3 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n\nPlease view our itinerary and venue directions here:\n${typeof window !== 'undefined' ? window.location.href.split('#')[0] : 'https://mansiwedsabhinav.vercel.app'}`;
+  // Calculate live countdown to The Sacred Wedding (3 Dec 2026, 20:30 IST)
+  useEffect(() => {
+    const targetWedding = new Date('2026-12-03T20:30:00+05:30').getTime();
+
+    const calculate = () => {
+      const now = new Date().getTime();
+      const diff = targetWedding - now;
+
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true });
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((diff % (1000 * 60)) / 1000),
+        isPast: false,
+      });
+    };
+
+    calculate();
+    const interval = setInterval(calculate, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const shareText = `🌸 *Mansi weds Abhinav — A Story in Bloom* 🌸\n\nWith great joy, our families invite you to celebrate our wedding ceremonies!\n\n✨ *Mehandi & Sangeet:* 2 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n✨ *Haldi & Sacred Wedding:* 3 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n\nPlease view our wedding itinerary and venue directions here:\n${typeof window !== 'undefined' ? window.location.href.split('#')[0] : 'https://mansiwedsabhinav.vercel.app'}`;
 
   const handleWhatsAppShare = () => {
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
@@ -39,7 +81,7 @@ export default function GuestExperience() {
           text: shareText,
           url: window.location.href.split('#')[0],
         });
-      } catch (err) {
+      } catch {
         handleWhatsAppShare();
       }
     } else {
@@ -56,31 +98,84 @@ export default function GuestExperience() {
   };
 
   return (
-    <section id="travel" className="py-24 px-4 sm:px-6 relative overflow-hidden">
+    <section id="travel" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden bg-heritage-ivory/60">
       
-      {/* Header */}
-      <div className="max-w-4xl mx-auto text-center space-y-3 mb-16 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
-          Venues, Directions &amp; Travel
-        </h2>
+      {/* Chapter Six Heading */}
+      <SectionHeading
+        kicker="Chapter Six"
+        title="Join Us"
+        hindiTitle="॥ सस्नेह निमन्त्रणम् • यात्रा एवं दिशा-निर्देश ॥"
+        description="Everything you need to celebrate with us: verified venue maps, airport transit guides, and instant travel planning."
+        dividerVariant="flourish"
+      />
 
-        <p className="font-serif italic text-ink-secondary text-sm sm:text-base max-w-2xl mx-auto">
-          {WEDDING_DATA.invitationMessage}
-        </p>
+      {/* Wedding Countdown Banner */}
+      <div className="max-w-4xl mx-auto mb-12 relative z-10">
+        <div className="stationery-card p-5 sm:p-6 rounded-3xl border border-gold-400/40 shadow-stationery text-center bg-paper-50 space-y-3">
+          <div className="flex items-center justify-center gap-2 text-xs font-sans font-semibold tracking-widest uppercase text-gold-700">
+            <Clock className="w-3.5 h-3.5 text-ruby-600" />
+            <span>Countdown to The Sacred Wedding • Bodhgaya</span>
+          </div>
+
+          {!timeLeft.isPast ? (
+            <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-lg mx-auto pt-1">
+              <div className="p-2 sm:p-3 rounded-2xl bg-paper-100/90 border border-gold-300/40">
+                <span className="font-serif text-2xl sm:text-4xl font-bold text-ink-title block leading-none">
+                  {timeLeft.days}
+                </span>
+                <span className="text-[10px] sm:text-xs font-sans uppercase tracking-wider text-ink-secondary">
+                  Days
+                </span>
+              </div>
+              <div className="p-2 sm:p-3 rounded-2xl bg-paper-100/90 border border-gold-300/40">
+                <span className="font-serif text-2xl sm:text-4xl font-bold text-ink-title block leading-none">
+                  {timeLeft.hours}
+                </span>
+                <span className="text-[10px] sm:text-xs font-sans uppercase tracking-wider text-ink-secondary">
+                  Hours
+                </span>
+              </div>
+              <div className="p-2 sm:p-3 rounded-2xl bg-paper-100/90 border border-gold-300/40">
+                <span className="font-serif text-2xl sm:text-4xl font-bold text-ink-title block leading-none">
+                  {timeLeft.minutes}
+                </span>
+                <span className="text-[10px] sm:text-xs font-sans uppercase tracking-wider text-ink-secondary">
+                  Minutes
+                </span>
+              </div>
+              <div className="p-2 sm:p-3 rounded-2xl bg-paper-100/90 border border-gold-300/40">
+                <span className="font-serif text-2xl sm:text-4xl font-bold text-ruby-600 block leading-none">
+                  {timeLeft.seconds}
+                </span>
+                <span className="text-[10px] sm:text-xs font-sans uppercase tracking-wider text-ink-secondary">
+                  Seconds
+                </span>
+              </div>
+            </div>
+          ) : (
+            <p className="font-serif italic text-lg text-emerald-800">
+              The wedding celebrations are taking place! May God bless Abhinav &amp; Mansi!
+            </p>
+          )}
+
+          <p className="font-serif italic text-xs text-ink-secondary">
+            Thursday, 3rd December 2026 • 8:30 PM Onwards • Buddha Heritage Resort, Bodhgaya
+          </p>
+        </div>
       </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
         
-        {/* Left Column: Interactive Dual Venue Cards (7 Cols) */}
+        {/* Left Column: Interactive Venue Details (7 Cols) */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="stationery-card p-6 sm:p-10 rounded-3xl border border-gold-400/40 shadow-stationery-deep">
+          <div className="stationery-card p-6 sm:p-10 rounded-3xl border border-gold-400/40 shadow-stationery-deep bg-paper-50">
             
-            <div className="flex items-center justify-between border-b border-gold-300/30 pb-4 mb-6">
+            <div className="flex flex-wrap items-center justify-between border-b border-gold-300/30 pb-4 mb-6 gap-3">
               <div>
                 <span className="font-serif italic text-xs text-gold-700 font-semibold tracking-wider block">
-                  Canonical Wedding Locations
+                  Wedding Destination
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-ink-title">
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-ink-title">
                   {activeVenue === 'bodhgaya' ? 'Buddha Heritage Resort' : 'The Royal Palace Banquet'}
                 </h3>
               </div>
@@ -111,47 +206,44 @@ export default function GuestExperience() {
             </div>
 
             {activeVenue === 'bodhgaya' ? (
-              <div className="space-y-5 animate-fadeIn">
+              <div className="space-y-5">
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-gold-700 text-xs font-sans font-semibold uppercase tracking-wider">
-                    <MapPin className="w-4 h-4 text-ruby-600" />
+                  <div className="flex items-start gap-2 text-gold-800 text-xs sm:text-sm font-sans font-semibold">
+                    <MapPin className="w-4 h-4 text-ruby-600 flex-shrink-0 mt-0.5" />
                     <span>Fifty meter before Thai Temple, Opp. Maya Sarovar, Bodhgaya, Bihar 824231</span>
                   </div>
-                  <p className="text-sm font-sans text-ink-primary leading-relaxed">
-                    The spiritual and serene sanctuary of Bodhgaya serves as the sacred marriage venue for the Mehandi, Sangeet, Haldi, Ghruchari, Barat, and auspicious Wedding Ceremonies.
+                  <p className="text-xs sm:text-sm font-sans text-ink-primary leading-relaxed">
+                    The serene sanctuary of Bodhgaya serves as the main wedding venue for all ceremonies: Mehandi, Sangeet, Haldi, Ghruchari, Barat, and the Sacred Wedding Pheras.
                   </p>
                 </div>
 
                 {/* Celebrations Hosted Here */}
                 <div className="p-4 bg-paper-100/90 rounded-2xl border border-gold-300/40 space-y-2">
                   <span className="text-[11px] font-sans font-semibold tracking-wider uppercase text-ink-title block">
-                    Celebrations Hosted at this Venue:
+                    Ceremonies Hosted at this Venue:
                   </span>
-                  <div className="grid grid-cols-2 gap-2 text-xs font-sans text-ink-title">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-ink-title">
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
-                      <span>Mehandi (Dec 2, 11:00 AM)</span>
+                      <span>Mehandi (Dec 2 • 11:00 AM)</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
-                      <span>Sangeet (Dec 2, 07:00 PM)</span>
+                      <span>Sangeet (Dec 2 • 07:00 PM)</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
-                      <span>Haldi (Dec 3, 11:00 AM)</span>
+                      <span>Haldi (Dec 3 • 11:00 AM)</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
-                      <span>Wedding &amp; Barat (Dec 3, 07:00 PM)</span>
+                      <span>Ghruchari &amp; Barat (Dec 3 • 07:00 PM)</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 sm:col-span-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-ruby-600"></span>
+                      <strong className="text-ruby-700">The Sacred Wedding &amp; Varmala (Dec 3 • 08:30 PM)</strong>
                     </div>
                   </div>
-                </div>
-
-                <div className="p-4 bg-paper-50 rounded-2xl border border-paper-300 text-xs space-y-1.5">
-                  <span className="font-semibold block text-ink-title">Landmark &amp; Arrival:</span>
-                  <p className="text-ink-secondary text-xs leading-relaxed font-sans">
-                    Directly opposite the scenic Maya Sarovar lake, 50 meters before the Royal Thai Monastery. Ample valet parking and round-the-clock reception available for all honored guests.
-                  </p>
                 </div>
 
                 {/* Action Buttons */}
@@ -166,7 +258,7 @@ export default function GuestExperience() {
                     <span>Open in Google Maps</span>
                   </a>
                   <a
-                    href="https://maps.apple.com/?q=Buddha+Heritage+Resort+Bodhgaya"
+                    href="https://maps.apple.com/?q=Buddha+Heritage+Resort+Bodhgaya+Bihar"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-3 px-5 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase transition-all"
@@ -176,25 +268,15 @@ export default function GuestExperience() {
                 </div>
               </div>
             ) : (
-              <div className="space-y-5 animate-fadeIn">
+              <div className="space-y-5">
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-gold-700 text-xs font-sans font-semibold uppercase tracking-wider">
-                    <MapPin className="w-4 h-4 text-ruby-600" />
+                  <div className="flex items-start gap-2 text-gold-800 text-xs sm:text-sm font-sans font-semibold">
+                    <MapPin className="w-4 h-4 text-ruby-600 flex-shrink-0 mt-0.5" />
                     <span>Near JBM Global School, Block-B, Sector 132, Noida, Uttar Pradesh 201304</span>
                   </div>
-                  <p className="text-sm font-sans text-ink-primary leading-relaxed">
-                    The Royal Palace Banquet (By KhanaK) hosted The Promise Night — the joyous engagement and ring ceremony celebrated with family blessings and toasts.
+                  <p className="text-xs sm:text-sm font-sans text-ink-primary leading-relaxed">
+                    The Promise Night and engagement ring ceremony was celebrated in Noida with the gracious presence of elders and loved ones.
                   </p>
-                </div>
-
-                <div className="p-4 bg-paper-100/90 rounded-2xl border border-gold-300/40 space-y-2">
-                  <span className="text-[11px] font-sans font-semibold tracking-wider uppercase text-ink-title block">
-                    Celebration Hosted at this Venue:
-                  </span>
-                  <div className="text-xs font-sans text-ink-title space-y-1">
-                    <p className="font-semibold">The Promise Night (Engagement Ceremony)</p>
-                    <p className="text-ink-secondary text-[11px]">Tuesday, 20 October 2026 • Dinner: 7:00 PM Onwards • Ring Ceremony: 8:00 PM</p>
-                  </div>
                 </div>
 
                 <div className="p-4 bg-paper-50 rounded-2xl border border-paper-300 text-xs space-y-1.5">
@@ -228,11 +310,11 @@ export default function GuestExperience() {
           </div>
         </div>
 
-        {/* Right Column: Travel Concierge & WhatsApp Share (5 Cols) */}
+        {/* Right Column: Transit & WhatsApp Share (5 Cols) */}
         <div className="lg:col-span-5 space-y-6">
           
           {/* Travel & Connectivity Guide */}
-          <div className="stationery-card p-6 sm:p-7 rounded-3xl border border-gold-400/40 shadow-stationery space-y-4">
+          <div className="stationery-card p-6 sm:p-7 rounded-3xl border border-gold-400/40 shadow-stationery space-y-4 bg-paper-50">
             <h4 className="font-serif text-lg font-bold text-ink-title border-b border-gold-300/30 pb-2.5 flex items-center gap-2">
               <Plane className="w-4 h-4 text-gold-700" />
               <span>Travel &amp; Transit Guide</span>
