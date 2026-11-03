@@ -17,15 +17,22 @@
   --font-hindi: var(--font-tiro-hindi);
   --font-hindi-sans: var(--font-mukta);
 
-  /* Royal Jewel Tone Design Tokens */
+  /* Royal Jewel & Heritage Heirloom Design Tokens */
   --color-primary-dark: #4A0E4E;
   --color-primary-cta: #B31252;
   --color-secondary-accent: #0C5A48;
   --color-metallic-gold: #C59E59;
   --color-surface-card: #FAF1EE;
-  --color-page-bg: #FDFAF7;
+  --color-page-bg: #FAF6F0;
   --color-dark-text: #1F1024;
   --color-light-text: #FFFFFF;
+
+  /* Heritage Creative Direction: Warm Ivory, Champagne, Antique Gold, Muted Burgundy, Dusty Blush */
+  --color-ivory: #FAF6F0;
+  --color-champagne: #F5EBE1;
+  --color-burgundy-muted: #6B1D2F;
+  --color-dusty-blush: #DCAEAF;
+  --color-antique-gold: #C59E59;
 
   --color-paper: #FDFAF7;
   --color-paper-card: #FAF1EE;

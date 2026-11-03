@@ -71,6 +71,23 @@ const config: Config = {
             50: "#FDFAF7",
           },
         },
+        // Step 1: Heritage Heirloom Palette ("A Story in Bloom — A Divine Beginning")
+        heritage: {
+          ivory: "#FAF6F0",       // Warm Ivory (Primary background)
+          champagne: "#F5EBE1",   // Warm Champagne (Elevated surfaces & card matting)
+          pearl: "#FDFBF7",       // Clean Pearl White
+          gold: "#C59E59",        // Antique Gold
+          'gold-light': "#DFC18A",// Subtle gold accent
+          'gold-dark': "#8E6F39", // Deep engraved gold
+          burgundy: "#6B1D2F",    // Muted Heritage Burgundy
+          'burgundy-deep': "#4A0E4E", // Deep Regal Plum
+          ruby: "#B31252",        // Rich Ruby Accent
+          blush: "#DCAEAF",       // Dusty Blush
+          'blush-soft': "#FAF1EE",// Rosewater Parchment
+          emerald: "#0C5A48",     // Bodhgaya Emerald
+          ink: "#1F1024",         // Deep Plum-Black Ink
+          'ink-muted': "#5C4957", // Editorial secondary ink
+        },
         // Standalone Emerald Green (Secondary Accent / Badges #0C5A48)
         emerald: {
           50: "#F1FAF6",
@@ -122,7 +139,7 @@ const config: Config = {
           muted: "#6B3B6F",
           faint: "#9B789E",
         },
-        // Semantic Royal Jewel Named Tokens
+        // Semantic Royal Jewel & Heritage Named Tokens
         'regal-plum': "#4A0E4E",
         'ruby-magenta': "#B31252",
         'emerald-green': "#0C5A48",
@@ -130,6 +147,10 @@ const config: Config = {
         'blush-ivory': "#FAF1EE",
         'pearl-white': "#FDFAF7",
         'plum-black': "#1F1024",
+        'warm-ivory': "#FAF6F0",
+        'warm-champagne': "#F5EBE1",
+        'muted-burgundy': "#6B1D2F",
+        'dusty-blush': "#DCAEAF",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "'Cormorant Garamond'", "'Tiro Devanagari Hindi'", "Georgia", "serif"],
