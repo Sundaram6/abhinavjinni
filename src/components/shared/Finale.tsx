@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Heart, Sparkles, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { WEDDING_DATA } from '@/data/weddingData';
+import { OrnamentalDivider } from '@/components/ui';
 
 export default function Finale() {
   const scrollToTop = () => {
@@ -11,19 +12,8 @@ export default function Finale() {
   };
 
   return (
-    <footer className="relative pt-24 pb-16 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-paper-100 to-paper-200/90 text-center border-t border-gold-400/35">
+    <footer className="relative pt-20 pb-16 px-4 sm:px-6 overflow-hidden border-t border-gold-400/30 text-center">
       
-      {/* Background Ganesh Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 sm:w-96 h-80 sm:h-96 pointer-events-none opacity-[0.04]">
-        <Image
-          src="/assets/ganesh_art.png"
-          alt=""
-          fill
-          sizes="384px"
-          className="object-contain"
-        />
-      </div>
-
       <div className="max-w-4xl mx-auto relative z-10 space-y-10">
         
         {/* Top Ganesh Emblem & Sanskrit Shloka */}
@@ -49,7 +39,7 @@ export default function Finale() {
         </div>
 
         {/* Both Families Greeting & Blessings */}
-        <div className="stationery-card p-8 sm:p-12 rounded-3xl border border-gold-400/40 shadow-stationery max-w-3xl mx-auto">
+        <div className="stationery-card p-6 sm:p-10 rounded-3xl border border-gold-400/35 shadow-stationery max-w-3xl mx-auto bg-paper-50">
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
             <div className="space-y-1">
@@ -79,43 +69,35 @@ export default function Finale() {
         </div>
 
         {/* Monogram Seal & Farewell */}
-        <div className="space-y-3 pt-4">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-burgundy-900 border-2 border-gold-400 text-paper-50 font-serif font-bold text-base shadow-md">
+        <div className="space-y-3 pt-2">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-burgundy-900 border-2 border-gold-400 text-paper-50 font-serif font-bold text-sm shadow-md">
             A &amp; M
           </div>
           <h3 className="font-serif text-2xl font-bold text-ink-title">
             Abhinav &amp; Mansi
           </h3>
-          <p className="font-serif italic text-2xl text-gold-700">
+          <p className="font-serif italic text-xl text-ruby-600">
             A Story in Bloom • 2026
           </p>
-          <p className="text-xs font-sans text-ink-muted leading-relaxed">
+          <div className="py-1">
+            <OrnamentalDivider variant="lotus" className="mx-auto" />
+          </div>
+          <p className="text-xs font-sans text-ink-muted leading-relaxed max-w-md mx-auto">
             Designed with devotion, love, and sacred joy for all our honored guests.
           </p>
         </div>
 
         {/* Back to top button */}
-        <div className="pt-6">
+        <div className="pt-4">
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all hover:scale-105"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all hover:scale-102"
             aria-label="Back to top of wedding website"
           >
             <ArrowUp className="w-3.5 h-3.5 text-gold-700" />
             <span>Return to Top</span>
           </button>
         </div>
-      </div>
-
-      {/* Bottom Botanical Floral Artwork Border */}
-      <div className="relative w-full h-24 sm:h-36 mt-12 opacity-85 pointer-events-none">
-        <Image
-          src="/assets/floral_border.png"
-          alt="Botanical floral border"
-          fill
-          sizes="100vw"
-          className="object-cover object-top"
-        />
       </div>
     </footer>
   );

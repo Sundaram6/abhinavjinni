@@ -7,7 +7,6 @@ import Hero from '@/components/hero/Hero';
 import TwoSoulsSection from '@/components/story/TwoSoulsSection';
 import ThePromiseSection from '@/components/story/ThePromiseSection';
 import OurFamiliesSection from '@/components/story/OurFamiliesSection';
-import PetalCanvas from '@/components/shared/PetalCanvas';
 import WeddingCelebrations from '@/components/events/WeddingCelebrations';
 import PhotoGallery from '@/components/gallery/PhotoGallery';
 import GuestExperience from '@/components/guest/GuestExperience';
@@ -55,10 +54,7 @@ export default function WeddingPage() {
       {/* Floating Ambient Sitar/Shehnai Audio Player */}
       <AudioPlayer />
 
-      {/* 2. Floating Petal Canvas (Hero & Background Animation) */}
-      <PetalCanvas />
-
-      {/* 3. Luxury Stationery Navbar */}
+      {/* 2. Luxury Stationery Navbar */}
       <Navbar onReopenInvitation={handleReopenInvitation} />
 
       {/* 4. Hero Section: Chapter One — A Beautiful Beginning */}

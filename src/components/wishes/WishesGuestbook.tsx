@@ -122,7 +122,7 @@ export default function WishesGuestbook() {
   });
 
   return (
-    <section id="wishes" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden bg-heritage-ivory/60">
+    <section id="wishes" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
       {/* Chapter Seven Section Heading */}
       <SectionHeading
@@ -130,25 +130,15 @@ export default function WishesGuestbook() {
         title="Blessings & Forever"
         hindiTitle="॥ शुभाशीर्वादः • सप्रेम पाणिग्रहण ॥"
         description="Your loving presence and prayers are the greatest gift as we begin this sacred union."
-        dividerVariant="flourish"
+        dividerVariant="lotus"
       />
 
       {/* Featured Candid Couple Heirloom Card */}
       <div className="max-w-5xl mx-auto mb-16 sm:mb-20 relative z-10">
-        <div className="stationery-card p-6 sm:p-10 rounded-3xl border border-gold-400/40 shadow-stationery bg-paper-50 relative overflow-hidden">
+        <div className="stationery-card p-6 sm:p-10 rounded-3xl border border-gold-400/35 shadow-stationery bg-paper-50 relative overflow-hidden">
           
-          {/* Subtle floral watermark */}
-          <div className="absolute top-0 right-0 w-64 h-64 opacity-5 pointer-events-none">
-            <Image
-              src="/assets/floral_border.png"
-              alt=""
-              fill
-              className="object-cover"
-            />
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            {/* Left: Candid Photo */}
+            {/* Left: Candid Photo in Coordinated Royal Frame */}
             <div className="md:col-span-5 relative">
               <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-inner border border-gold-400/35 bg-burgundy-950/10 group">
                 <Image
@@ -156,12 +146,16 @@ export default function WishesGuestbook() {
                   alt="Abhinav & Mansi cutting their engagement cake"
                   fill
                   sizes="(max-width: 768px) 100vw, 450px"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter saturate-105"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-102"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-burgundy-950/60 via-transparent to-transparent pointer-events-none"></div>
                 
-                {/* Gold Archival Hairline */}
-                <div className="absolute inset-2.5 sm:inset-3 border border-gold-400/30 rounded-xl pointer-events-none"></div>
+                {/* Gold Archival Inset & Temple Corners */}
+                <div className="absolute inset-2 sm:inset-2.5 border border-gold-400/30 rounded-xl pointer-events-none"></div>
+                <div className="absolute top-3 left-3 w-3 h-3 border-t border-l border-gold-400/70 pointer-events-none"></div>
+                <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-gold-400/70 pointer-events-none"></div>
+                <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-gold-400/70 pointer-events-none"></div>
+                <div className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-gold-400/70 pointer-events-none"></div>
 
                 <div className="absolute bottom-3 inset-x-3 text-center text-paper-50 space-y-0.5 z-20">
                   <span className="font-serif italic text-xs text-gold-200">
@@ -176,7 +170,7 @@ export default function WishesGuestbook() {
 
             {/* Right: Couple Message & Gratitude */}
             <div className="md:col-span-7 space-y-4 text-center md:text-left">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-ruby-700 border border-ruby-200 text-xs font-sans font-semibold tracking-wider uppercase">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-paper-100 text-ruby-700 border border-gold-300/40 text-xs font-sans font-semibold tracking-wider uppercase">
                 <Sparkles className="w-3.5 h-3.5 text-ruby-600" />
                 <span>With Heartfelt Gratitude</span>
               </div>

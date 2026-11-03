@@ -10,7 +10,7 @@ interface SectionHeadingProps {
   shloka?: string;
   description?: string;
   align?: 'center' | 'left';
-  dividerVariant?: 'flourish' | 'minimal' | 'swirl' | 'none';
+  dividerVariant?: 'lotus' | 'minimal' | 'mandala' | 'none';
   className?: string;
 }
 
@@ -21,7 +21,7 @@ export default function SectionHeading({
   shloka,
   description,
   align = 'center',
-  dividerVariant = 'flourish',
+  dividerVariant = 'lotus',
   className = '',
 }: SectionHeadingProps) {
   const isCenter = align === 'center';
@@ -34,23 +34,25 @@ export default function SectionHeading({
     >
       {/* 1. Kicker / Chapter Tag */}
       {kicker && (
-        <div className={`flex items-center gap-3 ${isCenter ? 'justify-center' : 'justify-start'}`}>
-          <span className="h-[1px] w-6 sm:w-10 bg-gold-400/50"></span>
-          <span className="font-serif italic text-xs sm:text-sm tracking-wider text-gold-700 font-semibold uppercase">
+        <div className={`flex items-center gap-2.5 ${isCenter ? 'justify-center' : 'justify-start'}`}>
+          <span className="h-[1px] w-6 sm:w-8 bg-gold-400/50"></span>
+          <span className="w-1 h-1 rotate-45 bg-gold-600/80"></span>
+          <span className="font-serif italic text-xs tracking-widest text-gold-700 font-semibold uppercase px-1">
             {kicker}
           </span>
-          <span className="h-[1px] w-6 sm:w-10 bg-gold-400/50"></span>
+          <span className="w-1 h-1 rotate-45 bg-gold-600/80"></span>
+          <span className="h-[1px] w-6 sm:w-8 bg-gold-400/50"></span>
         </div>
       )}
 
       {/* 2. Primary English Title */}
-      <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ink-title font-bold tracking-tight leading-tight">
+      <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink-title font-bold tracking-tight leading-tight">
         {title}
       </h2>
 
       {/* 3. Hindi Title / Traditional Expression */}
       {hindiTitle && (
-        <p className="font-hindi text-sm sm:text-base text-gold-700 font-semibold tracking-normal leading-relaxed">
+        <p className="font-hindi text-sm sm:text-base text-gold-800 font-semibold tracking-normal leading-relaxed">
           {hindiTitle}
         </p>
       )}
@@ -66,12 +68,12 @@ export default function SectionHeading({
 
       {/* 5. Editorial Supporting Description */}
       {description && (
-        <p className="font-sans text-xs sm:text-sm md:text-base text-ink-secondary max-w-2xl mx-auto leading-relaxed pt-1">
+        <p className="font-sans text-xs sm:text-sm md:text-base text-ink-secondary max-w-2xl mx-auto leading-relaxed pt-0.5">
           {description}
         </p>
       )}
 
-      {/* 6. Ornamental Divider */}
+      {/* 6. Unified Traditional Lotus Divider */}
       {dividerVariant !== 'none' && (
         <div className={`pt-2 ${isCenter ? 'flex justify-center' : 'flex justify-start'}`}>
           <OrnamentalDivider variant={dividerVariant} />

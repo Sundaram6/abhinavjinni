@@ -18,7 +18,7 @@ import {
   Compass
 } from 'lucide-react';
 import { WEDDING_DATA } from '@/data/weddingData';
-import { SectionHeading } from '@/components/ui';
+import { SectionHeading, OrnamentalDivider } from '@/components/ui';
 
 interface TimeLeft {
   days: number;
@@ -98,7 +98,7 @@ export default function GuestExperience() {
   };
 
   return (
-    <section id="travel" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden bg-heritage-ivory/60">
+    <section id="travel" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
       {/* Chapter Six Heading */}
       <SectionHeading
@@ -106,7 +106,7 @@ export default function GuestExperience() {
         title="Join Us"
         hindiTitle="॥ सस्नेह निमन्त्रणम् • यात्रा एवं दिशा-निर्देश ॥"
         description="Everything you need to celebrate with us: verified venue maps, airport transit guides, and instant travel planning."
-        dividerVariant="flourish"
+        dividerVariant="lotus"
       />
 
       {/* Wedding Countdown Banner */}
@@ -406,6 +406,12 @@ export default function GuestExperience() {
         </div>
 
       </div>
+
+      {/* Central Botanical Transition to Chapter Seven */}
+      <div className="mt-16 text-center">
+        <OrnamentalDivider variant="lotus" width="w-48 sm:w-64" className="mx-auto" />
+      </div>
+
     </section>
   );
 }

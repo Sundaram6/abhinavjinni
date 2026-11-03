@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { Calendar, MapPin, ChevronDown, Sparkles } from 'lucide-react';
+import { Calendar, MapPin, ChevronDown } from 'lucide-react';
 import { WEDDING_DATA } from '@/data/weddingData';
+import { OrnamentalDivider, RoyalPhotoFrame } from '@/components/ui';
 
 interface TimeLeft {
   days: number;
@@ -14,7 +14,6 @@ interface TimeLeft {
 }
 
 export default function Hero() {
-  const [selectedEventId, setSelectedEventId] = useState<string>('wedding');
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -23,12 +22,11 @@ export default function Hero() {
     isPast: false,
   });
 
-  const currentTargetEvent =
-    WEDDING_DATA.events.find(e => e.id === selectedEventId) || WEDDING_DATA.events[5];
+  const weddingDateIso = WEDDING_DATA.dates.wedding;
 
   useEffect(() => {
     const calculateTime = () => {
-      const targetTime = new Date(currentTargetEvent.isoDate).getTime();
+      const targetTime = new Date(weddingDateIso).getTime();
       const now = new Date().getTime();
       const difference = targetTime - now;
 
@@ -48,42 +46,25 @@ export default function Hero() {
     calculateTime();
     const timer = setInterval(calculateTime, 1000);
     return () => clearInterval(timer);
-  }, [currentTargetEvent.isoDate]);
+  }, [weddingDateIso]);
 
   return (
-    <section className="relative min-h-[95vh] flex flex-col items-center justify-between pt-16 pb-16 px-4 sm:px-6 overflow-hidden">
+    <section className="relative min-h-[92vh] flex flex-col items-center justify-between pt-20 sm:pt-24 pb-16 px-4 sm:px-6 overflow-hidden">
       
-      {/* Decorative Archival Corner Florals from Scanned Invitation */}
-      <div className="absolute top-0 left-0 w-40 sm:w-72 h-40 sm:h-72 pointer-events-none opacity-45 -translate-x-6 -translate-y-6">
-        <Image
-          src="/assets/floral_corner_left.png"
-          alt=""
-          fill
-          sizes="(max-width: 640px) 160px, 288px"
-          className="object-contain"
-          priority
-        />
-      </div>
-      <div className="absolute top-0 right-0 w-40 sm:w-72 h-40 sm:h-72 pointer-events-none opacity-45 translate-x-6 -translate-y-6">
-        <Image
-          src="/assets/floral_corner_right.png"
-          alt=""
-          fill
-          sizes="(max-width: 640px) 160px, 288px"
-          className="object-contain"
-          priority
-        />
-      </div>
-
-      {/* Chapter Marker & Header Inscription */}
-      <div className="text-center space-y-1.5 relative z-10 max-w-2xl mx-auto pt-6">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-paper-100/90 border border-gold-400/40 text-gold-700 font-serif italic text-xs font-semibold tracking-wider uppercase shadow-sm">
-          <Sparkles className="w-3 h-3 text-gold-600" />
-          <span>Chapter One • A Beautiful Beginning</span>
-          <Sparkles className="w-3 h-3 text-gold-600" />
+      {/* Chapter Marker & Sacred Inscription */}
+      <div className="text-center space-y-2 relative z-10 max-w-2xl mx-auto pt-4">
+        {/* Unified Kicker */}
+        <div className="flex items-center justify-center gap-2.5">
+          <span className="h-[1px] w-6 sm:w-10 bg-gold-400/50"></span>
+          <span className="w-1 h-1 rotate-45 bg-gold-600/80"></span>
+          <span className="font-serif italic text-xs tracking-widest text-gold-700 font-semibold uppercase px-1">
+            Chapter One • A Beautiful Beginning
+          </span>
+          <span className="w-1 h-1 rotate-45 bg-gold-600/80"></span>
+          <span className="h-[1px] w-6 sm:w-10 bg-gold-400/50"></span>
         </div>
 
-        <p className="font-hindi text-burgundy-900 text-sm sm:text-base font-semibold tracking-normal leading-relaxed pt-1">
+        <p className="font-hindi text-gold-800 text-sm sm:text-base font-semibold tracking-normal leading-relaxed pt-1">
           ॥ श्री गणेशाय नमः ॥
         </p>
         <p className="font-serif italic text-ink-secondary text-xs sm:text-sm">
@@ -92,18 +73,17 @@ export default function Hero() {
       </div>
 
       {/* Main Couple Headline */}
-      <div className="text-center relative z-10 my-4 sm:my-6 max-w-5xl mx-auto space-y-3">
-        <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-ink-title font-bold tracking-tight leading-none drop-shadow-sm">
-          Abhinav <span className="font-serif italic text-gold-600 font-normal text-4xl sm:text-6xl md:text-7xl lg:text-8xl mx-1 sm:mx-3">&amp;</span> Mansi
+      <div className="text-center relative z-10 my-4 sm:my-6 max-w-4xl mx-auto space-y-3">
+        <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl text-ink-title font-bold tracking-tight leading-none">
+          Abhinav <span className="font-serif italic text-gold-600 font-normal text-4xl sm:text-6xl md:text-7xl mx-1 sm:mx-3">&amp;</span> Mansi
         </h1>
 
-        {/* Romantic Editorial Tagline */}
-        <div className="flex items-center justify-center gap-3 pt-1">
-          <span className="h-[1px] w-8 sm:w-20 bg-gradient-to-r from-transparent to-gold-400"></span>
-          <span className="font-serif italic text-2xl sm:text-3xl md:text-4xl text-ruby-600">
+        {/* Romantic Editorial Tagline & Sacred Lotus Divider */}
+        <div className="pt-1 pb-1">
+          <p className="font-serif italic text-2xl sm:text-3xl text-ruby-600 mb-2">
             A Story in Bloom
-          </span>
-          <span className="h-[1px] w-8 sm:w-20 bg-gradient-to-l from-transparent to-gold-400"></span>
+          </p>
+          <OrnamentalDivider variant="lotus" className="mx-auto" />
         </div>
 
         <p className="font-serif text-ink-primary text-sm sm:text-base md:text-lg max-w-xl mx-auto pt-1 leading-relaxed">
@@ -113,41 +93,20 @@ export default function Hero() {
 
       {/* Exceptional Couple Photograph Framing */}
       <div className="relative z-10 w-full max-w-3xl mx-auto my-4 sm:my-6">
-        <div className="stationery-card p-4 sm:p-7 rounded-3xl border-2 border-gold-400/40 shadow-stationery-deep bg-paper-50 overflow-hidden">
-          
-          {/* Inner Golden Filigree Accent */}
-          <div className="absolute inset-2 sm:inset-3 border border-gold-400/25 rounded-2xl pointer-events-none z-20"></div>
-          <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-gold-500/50 pointer-events-none z-20"></div>
-          <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-gold-500/50 pointer-events-none z-20"></div>
-          <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-gold-500/50 pointer-events-none z-20"></div>
-          <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-gold-500/50 pointer-events-none z-20"></div>
-
-          {/* Central Image Canvas: Authentic Couple Photograph */}
-          <div className="relative aspect-[3/2] w-full rounded-2xl overflow-hidden bg-burgundy-950/20 shadow-inner">
-            <Image
-              src="/assets/photos/couple_main.jpg"
-              alt="Abhinav & Mansi looking lovingly at each other"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 768px"
-              className="object-cover object-top filter saturate-105"
-            />
-            {/* Subtle Vignette for Archival Tone */}
-            <div className="absolute inset-0 bg-gradient-to-t from-burgundy-950/75 via-transparent to-transparent"></div>
-
-            {/* Bottom Inscription Plaque */}
-            <div className="absolute bottom-4 inset-x-4 z-20 text-center text-paper-50 space-y-0.5">
-              <h3 className="font-serif text-lg sm:text-2xl font-bold tracking-wide drop-shadow text-gold-100">
-                Abhinav &amp; Mansi
-              </h3>
-              <p className="font-serif italic text-xs sm:text-sm text-paper-200/90 drop-shadow">
-                Under golden chandeliers, two hearts unite into one eternal bond.
-              </p>
-            </div>
-          </div>
-
+        <RoyalPhotoFrame
+          src="/assets/photos/couple_main.jpg"
+          alt="Abhinav & Mansi looking lovingly at each other"
+          aspectRatioClass="aspect-[3/2]"
+          objectPosition="object-top"
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 768px"
+          overlayCaption={{
+            title: 'Abhinav & Mansi',
+            subtitle: 'Under golden chandeliers, two hearts unite into one eternal bond.',
+          }}
+        >
           {/* Verified Date & Location Badge Plaque */}
-          <div className="mt-4 pt-3 border-t border-gold-300/35 grid grid-cols-1 sm:grid-cols-2 gap-3 text-center sm:text-left text-xs font-sans">
+          <div className="pt-2 border-t border-gold-300/35 grid grid-cols-1 sm:grid-cols-2 gap-3 text-center sm:text-left text-xs font-sans">
             <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-paper-100/80 border border-gold-300/40">
               <Calendar className="w-4 h-4 text-ruby-600 flex-shrink-0" />
               <div>
@@ -164,66 +123,31 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
-        </div>
+        </RoyalPhotoFrame>
       </div>
 
-      {/* Dual Core Actions & Interactive Countdown */}
+      {/* Dual Core Actions & Countdown */}
       <div className="relative z-10 w-full max-w-xl mx-auto text-center space-y-4 pt-2">
         
         {/* Core Actions: View Celebrations & Get Directions */}
         <div className="flex flex-wrap items-center justify-center gap-3">
           <a
             href="#celebrations"
-            className="px-6 py-3 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-md hover:shadow-lg transition-all hover:scale-105 border border-gold-400/40"
+            className="px-6 py-3 rounded-full bg-ruby-600 hover:bg-ruby-700 text-white font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-md hover:shadow-lg transition-all hover:scale-102 border border-gold-400/40"
           >
             View Celebrations
           </a>
           <a
             href="#travel"
-            className="px-6 py-3 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-sm border border-gold-400/40 transition-all hover:scale-105"
+            className="px-6 py-3 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary font-sans text-xs sm:text-sm font-semibold tracking-wider uppercase shadow-sm border border-gold-400/40 transition-all hover:scale-102"
           >
             Get Directions
           </a>
         </div>
 
-        {/* Celebration selector tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-sans pt-2">
-          <button
-            onClick={() => setSelectedEventId('wedding')}
-            className={`px-3 py-1 rounded-full border transition-all ${
-              selectedEventId === 'wedding'
-                ? 'bg-ruby-600 text-white border-gold-400 font-medium shadow-sm'
-                : 'bg-paper-100/80 text-ink-primary border-gold-300/40 hover:bg-paper-200'
-            }`}
-          >
-            The Sacred Wedding (Dec 3)
-          </button>
-          <button
-            onClick={() => setSelectedEventId('sangeet')}
-            className={`px-3 py-1 rounded-full border transition-all ${
-              selectedEventId === 'sangeet'
-                ? 'bg-ruby-600 text-white border-gold-400 font-medium shadow-sm'
-                : 'bg-paper-100/80 text-ink-primary border-gold-300/40 hover:bg-paper-200'
-            }`}
-          >
-            Sangeet &amp; Mehandi (Dec 2)
-          </button>
-          <button
-            onClick={() => setSelectedEventId('promise-night')}
-            className={`px-3 py-1 rounded-full border transition-all ${
-              selectedEventId === 'promise-night'
-                ? 'bg-ruby-600 text-white border-gold-400 font-medium shadow-sm'
-                : 'bg-paper-100/80 text-ink-primary border-gold-300/40 hover:bg-paper-200'
-            }`}
-          >
-            The Promise Night (Oct 20)
-          </button>
-        </div>
-
-        {/* Target celebration title */}
-        <p className="font-sans text-xs sm:text-sm text-ink-primary font-medium">
-          Counting down to <span className="font-serif font-bold text-ruby-600">{currentTargetEvent.title}</span> ({currentTargetEvent.dateString})
+        {/* Target Celebration Title */}
+        <p className="font-sans text-xs sm:text-sm text-ink-primary font-medium pt-1">
+          Counting down to <span className="font-serif font-bold text-ruby-600">The Sacred Wedding</span> (3rd December 2026)
         </p>
 
         {/* Countdown Digit Boxes */}
@@ -231,7 +155,7 @@ export default function Hero() {
           <div className="p-4 rounded-xl bg-paper-100/90 border border-gold-400/40 text-ink-title font-sans">
             <p className="text-base font-semibold font-serif">This celebration has joyfully taken place!</p>
             <p className="text-xs text-ink-secondary mt-1">
-              Cherishing the memories and looking forward to the sacred wedding ceremonies in Bodhgaya.
+              Cherishing the memories of the sacred wedding ceremonies in Bodhgaya.
             </p>
           </div>
         ) : (

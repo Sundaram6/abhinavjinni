@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { Sparkles, X, ChevronLeft, ChevronRight, Maximize2, Download, Image as ImageIcon } from 'lucide-react';
 import { WEDDING_DATA } from '@/data/weddingData';
+import { SectionHeading, OrnamentalDivider } from '@/components/ui';
 
 export default function PhotoGallery() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -71,34 +72,31 @@ export default function PhotoGallery() {
   };
 
   return (
-    <section id="gallery" className="py-24 px-4 sm:px-6 relative overflow-hidden">
+    <section id="gallery" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
-      {/* Header */}
-      <div className="max-w-4xl mx-auto text-center space-y-3 mb-12 relative z-10">
-        <h2 className="font-serif text-3xl sm:text-5xl text-ink-title font-bold tracking-tight">
-          Stationery &amp; Photo Album
-        </h2>
+      {/* Unified Section Heading */}
+      <SectionHeading
+        title="Stationery & Photo Album"
+        hindiTitle="॥ स्मृति चित्रावली • राजसी कलाकृति ॥"
+        description="An editorial showcase of hand-crafted invitation suites, botanical motifs, and cherished moments."
+        dividerVariant="lotus"
+      />
 
-        <p className="font-serif italic text-ink-secondary text-sm sm:text-base max-w-xl mx-auto">
-          An editorial showcase of hand-crafted invitation suites, botanical motifs, and cherished moments.
-        </p>
-
-        {/* Categories Bar */}
-        <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
-                activeCategory === cat
-                  ? 'bg-ruby-600 text-white border-gold-400 shadow-sm font-semibold scale-105'
-                  : 'bg-paper-100 text-ink-primary border border-gold-400/35 hover:bg-paper-200 font-medium'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      {/* Categories Bar */}
+      <div className="flex flex-wrap items-center justify-center gap-2 mb-12 relative z-10">
+        {categories.map(cat => (
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
+              activeCategory === cat
+                ? 'bg-ruby-600 text-white border-gold-400 shadow-sm font-semibold'
+                : 'bg-paper-100 text-ink-primary border border-gold-400/35 hover:bg-paper-200 font-medium'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
 
       {/* Masonry / Responsive Grid */}
@@ -138,6 +136,11 @@ export default function PhotoGallery() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Central Botanical Transition to Venues & Travel */}
+      <div className="mt-16 text-center">
+        <OrnamentalDivider variant="lotus" width="w-48 sm:w-64" className="mx-auto" />
       </div>
 
       {/* Fullscreen Lightbox Modal */}

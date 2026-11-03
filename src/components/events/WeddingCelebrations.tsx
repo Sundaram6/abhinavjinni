@@ -16,7 +16,7 @@ import {
   Crown
 } from 'lucide-react';
 import { WEDDING_DATA, EventDetail } from '@/data/weddingData';
-import { SectionHeading } from '@/components/ui';
+import { SectionHeading, OrnamentalDivider } from '@/components/ui';
 
 // Custom Ceremony Emblems / Line-art Icons
 function CeremonyEmblem({ id }: { id: string }) {
@@ -85,7 +85,7 @@ export default function WeddingCelebrations() {
   };
 
   return (
-    <section id="celebrations" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden bg-paper-100/50">
+    <section id="celebrations" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
       {/* Chapter Five Heading */}
       <SectionHeading
@@ -93,7 +93,7 @@ export default function WeddingCelebrations() {
         title="The Celebrations"
         hindiTitle="॥ मङ्गल विवाहोत्सव कार्यक्रम • बोधगया ॥"
         description="A sacred two-day celebration of heritage, music, vibrant rituals, and eternal vows under the Bodhi sky."
-        dividerVariant="flourish"
+        dividerVariant="lotus"
       />
 
       {/* Global Day Filter & Calendar Action Bar */}
@@ -517,6 +517,11 @@ export default function WeddingCelebrations() {
           </div>
         )}
 
+      </div>
+
+      {/* Central Botanical Transition to Gallery */}
+      <div className="mt-16 text-center">
+        <OrnamentalDivider variant="lotus" width="w-48 sm:w-64" className="mx-auto" />
       </div>
 
     </section>
