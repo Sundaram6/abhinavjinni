@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
-import { Sparkles, X, ChevronLeft, ChevronRight, Maximize2, Download, Image as ImageIcon } from 'lucide-react';
+import { Sparkles, X, ChevronLeft, ChevronRight, Maximize2, Image as ImageIcon } from 'lucide-react';
 import { WEDDING_DATA } from '@/data/weddingData';
 import { SectionHeading, OrnamentalDivider } from '@/components/ui';
 
@@ -182,14 +182,6 @@ export default function PhotoGallery() {
             </div>
 
             <div className="flex items-center gap-3">
-              <a
-                href={filteredItems[lightboxIndex].src}
-                download
-                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                title="Download high-resolution image"
-              >
-                <Download className="w-5 h-5" />
-              </a>
               <button
                 onClick={closeLightbox}
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none"
