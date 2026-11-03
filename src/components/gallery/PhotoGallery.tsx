@@ -11,7 +11,7 @@ export default function PhotoGallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const touchStartXRef = useRef<number | null>(null);
 
-  const categories = ['All', 'Stationery', 'The Promise Night', 'Portraits'];
+  const categories = ['All', 'The Couple', 'Portraits', 'Family & Loved Ones'];
 
   const filteredItems = WEDDING_DATA.galleryItems.filter(item => {
     if (activeCategory === 'All') return true;
@@ -76,9 +76,10 @@ export default function PhotoGallery() {
       
       {/* Unified Section Heading */}
       <SectionHeading
-        title="Stationery & Photo Album"
-        hindiTitle="॥ स्मृति चित्रावली • राजसी कलाकृति ॥"
-        description="An editorial showcase of hand-crafted invitation suites, botanical motifs, and cherished moments."
+        kicker="Chapter VI • Smriti Chitrawali"
+        title="The Royal Gallery"
+        hindiTitle="॥ स्मृति चित्रावली • पावन स्मृतियाँ ॥"
+        description="Cherished moments from The Promise Night — sacred vows, bridal radiance, joyous waltzes, and loving family blessings."
         dividerVariant="lotus"
       />
 
@@ -88,54 +89,72 @@ export default function PhotoGallery() {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all ${
+            className={`px-4 py-1.5 rounded-full text-xs font-sans tracking-wider uppercase transition-all duration-200 ${
               activeCategory === cat
-                ? 'bg-ruby-600 text-white border-gold-400 shadow-sm font-semibold'
+                ? 'bg-ruby-600 text-white border border-gold-400 shadow-sm font-semibold'
                 : 'bg-paper-100 text-ink-primary border border-gold-400/35 hover:bg-paper-200 font-medium'
             }`}
           >
-            {cat}
+            {cat} {cat === 'All' ? `(${WEDDING_DATA.galleryItems.length})` : `(${WEDDING_DATA.galleryItems.filter(i => i.category === cat).length})`}
           </button>
         ))}
       </div>
 
-      {/* Masonry / Responsive Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10">
-        {filteredItems.map((item, index) => (
-          <div
-            key={item.id}
-            onClick={() => openLightbox(index)}
-            className="stationery-card rounded-2xl overflow-hidden border border-gold-400/35 shadow-stationery group cursor-pointer transition-all duration-300 hover:shadow-stationery-deep hover:-translate-y-1"
-          >
-            <div className="relative aspect-[4/3] bg-paper-200 overflow-hidden">
-              <Image
-                src={item.src}
-                alt={item.title}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-burgundy-950/20 group-hover:bg-burgundy-950/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <span className="p-3 rounded-full bg-paper-50/90 text-ruby-600 shadow-md transform scale-90 group-hover:scale-100 transition-transform">
-                  <Maximize2 className="w-5 h-5" />
-                </span>
-              </div>
-            </div>
+      {/* Editorial Masonry Grid — Preserves Natural Proportions & Keeps People Centered */}
+      <div className="max-w-6xl mx-auto columns-1 sm:columns-2 lg:columns-3 gap-6 sm:gap-8 space-y-6 sm:space-y-8 relative z-10">
+        {filteredItems.map((item, index) => {
+          const isPortrait = item.aspect === 'portrait';
+          return (
+            <div
+              key={item.id}
+              onClick={() => openLightbox(index)}
+              className="break-inside-avoid rounded-2xl overflow-hidden border border-gold-400/35 shadow-stationery group cursor-pointer transition-all duration-300 hover:shadow-stationery-deep hover:-translate-y-1 bg-paper-50"
+            >
+              {/* Photo Container with Authentic Aspect Ratio */}
+              <div className={`relative ${isPortrait ? 'aspect-[2/3]' : 'aspect-[3/2]'} bg-paper-200 overflow-hidden`}>
+                <Image
+                  src={item.thumbSrc || item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                
+                {/* Temple Corner Brackets (Royal Indian Framing) */}
+                <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-gold-400/60 pointer-events-none" />
+                <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-gold-400/60 pointer-events-none" />
+                <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-gold-400/60 pointer-events-none" />
+                <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-gold-400/60 pointer-events-none" />
 
-            <div className="p-4 sm:p-5 bg-paper-100 border-t border-gold-300/30">
-              <div className="flex items-center justify-between text-[11px] font-sans font-semibold tracking-wider uppercase text-gold-700 mb-1">
-                <span>{item.category}</span>
-                <span className="italic font-serif normal-case text-ink-muted">View in Lightbox</span>
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-burgundy-950/20 group-hover:bg-burgundy-950/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <span className="p-3 rounded-full bg-paper-50/90 text-ruby-600 shadow-md transform scale-90 group-hover:scale-100 transition-transform">
+                    <Maximize2 className="w-5 h-5" />
+                  </span>
+                </div>
               </div>
-              <h3 className="font-serif text-lg font-bold text-ink-title leading-snug">
-                {item.title}
-              </h3>
-              <p className="font-sans text-xs text-ink-secondary mt-1 line-clamp-2 leading-relaxed">
-                {item.caption}
-              </p>
+
+              {/* Card Meta & Caption */}
+              <div className="p-4 sm:p-5 bg-paper-100 border-t border-gold-300/30">
+                <div className="flex items-center justify-between text-[11px] font-sans font-semibold tracking-wider uppercase text-gold-700 mb-1">
+                  <span>{item.category}</span>
+                  <span className="italic font-serif normal-case text-ink-muted">View Photo</span>
+                </div>
+                {item.titleHindi && (
+                  <p className="font-hindi text-xs text-gold-800 font-medium mb-1">
+                    {item.titleHindi}
+                  </p>
+                )}
+                <h3 className="font-serif text-lg font-bold text-ink-title leading-snug">
+                  {item.title}
+                </h3>
+                <p className="font-sans text-xs text-ink-secondary mt-1.5 leading-relaxed">
+                  {item.caption}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Central Botanical Transition to Venues & Travel */}
@@ -195,7 +214,7 @@ export default function PhotoGallery() {
               <ChevronLeft className="w-6 h-6" />
             </button>
 
-            {/* Main Image */}
+            {/* Main Image (object-contain keeps 100% of image visible and people centered) */}
             <div className="relative w-full h-full max-w-4xl max-h-[75vh] flex items-center justify-center">
               <Image
                 src={filteredItems[lightboxIndex].src}
@@ -222,6 +241,11 @@ export default function PhotoGallery() {
 
           {/* Bottom Caption Bar */}
           <div className="text-center text-paper-50 max-w-2xl mx-auto z-20 space-y-1">
+            {filteredItems[lightboxIndex].titleHindi && (
+              <p className="font-hindi text-sm text-gold-400 font-medium">
+                {filteredItems[lightboxIndex].titleHindi}
+              </p>
+            )}
             <h4 className="font-serif text-lg sm:text-xl font-bold text-gold-300">
               {filteredItems[lightboxIndex].title}
             </h4>
