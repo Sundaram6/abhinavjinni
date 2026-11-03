@@ -19,27 +19,28 @@ export default function WeddingPage() {
 
   const handleOpenInvitation = () => {
     setIsInvitationOpen(true);
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
   };
 
   const handleReopenInvitation = () => {
     setIsInvitationOpen(false);
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new Event('wedding_invitation_reopened'));
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Ensure anchor links scroll reliably after hydration
+  // Ensure initial landing is always pinned at the top Hero section
   React.useEffect(() => {
-    if (typeof window !== 'undefined' && window.location.hash) {
-      setTimeout(() => {
-        const el = document.querySelector(window.location.hash);
-        if (el) {
-          el.scrollIntoView({ behavior: 'auto' });
-        }
-      }, 100);
+    if (typeof window !== 'undefined') {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
-  }, [isInvitationOpen]);
+  }, []);
 
   return (
     <main className="relative min-h-screen overflow-x-hidden selection:bg-ruby-100 selection:text-burgundy-950 paper-grain">

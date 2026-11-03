@@ -121,13 +121,13 @@ export default function Hero() {
           <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-gold-500/50 pointer-events-none z-20"></div>
 
           {/* Central Image Canvas: Authentic Couple Photograph */}
-          <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden bg-burgundy-950/20 shadow-inner">
+          <div className="relative aspect-[3/2] w-full rounded-2xl overflow-hidden bg-burgundy-950/20 shadow-inner">
             <Image
               src="/assets/photos/couple_main.jpg"
               alt="Abhinav & Mansi looking lovingly at each other"
               fill
               priority
-              className="object-cover object-center filter saturate-105"
+              className="object-cover object-top filter saturate-105"
             />
             {/* Subtle Vignette for Archival Tone */}
             <div className="absolute inset-0 bg-gradient-to-t from-burgundy-950/75 via-transparent to-transparent"></div>

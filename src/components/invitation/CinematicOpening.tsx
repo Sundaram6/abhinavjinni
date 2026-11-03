@@ -23,6 +23,11 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
   // 1. Check preferences and URL query params (Every refresh displays the full intro)
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+
       const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
       setPrefersReducedMotion(mediaQuery.matches);
 
@@ -43,6 +48,25 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
     }
     setHasCheckedStorage(true);
   }, [onOpen]);
+
+  // Lock body scroll while cinematic opening is visible so underlying page cannot scroll
+  useEffect(() => {
+    if (!isOpen) {
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = 'hidden';
+        window.scrollTo(0, 0);
+      }
+    } else {
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = '';
+      }
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = '';
+      }
+    };
+  }, [isOpen]);
 
   // 2. Play or reset video when opening is active
   useEffect(() => {
@@ -114,14 +138,19 @@ export default function CinematicOpening({ isOpen, onOpen }: CinematicOpeningPro
       bgVideoRef.current.pause();
     }
 
-    // Trigger authentic wedding Shehnai / Sitar music
+    // Restore body scroll and ensure viewport is at the top
     if (typeof window !== 'undefined') {
+      document.body.style.overflow = '';
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       window.dispatchEvent(new Event('wedding_invitation_unfolded'));
     }
 
     setTimeout(() => {
       onOpen();
       setIsFadingOut(false);
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }
     }, 650);
   };
 
