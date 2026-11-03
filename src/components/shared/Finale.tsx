@@ -87,16 +87,22 @@ export default function Finale() {
           </p>
         </div>
 
-        {/* Back to top button */}
-        <div className="pt-4">
-          <button
-            onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all hover:scale-102"
-            aria-label="Back to top of wedding website"
-          >
-            <ArrowUp className="w-3.5 h-3.5 text-gold-700" />
-            <span>Return to Top</span>
-          </button>
+        {/* Back to top button & Fun Contact Note */}
+        <div className="pt-4 space-y-4">
+          <div>
+            <button
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper-100 hover:bg-paper-200 text-ink-primary border border-gold-400/40 text-xs font-sans font-semibold tracking-wider uppercase shadow-sm transition-all hover:scale-102"
+              aria-label="Back to top of wedding website"
+            >
+              <ArrowUp className="w-3.5 h-3.5 text-gold-700" />
+              <span>Return to Top</span>
+            </button>
+          </div>
+
+          <p className="font-serif italic text-sm sm:text-base text-ruby-700 font-semibold tracking-wide">
+            contact Sundaram/Golu for Funnnnn
+          </p>
         </div>
       </div>
     </footer>
