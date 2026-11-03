@@ -20,6 +20,7 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
   }, []);
 
   const navLinks = [
+    { label: 'Story', href: '#two-souls' },
     { label: 'Celebrations', href: '#celebrations' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Venues & Travel', href: '#travel' },
