@@ -124,9 +124,9 @@ export default function WishesGuestbook() {
   return (
     <section id="wishes" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
-      {/* Chapter Seven Section Heading */}
+      {/* Chapter Eight Section Heading */}
       <SectionHeading
-        kicker="Chapter Seven"
+        kicker="Chapter Eight"
         title="Blessings & Forever"
         hindiTitle="॥ शुभाशीर्वादः • सप्रेम पाणिग्रहण ॥"
         description="Your loving presence and prayers are the greatest gift as we begin this sacred union."

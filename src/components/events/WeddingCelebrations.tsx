@@ -105,9 +105,9 @@ export default function WeddingCelebrations() {
   return (
     <section id="celebrations" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
-      {/* Chapter Five Heading */}
+      {/* Chapter Three Heading */}
       <SectionHeading
-        kicker="Chapter Five"
+        kicker="Chapter Three"
         title="The Celebrations"
         hindiTitle="॥ मङ्गल विवाहोत्सव कार्यक्रम • बोधगया ॥"
         description="A sacred two-day celebration of heritage, music, vibrant rituals, and eternal vows under the Bodhi sky."

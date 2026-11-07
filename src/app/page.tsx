@@ -61,31 +61,31 @@ export default function WeddingPage() {
       {/* 2. Luxury Stationery Navbar */}
       <Navbar onReopenInvitation={handleReopenInvitation} />
 
-      {/* 4. Hero Section: Chapter One — A Beautiful Beginning */}
+      {/* Chapter One: Hero — A Beautiful Beginning */}
       <Hero />
 
       {/* Chapter Two: Two Souls, One Story */}
       <TwoSoulsSection />
 
-      {/* Chapter Three: The Promise */}
-      <ThePromiseSection />
+      {/* Chapter Three: The Celebrations Itinerary */}
+      <WeddingCelebrations />
 
       {/* Chapter Four: Our Families */}
       <OurFamiliesSection />
 
-      {/* Chapter Five: The Celebrations Itinerary */}
-      <WeddingCelebrations />
+      {/* Chapter Five: The Sacred Promise / The Promise Night */}
+      <ThePromiseSection />
 
-      {/* 7. Stationery & Photo Album Gallery */}
+      {/* Chapter Six: Stationery & Photo Album Gallery */}
       <PhotoGallery />
 
-      {/* 8. Guest Experience: RSVP, Venue Directions, Travel & WhatsApp */}
+      {/* Chapter Seven: Guest Experience: RSVP, Venue Directions, Travel & WhatsApp */}
       <GuestExperience />
 
-      {/* 9. Wishes & Sacred Blessings Guestbook */}
+      {/* Chapter Eight: Wishes & Sacred Blessings Guestbook */}
       <WishesGuestbook />
 
-      {/* 10. Finale & Family Blessings */}
+      {/* Finale & Family Blessings */}
       <Finale />
     </main>
   );
