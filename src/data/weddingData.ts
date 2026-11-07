@@ -228,6 +228,8 @@ export const WEDDING_DATA = {
         { name: "Blush Ivory", hex: "#FAF1EE" },
       ],
       note: "The Pal family leads the joyful Baraat procession to unite two beautiful souls.",
+      logo: "/assets/events/baraat_logo.webp",
+      image: "/assets/events/baraat_photo.webp",
     },
     {
       id: "wedding",
@@ -258,6 +260,8 @@ export const WEDDING_DATA = {
       ],
       shloka: "विघ्नहरण मंगल करण श्री गणपति महाराज। प्रथम निमन्त्रण आपको पूरण करियो काज ॥",
       note: "Under the sacred Bodhi sky, two hearts unite into one eternal bond.",
+      logo: "/assets/events/wedding_logo.webp",
+      image: "/assets/events/wedding_photo.webp",
     },
   ] as EventDetail[],
   story: [
