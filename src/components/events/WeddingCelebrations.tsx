@@ -213,6 +213,11 @@ export default function WeddingCelebrations() {
                           <h4 className="font-serif text-xl sm:text-2xl font-bold text-ink-title leading-tight">
                             {event.title}
                           </h4>
+                          {event.subTitle && (
+                            <p className="font-serif italic text-xs sm:text-sm text-gold-800 font-medium">
+                              {event.subTitle}
+                            </p>
+                          )}
                           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-sans text-ink-secondary pt-1">
                             <span className="inline-flex items-center gap-1.5 font-semibold text-ruby-600">
                               <Clock className="w-3.5 h-3.5" />
@@ -421,6 +426,11 @@ export default function WeddingCelebrations() {
                           <h4 className="font-serif text-xl sm:text-2xl font-bold text-ink-title leading-tight">
                             {event.title}
                           </h4>
+                          {event.subTitle && (
+                            <p className="font-serif italic text-xs sm:text-sm text-gold-800 font-medium">
+                              {event.subTitle}
+                            </p>
+                          )}
                           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-sans text-ink-secondary pt-1">
                             <span className="inline-flex items-center gap-1.5 font-semibold text-ruby-600">
                               <Clock className="w-3.5 h-3.5" />
