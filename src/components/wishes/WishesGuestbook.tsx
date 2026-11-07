@@ -140,10 +140,10 @@ export default function WishesGuestbook() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Left: Candid Photo in Coordinated Royal Frame */}
             <div className="md:col-span-5 relative">
-              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-inner border border-gold-400/35 bg-burgundy-950/10 group">
+              <div className="relative aspect-[2/3] w-full rounded-2xl overflow-hidden shadow-inner border border-gold-400/35 bg-burgundy-950/10 group">
                 <Image
-                  src="/assets/photos/couple_candid_cake.jpg"
-                  alt="Abhinav & Mansi cutting their engagement cake"
+                  src="/assets/photos/couple_standing_stage.webp"
+                  alt="Abhinav & Mansi standing together on stage"
                   fill
                   sizes="(max-width: 768px) 100vw, 450px"
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-102"
