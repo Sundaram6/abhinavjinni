@@ -11,7 +11,7 @@ export default function PhotoGallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const touchStartXRef = useRef<number | null>(null);
 
-  const categories = ['All', 'The Couple', 'Portraits'];
+  const categories = ['All', 'The Couple', 'Portraits', 'Family & Loved Ones'];
 
   const filteredItems = WEDDING_DATA.galleryItems.filter(item => {
     if (activeCategory === 'All') return true;
@@ -79,7 +79,7 @@ export default function PhotoGallery() {
         kicker="Chapter VI • Smriti Chitrawali"
         title="The Royal Gallery"
         hindiTitle="॥ स्मृति चित्रावली • पावन स्मृतियाँ ॥"
-        description="Cherished moments from The Promise Night — sacred vows, bridal radiance, joyous waltzes, and timeless romantic portraits."
+        description="Cherished moments from The Promise Night — sacred vows, bridal radiance, joyous waltzes, and warm celebrations with brothers, sisters, and cousins."
         dividerVariant="lotus"
       />
 
