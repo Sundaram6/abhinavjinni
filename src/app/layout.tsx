@@ -24,18 +24,20 @@ export const metadata: Metadata = {
     siteName: 'Abhinav & Mansi Wedding Celebrations',
     images: [
       {
-        url: '/assets/invitation-page-1.webp',
+        url: 'https://mansiwedsabhinav.vercel.app/og-image.jpg',
+        secureUrl: 'https://mansiwedsabhinav.vercel.app/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Abhinav weds Mansi Wedding Invitation Suite',
+        type: 'image/jpeg',
+        alt: 'Abhinav & Mansi Wedding Celebrations',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Abhinav & Mansi — A Story in Bloom',
-    description: 'Join us in celebrating the wedding of Abhinav & Mansi. View the itinerary, venues, and travel details.',
-    images: ['/assets/invitation-page-1.webp'],
+    description: 'Together with their families, Abhinav & Mansi invite you to their wedding celebrations in Bodhgaya.',
+    images: ['https://mansiwedsabhinav.vercel.app/og-image.jpg'],
   },
 };
 
