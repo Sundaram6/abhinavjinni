@@ -402,7 +402,7 @@ export const WEDDING_DATA = {
       src: "/assets/gallery/mansi_abhinav_eternal_gaze.webp",
       thumbSrc: "/assets/gallery/mansi_abhinav_eternal_gaze_thumb.webp",
       caption: "A quiet, tender glance exchanged between Mansi and Abhinav amidst the vibrant celebration.",
-      aspect: "landscape",
+      aspect: "portrait",
     },
     {
       id: "gal-8",
@@ -421,8 +421,8 @@ export const WEDDING_DATA = {
       category: "The Couple",
       src: "/assets/gallery/mansi_holding_abhinav.webp",
       thumbSrc: "/assets/gallery/mansi_holding_abhinav_thumb.webp",
-      caption: "Mansi holding Abhinav close — a candid portrait of tenderness, trust, and shared laughter.",
-      aspect: "portrait",
+      caption: "Mansi gently sliding the sacred engagement ring onto Abhinav's finger — a tender embrace of eternal trust and lifelong devotion.",
+      aspect: "landscape",
     },
     {
       id: "gal-10",
@@ -486,13 +486,13 @@ export const WEDDING_DATA = {
     },
     {
       id: "gal-16",
-      title: "Cherished Bonds — Golu & Chandani",
-      titleHindi: "॥ आत्मीय सखियाँ व भाई ॥",
+      title: "Cherished Moments — A Rose-Filled Welcome",
+      titleHindi: "॥ स्नेह भरा स्वागत • आत्मीय रिश्ते ॥",
       category: "Family & Loved Ones",
       src: "/assets/gallery/mansi_golu_chandani.webp",
       thumbSrc: "/assets/gallery/mansi_golu_chandani_thumb.webp",
-      caption: "Mansi sharing radiant laughter and candid joyful moments with cousin Golu and dear friend Chandani.",
-      aspect: "landscape",
+      caption: "A joyful and elegant moment as Mansi is greeted with a lavish bouquet of crimson roses on her special day.",
+      aspect: "portrait",
     },
   ],
 };
