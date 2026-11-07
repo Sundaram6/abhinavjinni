@@ -19,6 +19,8 @@ export interface EventDetail {
   shloka?: string;
   note?: string;
   badge: string;
+  logo?: string;
+  image?: string;
 }
 
 export const WEDDING_DATA = {
@@ -133,6 +135,8 @@ export const WEDDING_DATA = {
         { name: "Blush Ivory", hex: "#FAF1EE" },
       ],
       note: "Join us in the sun-drenched gardens as henna patterns tell our story.",
+      logo: "/assets/events/mehendi_logo.webp",
+      image: "/assets/events/mehendi_photo.webp",
     },
     {
       id: "sangeet",
@@ -162,6 +166,8 @@ export const WEDDING_DATA = {
         { name: "Rich Ruby Magenta", hex: "#B31252" },
       ],
       note: "Put on your dancing shoes! A night filled with laughter, songs, and boundless energy.",
+      logo: "/assets/events/sangeet_logo.webp",
+      image: "/assets/events/sangeet_photo.webp",
     },
     {
       id: "haldi",
@@ -191,6 +197,8 @@ export const WEDDING_DATA = {
         { name: "Pearl White", hex: "#FDFAF7" },
       ],
       note: "Prepare to be painted in pure gold and showered with fresh blossoms.",
+      logo: "/assets/events/haldi_logo.webp",
+      image: "/assets/events/haldi_photo.webp",
     },
     {
       id: "ghruchari-barat",

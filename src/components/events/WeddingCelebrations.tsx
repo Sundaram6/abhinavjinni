@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { 
   Calendar, 
   Clock, 
@@ -18,38 +19,53 @@ import {
 import { WEDDING_DATA, EventDetail } from '@/data/weddingData';
 import { SectionHeading, OrnamentalDivider } from '@/components/ui';
 
-// Custom Ceremony Emblems / Line-art Icons
-function CeremonyEmblem({ id }: { id: string }) {
-  switch (id) {
+// Custom Ceremony Emblems / Authentic Event Logos
+function CeremonyEmblem({ event }: { event: EventDetail }) {
+  if (event.logo) {
+    return (
+      <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden border-2 border-gold-400/80 shadow-md ring-2 ring-gold-200/50 flex-shrink-0 transition-transform duration-300">
+        <Image
+          src={event.logo}
+          alt={event.title}
+          fill
+          sizes="(max-width: 640px) 56px, 64px"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl pointer-events-none" />
+      </div>
+    );
+  }
+
+  switch (event.id) {
     case 'mehandi':
       return (
-        <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-300/60 flex items-center justify-center text-emerald-800 shadow-sm">
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-emerald-50 border border-emerald-300/60 flex items-center justify-center text-emerald-800 shadow-sm flex-shrink-0">
           <span className="text-xl">🌿</span>
         </div>
       );
     case 'sangeet':
       return (
-        <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-300/60 flex items-center justify-center text-purple-800 shadow-sm">
-          <Music className="w-6 h-6 text-purple-700" />
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-purple-50 border border-purple-300/60 flex items-center justify-center text-purple-800 shadow-sm flex-shrink-0">
+          <Music className="w-7 h-7 text-purple-700" />
         </div>
       );
     case 'haldi':
       return (
-        <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-300/60 flex items-center justify-center text-amber-800 shadow-sm">
-          <Sun className="w-6 h-6 text-amber-600" />
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-amber-50 border border-amber-300/60 flex items-center justify-center text-amber-800 shadow-sm flex-shrink-0">
+          <Sun className="w-7 h-7 text-amber-600" />
         </div>
       );
     case 'ghruchari-barat':
       return (
-        <div className="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-300/60 flex items-center justify-center text-rose-800 shadow-sm">
-          <Crown className="w-6 h-6 text-rose-700" />
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-rose-50 border border-rose-300/60 flex items-center justify-center text-rose-800 shadow-sm flex-shrink-0">
+          <Crown className="w-7 h-7 text-rose-700" />
         </div>
       );
     case 'wedding':
     default:
       return (
-        <div className="w-12 h-12 rounded-2xl bg-burgundy-50 border border-burgundy-300/60 flex items-center justify-center text-burgundy-900 shadow-sm">
-          <Flame className="w-6 h-6 text-ruby-600" />
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-burgundy-50 border border-burgundy-300/60 flex items-center justify-center text-burgundy-900 shadow-sm flex-shrink-0">
+          <Flame className="w-7 h-7 text-ruby-600" />
         </div>
       );
   }
@@ -181,7 +197,7 @@ export default function WeddingCelebrations() {
                       className="p-5 sm:p-6 flex items-start sm:items-center justify-between gap-4 cursor-pointer hover:bg-gold-50/20 transition-colors"
                     >
                       <div className="flex items-start sm:items-center gap-4">
-                        <CeremonyEmblem id={event.id} />
+                        <CeremonyEmblem event={event} />
                         <div className="space-y-0.5">
                           <div className="flex items-center gap-2">
                             <span className="font-serif italic text-xs text-gold-700 font-semibold tracking-wider">
@@ -225,7 +241,29 @@ export default function WeddingCelebrations() {
 
                     {/* Expandable Details Tray */}
                     {isExpanded && (
-                      <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-gold-300/30 space-y-5 bg-paper-100/40">
+                      <div className="px-5 sm:px-6 pb-6 pt-3 border-t border-gold-300/30 space-y-5 bg-paper-100/40">
+                        {/* Ceremony Photo Banner if available */}
+                        {event.image && (
+                          <div className="relative w-full h-52 sm:h-72 rounded-xl overflow-hidden border border-gold-400/50 shadow-md">
+                            <Image
+                              src={event.image}
+                              alt={event.title}
+                              fill
+                              sizes="(max-width: 640px) 100vw, 768px"
+                              className="object-cover object-center"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                            <div className="absolute bottom-3 left-4 right-4 text-white flex items-center justify-between">
+                              <span className="text-xs font-sans font-semibold tracking-widest uppercase text-gold-300">
+                                {event.chapter} • {event.title}
+                              </span>
+                              <span className="text-xs font-serif italic text-paper-100 hidden sm:inline">
+                                {event.subTitle}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+
                         {/* Note / Sentiment */}
                         {event.note && (
                           <p className="font-serif italic text-sm sm:text-base text-ink-primary leading-relaxed">
@@ -362,7 +400,7 @@ export default function WeddingCelebrations() {
                       className="p-5 sm:p-6 flex items-start sm:items-center justify-between gap-4 cursor-pointer hover:bg-gold-50/20 transition-colors"
                     >
                       <div className="flex items-start sm:items-center gap-4">
-                        <CeremonyEmblem id={event.id} />
+                        <CeremonyEmblem event={event} />
                         <div className="space-y-0.5">
                           <div className="flex items-center gap-2">
                             <span className="font-serif italic text-xs text-gold-700 font-semibold tracking-wider">
@@ -411,7 +449,29 @@ export default function WeddingCelebrations() {
 
                     {/* Expandable Details Tray */}
                     {isExpanded && (
-                      <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-gold-300/30 space-y-5 bg-paper-100/40">
+                      <div className="px-5 sm:px-6 pb-6 pt-3 border-t border-gold-300/30 space-y-5 bg-paper-100/40">
+                        {/* Ceremony Photo Banner if available */}
+                        {event.image && (
+                          <div className="relative w-full h-52 sm:h-72 rounded-xl overflow-hidden border border-gold-400/50 shadow-md">
+                            <Image
+                              src={event.image}
+                              alt={event.title}
+                              fill
+                              sizes="(max-width: 640px) 100vw, 768px"
+                              className="object-cover object-center"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                            <div className="absolute bottom-3 left-4 right-4 text-white flex items-center justify-between">
+                              <span className="text-xs font-sans font-semibold tracking-widest uppercase text-gold-300">
+                                {event.chapter} • {event.title}
+                              </span>
+                              <span className="text-xs font-serif italic text-paper-100 hidden sm:inline">
+                                {event.subTitle}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+
                         {/* Shloka if wedding */}
                         {event.shloka && (
                           <div className="p-3.5 rounded-xl bg-gold-50/60 border border-gold-300/40 text-center">
