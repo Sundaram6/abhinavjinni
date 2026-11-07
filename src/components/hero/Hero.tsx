@@ -95,9 +95,9 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-3xl mx-auto my-4 sm:my-6">
         <RoyalPhotoFrame
           src="/assets/photos/couple_main.jpg"
-          alt="Abhinav & Mansi looking lovingly at each other"
-          aspectRatioClass="aspect-[3/2]"
-          objectPosition="object-top"
+          alt="Abhinav & Mansi under golden chandeliers"
+          aspectRatioClass="aspect-[4/3]"
+          objectPosition="object-[center_15%]"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 768px"
           overlayCaption={{
