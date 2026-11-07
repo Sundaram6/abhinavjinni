@@ -8,9 +8,9 @@ export default function ThePromiseSection() {
   return (
     <section id="the-promise" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
-      {/* Chapter Five Heading */}
+      {/* Chapter Six Heading */}
       <SectionHeading
-        kicker="Chapter Five"
+        kicker="Chapter Six"
         title="The Promise Night"
         hindiTitle="॥ मुद्रिका परिणय संस्कार • The Engagement ॥"
         description="A cherished memory of golden chandeliers, shared vows, and the sacred exchange of engagement rings."

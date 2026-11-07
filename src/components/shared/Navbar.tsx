@@ -22,10 +22,10 @@ export default function Navbar({ onReopenInvitation }: NavbarProps) {
   const navLinks = [
     { label: 'Story', href: '#two-souls' },
     { label: 'Celebrations', href: '#celebrations' },
+    { label: 'Venues & Travel', href: '#travel' },
     { label: 'Families', href: '#families' },
     { label: 'The Promise', href: '#the-promise' },
     { label: 'Gallery', href: '#gallery' },
-    { label: 'Venues & Travel', href: '#travel' },
     { label: 'Blessings', href: '#wishes' },
   ];
 

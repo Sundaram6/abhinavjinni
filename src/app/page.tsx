@@ -70,17 +70,17 @@ export default function WeddingPage() {
       {/* Chapter Three: The Celebrations Itinerary */}
       <WeddingCelebrations />
 
-      {/* Chapter Four: Our Families */}
+      {/* Chapter Four: Guest Experience: RSVP, Venue Directions, Travel & WhatsApp */}
+      <GuestExperience />
+
+      {/* Chapter Five: Our Families */}
       <OurFamiliesSection />
 
-      {/* Chapter Five: The Sacred Promise / The Promise Night */}
+      {/* Chapter Six: The Sacred Promise / The Promise Night */}
       <ThePromiseSection />
 
-      {/* Chapter Six: Stationery & Photo Album Gallery */}
+      {/* Chapter Seven: Stationery & Photo Album Gallery */}
       <PhotoGallery />
-
-      {/* Chapter Seven: Guest Experience: RSVP, Venue Directions, Travel & WhatsApp */}
-      <GuestExperience />
 
       {/* Chapter Eight: Wishes & Sacred Blessings Guestbook */}
       <WishesGuestbook />

@@ -100,9 +100,9 @@ export default function GuestExperience() {
   return (
     <section id="travel" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
-      {/* Chapter Seven Heading */}
+      {/* Chapter Four Heading */}
       <SectionHeading
-        kicker="Chapter Seven"
+        kicker="Chapter Four"
         title="Join Us"
         hindiTitle="॥ सस्नेह निमन्त्रणम् • यात्रा एवं दिशा-निर्देश ॥"
         description="Everything you need to celebrate with us: verified venue maps, airport transit guides, and instant travel planning."

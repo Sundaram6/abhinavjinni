@@ -76,7 +76,7 @@ export default function PhotoGallery() {
       
       {/* Unified Section Heading */}
       <SectionHeading
-        kicker="Chapter Six • Smriti Chitrawali"
+        kicker="Chapter Seven • Smriti Chitrawali"
         title="The Royal Gallery"
         hindiTitle="॥ स्मृति चित्रावली • पावन स्मृतियाँ ॥"
         description="Cherished moments from The Promise Night — sacred vows, bridal radiance, joyous waltzes, and warm celebrations with brothers, sisters, and cousins."

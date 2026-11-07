@@ -8,9 +8,9 @@ export default function OurFamiliesSection() {
   return (
     <section id="families" className="py-20 sm:py-28 px-4 sm:px-6 relative overflow-hidden border-t border-gold-400/20">
       
-      {/* Chapter Four Heading */}
+      {/* Chapter Five Heading */}
       <SectionHeading
-        kicker="Chapter Four"
+        kicker="Chapter Five"
         title="Our Families"
         hindiTitle="॥ कुलदीपकः कुलप्रदीपः • माता-पिता आशीर्वाद ॥"
         description="Two revered families united by deep tradition, mutual respect, and boundless love for their children."
