@@ -437,12 +437,12 @@ export const WEDDING_DATA = {
     {
       id: "gal-11",
       title: "Sweet Beginnings",
-      titleHindi: "॥ मिठास भरे पल • आनन्दोत्सव ॥",
+      titleHindi: "॥ मिठास भरे पल • मधुर शुरुआत ॥",
       category: "The Couple",
       src: "/assets/gallery/cake_mansi_abhinav_portrait.webp",
       thumbSrc: "/assets/gallery/cake_mansi_abhinav_portrait_thumb.webp",
-      caption: "A joyful portrait of Mansi and Abhinav sharing radiant smiles beside their celebration cake.",
-      aspect: "portrait",
+      caption: "Abhinav and Mansi placing their hands together on their elegant multi-tiered engagement cake, marking the sweetest beginning to forever.",
+      aspect: "landscape",
     },
     {
       id: "gal-12",
