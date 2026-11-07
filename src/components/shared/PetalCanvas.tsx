@@ -43,14 +43,16 @@ export default function PetalCanvas() {
     window.addEventListener('resize', handleResize);
 
     const petalColors = [
-      'rgba(179, 18, 82, 0.45)',   // Rich Ruby Magenta (#B31252)
-      'rgba(197, 158, 89, 0.45)',  // Antique Warm Gold (#C59E59)
-      'rgba(74, 14, 78, 0.35)',    // Deep Regal Plum (#4A0E4E)
-      'rgba(250, 241, 238, 0.60)', // Blush Ivory (#FAF1EE)
-      'rgba(12, 90, 72, 0.28)',    // Emerald Green (#0C5A48)
+      'rgba(180, 20, 50, 0.60)',   // Deep Crimson Red Rose
+      'rgba(195, 28, 68, 0.55)',   // Royal Ruby Rose
+      'rgba(215, 38, 61, 0.55)',   // Classic Scarlet Rose Petal
+      'rgba(138, 14, 42, 0.50)',   // Velvet Burgundy Rose
+      'rgba(235, 95, 125, 0.50)',  // Soft Blush Romantic Rose
+      'rgba(220, 70, 95, 0.52)',   // Coral Rose Blossom
+      'rgba(212, 160, 48, 0.35)',  // Warm Marigold & Gold Spark
     ];
 
-    const PETAL_COUNT = Math.min(22, Math.floor(window.innerWidth / 40));
+    const PETAL_COUNT = Math.min(26, Math.floor(window.innerWidth / 35));
     const petals: Petal[] = [];
 
     for (let i = 0; i < PETAL_COUNT; i++) {

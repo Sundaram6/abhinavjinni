@@ -139,7 +139,7 @@ export const PHOTOGRAPHY_CONFIG: Record<PhotoSlotId, PhotoSlot> = {
     imageSrc: '/assets/photos/abhinav_family.jpg',
     isPlaceholder: false,
     alt: "The Pal Family — Sh. Inder Pal & Smt. Nirmala",
-    caption: "Leading the royal celebrations and sacred Barat procession to Bodhgaya.",
+    caption: "Leading the royal celebrations and sacred Baraat procession to Bodhgaya.",
     storySnippet: "Together with Surender, Yogender, Himanshu, Rishabh, Nityaya & Avyagra Pal.",
     placeholder: {
       motif: 'groom-family',

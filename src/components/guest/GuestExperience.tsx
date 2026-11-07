@@ -66,7 +66,7 @@ export default function GuestExperience() {
     return () => clearInterval(interval);
   }, []);
 
-  const shareText = `🌸 *Mansi weds Abhinav — A Story in Bloom* 🌸\n\nWith great joy, our families invite you to celebrate our wedding ceremonies!\n\n✨ *Mehandi & Sangeet:* 2 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n✨ *Haldi & Sacred Wedding:* 3 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n\nPlease view our wedding itinerary and venue directions here:\n${typeof window !== 'undefined' ? window.location.href.split('#')[0] : 'https://mansiwedsabhinav.vercel.app'}`;
+  const shareText = `🌸 *Mansi weds Abhinav — A Story in Bloom* 🌸\n\nWith great joy, our families invite you to celebrate our wedding ceremonies!\n\n✨ *Mehendi & Sangeet:* 2 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n✨ *Haldi & Sacred Wedding:* 3 Dec 2026 (Buddha Heritage Resort, Bodhgaya)\n\nPlease view our wedding itinerary and venue directions here:\n${typeof window !== 'undefined' ? window.location.href.split('#')[0] : 'https://mansiwedsabhinav.vercel.app'}`;
 
   const handleWhatsAppShare = () => {
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
@@ -213,7 +213,7 @@ export default function GuestExperience() {
                     <span>Fifty meter before Thai Temple, Opp. Maya Sarovar, Bodhgaya, Bihar 824231</span>
                   </div>
                   <p className="text-xs sm:text-sm font-sans text-ink-primary leading-relaxed">
-                    The serene sanctuary of Bodhgaya serves as the main wedding venue for all ceremonies: Mehandi, Sangeet, Haldi, Ghruchari, Barat, and the Sacred Wedding Pheras.
+                    The serene sanctuary of Bodhgaya serves as the main wedding venue for all ceremonies: Mehendi, Sangeet, Haldi, Ghudchadhi, Baraat, and the Sacred Wedding Pheras.
                   </p>
                 </div>
 
@@ -225,7 +225,7 @@ export default function GuestExperience() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-ink-title">
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
-                      <span>Mehandi (Dec 2 • 11:00 AM)</span>
+                      <span>Mehendi (Dec 2 • 11:00 AM)</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
@@ -237,7 +237,7 @@ export default function GuestExperience() {
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold-600"></span>
-                      <span>Ghruchari &amp; Barat (Dec 3 • 07:00 PM)</span>
+                      <span>Ghudchadhi &amp; Baraat (Dec 3 • 07:00 PM)</span>
                     </div>
                     <div className="flex items-center gap-1.5 sm:col-span-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-ruby-600"></span>

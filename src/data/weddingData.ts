@@ -42,11 +42,11 @@ export const WEDDING_DATA = {
   },
   dates: {
     engagement: "2026-10-20T19:00:00+05:30",
-    mehandi: "2026-12-02T11:00:00+05:30",
+    mehendi: "2026-12-02T11:00:00+05:30",
     sangeet: "2026-12-02T19:00:00+05:30",
     haldi: "2026-12-03T11:00:00+05:30",
-    ghruchari: "2026-12-03T19:00:00+05:30",
-    barat: "2026-12-03T19:30:00+05:30",
+    ghudchadhi: "2026-12-03T19:00:00+05:30",
+    baraat: "2026-12-03T19:30:00+05:30",
     wedding: "2026-12-03T20:30:00+05:30",
   },
   family: {
@@ -109,9 +109,9 @@ export const WEDDING_DATA = {
       note: "Celebrated with love and family blessings in Noida.",
     },
     {
-      id: "mehandi",
+      id: "mehendi",
       chapter: "Chapter II",
-      title: "Mehandi Rasam",
+      title: "Mehendi Rasam",
       subTitle: "Art of Henna & Folk Melodies",
       hindiTitle: "मेहंदी उत्सव",
       dateString: "Wednesday, 2nd December 2026",
@@ -201,9 +201,9 @@ export const WEDDING_DATA = {
       image: "/assets/events/haldi_photo.webp",
     },
     {
-      id: "ghruchari-barat",
+      id: "ghudchadhi-baraat",
       chapter: "Chapter V",
-      title: "Ghruchari & Barat",
+      title: "Ghudchadhi & Baraat",
       subTitle: "The Groom's Royal Procession",
       hindiTitle: "घुड़चढ़ी एवं बारात प्रस्थान",
       dateString: "Thursday, 3rd December 2026",
@@ -211,8 +211,8 @@ export const WEDDING_DATA = {
       time: "7:00 PM",
       badge: "Bodhgaya",
       timeline: [
-        { time: "07:00 PM", activity: "Ghruchari & Sehra Bandi", description: "Sacred blessings as the groom mounts the mare" },
-        { time: "07:30 PM", activity: "Departure of Barat", description: "Grand celebratory procession with live brass band & fireworks" },
+        { time: "07:00 PM", activity: "Ghudchadhi & Sehra Bandi", description: "Sacred blessings as the groom mounts the mare" },
+        { time: "07:30 PM", activity: "Departure of Baraat", description: "Grand celebratory procession with live brass band & fireworks" },
         { time: "08:15 PM", activity: "Milni & Swagat at Wedding Venue", description: "Traditional garland reception by the bride's family" },
       ],
       venueName: "Buddha Heritage Resort",
@@ -227,7 +227,7 @@ export const WEDDING_DATA = {
         { name: "Antique Warm Gold", hex: "#C59E59" },
         { name: "Blush Ivory", hex: "#FAF1EE" },
       ],
-      note: "The Pal family leads the joyful Barat procession to unite two beautiful souls.",
+      note: "The Pal family leads the joyful Baraat procession to unite two beautiful souls.",
     },
     {
       id: "wedding",

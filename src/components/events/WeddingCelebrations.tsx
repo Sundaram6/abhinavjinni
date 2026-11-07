@@ -37,6 +37,7 @@ function CeremonyEmblem({ event }: { event: EventDetail }) {
   }
 
   switch (event.id) {
+    case 'mehendi':
     case 'mehandi':
       return (
         <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-emerald-50 border border-emerald-300/60 flex items-center justify-center text-emerald-800 shadow-sm flex-shrink-0">
@@ -55,6 +56,7 @@ function CeremonyEmblem({ event }: { event: EventDetail }) {
           <Sun className="w-7 h-7 text-amber-600" />
         </div>
       );
+    case 'ghudchadhi-baraat':
     case 'ghruchari-barat':
       return (
         <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-rose-50 border border-rose-300/60 flex items-center justify-center text-rose-800 shadow-sm flex-shrink-0">
@@ -374,7 +376,7 @@ export default function WeddingCelebrations() {
                   Day Two • Thursday, 3rd December 2026 (The Wedding)
                 </h3>
                 <p className="font-serif italic text-xs sm:text-sm text-gold-800">
-                  Golden Haldi, Barat procession, and sacred Pheras around the Agni
+                  Golden Haldi, Baraat procession, and sacred Pheras around the Agni
                 </p>
               </div>
             </div>

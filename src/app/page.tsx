@@ -13,6 +13,7 @@ import GuestExperience from '@/components/guest/GuestExperience';
 import WishesGuestbook from '@/components/wishes/WishesGuestbook';
 import Finale from '@/components/shared/Finale';
 import AudioPlayer from '@/components/shared/AudioPlayer';
+import PetalCanvas from '@/components/shared/PetalCanvas';
 
 export default function WeddingPage() {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
@@ -53,6 +54,9 @@ export default function WeddingPage() {
 
       {/* Floating Ambient Sitar/Shehnai Audio Player */}
       <AudioPlayer />
+
+      {/* Floating Sacred Rose Petals Shower */}
+      <PetalCanvas />
 
       {/* 2. Luxury Stationery Navbar */}
       <Navbar onReopenInvitation={handleReopenInvitation} />

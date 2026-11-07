@@ -11,7 +11,7 @@ Celebrated across **Bodhgaya & Noida (October – December 2026)**.
 - **Cinematic Video Opening:** High-definition video opening featuring the sacred metamorphosis from Lord Shiva & Goddess Parvati blessings into the couple holding their engagement rings, accompanied by an ambient Ambilight backdrop and smooth transition into the celebration website.
 - **Royal Jewel Tone Aesthetic:** A bespoke 2026 Indian bridal palette featuring Imperial Jewel Plum (`#3D072B`), Regal Ruby (`#AD1351`), Imperial Emerald (`#00664E`), and Antique Royal Gold (`#C89B53`) set on handmade Pearl Silk paper (`#FAF6F0`).
 - **Tiro Devanagari Hindi Typography:** Sacred mantras (*॥ श्री गणेशाय नमः ॥*), Sanskrit shlokas, ceremony titles, and blessing tags rendered in authentic, elegant **Tiro Devanagari Hindi**.
-- **Ceremonies & Itinerary:** Complete schedule of celebrations across Noida (*The Promise Night*) and Bodhgaya (*Mehandi, Sangeet Sandhya, Haldi, Ghruchari & Barat, and The Sacred Wedding*).
+- **Ceremonies & Itinerary:** Complete schedule of celebrations across Noida (*The Promise Night*) and Bodhgaya (*Mehendi, Sangeet Sandhya, Haldi, Ghudchadhi & Baraat, and The Sacred Wedding*).
 - **Calendar & Directions Integration:** One-click Google Calendar / Apple iCalendar (`.ics`) downloads and Google Maps venue navigation.
 - **Guest Experience & Travel Guide:** Detailed travel info for Gaya and Patna airports, railway junctions, December climate guide, and one-tap WhatsApp invitation sharing.
 - **Wishes & Blessings Guestbook:** Interactive guestbook with optimistic likes, Devanagari blessing tags, and celebratory jewel-tone confetti.
